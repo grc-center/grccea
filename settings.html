@@ -1,0 +1,684 @@
+<!doctype html>
+<html lang="en" class="h-100">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Settings | GRC Center</title>
+  <link href="favicon.ico" rel="icon">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body class="d-flex flex-column h-100 bg-light">
+
+<section id="settings" class="py-3">
+  <div class="container-fluid">
+    <div class="btn-group mb-3 float-right">
+      <a class="btn btn-sm btn-outline-secondary" href="#">Help</a>
+      <a class="btn btn-sm btn-outline-secondary" href="index.html">Back</a>
+    </div>
+    <nav>
+      <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <a class="nav-item nav-link active" data-toggle="tab" id="nav-cost-center-tab" href="#nav-cost-center" aria-controls="nav-cost-center" aria-selected="true" role="tab">Cost Center</a>
+        <a class="nav-item nav-link" data-toggle="tab" id="nav-meeting-type-tab" href="#nav-meeting-type" aria-controls="nav-meeting-type" aria-selected="false" role="tab">Meeting Type</a>
+        <a class="nav-item nav-link" data-toggle="tab" id="nav-rooms-tab" href="#nav-rooms" aria-controls="nav-rooms" aria-selected="false" role="tab">Rooms</a>
+        <a class="nav-item nav-link" data-toggle="tab" id="nav-users-tab" href="#nav-users" aria-controls="nav-users" aria-selected="false" role="tab">Users</a>
+        <a class="nav-item nav-link" data-toggle="tab" id="nav-status-tab" href="#nav-status" aria-controls="nav-status" aria-selected="false" role="tab">Status</a>
+        <a class="nav-item nav-link" data-toggle="tab" id="nav-priority-tab" href="#nav-priority" aria-controls="nav-priority" aria-selected="false" role="tab">Priority</a>
+        <a class="nav-item nav-link" data-toggle="tab" id="nav-audit-log-tab" href="#nav-audit-log" aria-controls="nav-audit-log" aria-selected="false" role="tab">Audit log</a>
+        <a class="nav-item nav-link" data-toggle="tab" id="nav-settings-tab" href="#nav-settings" aria-controls="nav-settings" aria-selected="false" role="tab">Settings</a>
+      </div>
+    </nav>
+    <div id="nav-tabContent" class="tab-content">
+      <div id="nav-cost-center" class="tab-pane fade bg-white p-3 border-right border-bottom border-left show active" aria-labelledby="nav-cost-center-tab" role="tabpanel">
+        <div class="btn-group mb-3" role="group">
+          <button class="btn btn-sm btn-outline-secondary" type="button">Add Project</button>
+          <button class="btn btn-sm btn-outline-secondary" type="button">Add Program</button>
+          <button class="btn btn-sm btn-outline-secondary" type="button">Remove</button>
+          <button class="btn btn-sm btn-outline-secondary" type="button">Add Activities from csv file</button>
+        </div>
+        <table id="cost-center-table" class="table table-sm table-bordered table-hover">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col" class="w-100">Name</th>
+              <th scope="col">Active</th>
+            </tr>
+          </thead>
+          <thead class="thead-light" href="#collapseProject" aria-expanded="true" data-toggle="collapse" aria-controls="collapseProject">
+            <tr><th colspan="3">PROJECT</th></tr>
+          </thead>
+          <tbody class="collapse show" id="collapseProject">
+            <tr>
+              <td><input id="row1Check1" type="checkbox"></td>
+              <td><input class="form-control form-control-sm" id="row1Input" type="text" value="ABSA Bank ATM Installation"></td>
+              <td><input type="checkbox" id="row1Check2" checked></td>
+            </tr>
+            <tr>
+              <td><input id="row1Check1" type="checkbox"></td>
+              <td><input class="form-control form-control-sm" id="row2Input" type="text" value="Bench"></td>
+              <td><input id="row1Check2" type="checkbox"></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" id="row3Check1"></td>
+              <td><input class="form-control form-control-sm" id="row2Input" type="text" value="ERP Upgrade Project"></td>
+              <td><input type="checkbox" id="row3Check2" checked></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" id="row4Check1"></td>
+              <td><input class="form-control form-control-sm" id="row2Input" type="text" value="ABSA and S&P Merger"></td>
+              <td><input type="checkbox" id="row4Check2" checked></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" id="row5Check1"></td>
+              <td><input class="form-control form-control-sm" id="row2Input" type="text" value="New Facility Augmentation"></td>
+              <td><input type="checkbox" id="row5Check2" checked></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" id="row6Check1"></td>
+              <td><input class="form-control form-control-sm" id="row2Input" type="text" value="Core Banking Upgrade"></td>
+              <td><input type="checkbox" id="row6Check2" checked></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" id="row7Check1"></td>
+              <td><input class="form-control form-control-sm" id="row2Input" type="text" value="Roll out of Forex System"></td>
+              <td><input type="checkbox" id="row7Check2" checked></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" id="row8Check1"></td>
+              <td><input class="form-control form-control-sm" id="row2Input" type="text" value="Enterprise Communication System Upgrade"></td>
+              <td><input type="checkbox" id="row8Check2" checked></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" id="row9Check1"></td>
+              <td><input class="form-control form-control-sm" id="row9Input" type="text" value="Mobile Banking System"></td>
+              <td><input type="checkbox" id="row9Check2" checked></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" id="row10Check1"></td>
+              <td><input class="form-control form-control-sm" id="row10Input" type="text" value="Ipka"></td>
+              <td><input type="checkbox" id="row10Check2" checked></td>
+            </tr>
+          </tbody>
+          <thead class="thead-light" data-target="#collapseProgram" data-toggle="collapse" aria-expanded="false" aria-controls="collapseProgram">
+            <tr>
+              <th colspan="3">PROGRAM</th>
+            </tr>
+          </thead>
+          <tbody id="collapseProgram" class="collapse">
+            <tr>
+              <td><input type="checkbox" id="row11Check1"></td>
+              <td><input class="form-control form-control-sm" id="row11Input" type="text" value="Tech Debt"></td>
+              <td><input type="checkbox" id="row11Check2" checked></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" id="row12Check1"></td>
+              <td><input class="form-control form-control-sm" id="row12Input" type="text" value="DR System Augmentation"></td>
+              <td><input type="checkbox" id="row12Check2"></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" id="row13Check1"></td>
+              <td><input class="form-control form-control-sm" id="row13Input" type="text" value="New Data Center Augmentation"></td>
+              <td><input type="checkbox" id="row13Check2" checked></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" id="row14Check1"></td>
+              <td><input class="form-control form-control-sm" id="row14Input" type="text" value="Hardware Upgrade"></td>
+              <td><input type="checkbox" id="row14Check2" checked></td>
+            </tr>
+          </tbody>
+        </table>
+      </div><!-- /#nav-cost-center -->
+      <div id="nav-meeting-type" class="tab-pane fade bg-white p-3" aria-labelledby="nav-meeting-type-tab" role="tabpanel">
+        <div class="btn-group mb-3" role="group">
+          <button class="btn btn-sm btn-outline-secondary" type="button">Add</button>
+          <button class="btn btn-sm btn-outline-secondary" type="button">Remove</button>
+        </div>
+        <table id="meeting-type-table" class="table table-sm table-bordered table-hover">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col" class="w-100">Name</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input id="row1Check1" type="checkbox"></td>
+              <td><input id="row1Input2" class="form-control form-control-sm" type="text" value="Design Meeting"></td>
+            </tr>
+            <tr>
+              <td><input id="row2Check1" type="checkbox"></td>
+              <td><input id="row2Input2" class="form-control form-control-sm" type="text" value="Architecture Meeting"></td>
+            </tr>
+            <tr>
+              <td><input id="row3Check1" type="checkbox"></td>
+              <td><input id="row3Input2" class="form-control form-control-sm" type="text" value="Steering Committee Meeting"></td>
+            </tr>
+            <tr>
+              <td><input id="row4Check1" type="checkbox"></td>
+              <td><input id="row4Input2" class="form-control form-control-sm" type="text" value="Webinar Meeting"></td>
+            </tr>
+            <tr>
+              <td><input id="row5Check1" type="checkbox"></td>
+              <td><input id="row5Input2" class="form-control form-control-sm" type="text" value="Demo Type"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div><!-- /#nav-meeting-type -->
+      <div id="nav-rooms" class="tab-pane fade bg-white p-3" aria-labelledby="nav-rooms-tab" role="tabpanel">
+        <div class="btn-group mb-3" role="group">
+          <button class="btn btn-sm btn-outline-secondary" type="button">Add from csv file</button>
+          <button class="btn btn-sm btn-outline-secondary" type="button">Remove</button>
+          <button class="btn btn-sm btn-outline-secondary" type="button">Assets</button>
+        </div>
+        <table id="rooms-table" class="table table-sm table-bordered table-hover">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Type</th>
+              <th scope="col">Hardware</th>
+              <th scope="col">Time Zone</th>
+              <th scope="col">Capacity</th>
+            </tr>
+          </thead>
+          <thead class="thead-light" data-toggle="collapse" data-target="#collapseMumbai" aria-controls="collapseMumbai" aria-expanded="true">
+            <tr>
+              <th colspan="6">Mumbai</th>
+            </tr>
+          </thead>
+          <tbody id="collapseMumbai" class="collapse show">
+            <tr>
+              <td><input id="row1Check1" type="checkbox"></td>
+              <td><input class="form-control form-control-sm" id="row1Input1" type="text" value="Mumbai Meeting Room"></td>
+              <td>
+                <select class="custom-select custom-select-sm" id="row1Select2">
+                  <option value="1">Unknown</option>
+                  <option value="2">TelePresence</option>
+                  <option value="3">VideoConference</option>
+                  <option value="4" selected>NormalConference</option>
+                </select>
+              </td>
+              <td><input class="form-control form-control-sm" id="row1Input3" type="text" value="GMT+05:30"></td>
+              <td>
+                <select class="custom-select custom-select-sm" id="row1Select4">
+                  <option selected>Open this select menu</option>
+                  <option value="1">Africa/Abidjan</option>
+                  <option value="2">Africa/Accra</option>
+                  <option value="3">Africa/Addis_Ababa</option>
+                  <option value="4">Other...</option>
+                </select>
+              </td>
+              <td><input class="form-control form-control-sm" id="row1Input" type="number" value="25"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div><!-- /#nav-rooms -->
+      <div id="nav-users" class="tab-pane fade bg-white p-3" aria-labelledby="nav-users-tab" role="tabpanel">
+        <div class="btn-group mb-3" role="group">
+          <button class="btn btn-sm btn-outline-secondary" type="button">Add from csv file</button>
+          <button class="btn btn-sm btn-outline-secondary" type="button">Remove</button>
+        </div>
+        <table id="users-table" class="table table-sm table-bordered table-hover">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Role</th>
+              <th scope="col">Email</th>
+              <th scope="col">Time Zone</th>
+              <th scope="col">Cost Center</th>
+              <th scope="col">Active</th>
+            </tr>
+          </thead>
+          <thead class="thead-light" data-toggle="collapse" href="#collapseBoston" role="button" aria-expanded="true" aria-controls="collapseBoston">
+            <tr><th colspan="7">Boston (America/New_York)</th></tr>
+          </thead>
+          <tbody id="collapseBoston" class="collapse show">
+            <tr>
+              <td><input id="row1Check1" type="checkbox"></td>
+              <td>Amar Singh</td>
+              <td>
+                <select class="custom-select custom-select-sm" id="row1Select1">
+                  <option value="1">Manager</option>
+                  <option value="2" selected>Team_Member</option>
+                  <option value="3">Cost_Center_Manager</option>
+                  <option value="4">Cost_Center_Administrator</option>
+                  <option value="5">Super_Administrator</option>
+                </select>
+              </td>
+              <td>as@grccenter.com</td>
+              <td>America/New_York</td>
+              <td>
+                <select class="custom-select custom-select-sm" id="row1Select2">
+                  <option value="1">Bench</option>
+                  <option value="2" selected>G-Nex</option>
+                  <option value="3">ERP Upgrade Project</option>
+                  <option value="4">Other...</option>
+                </select>
+              </td>
+              <td><input id="row1Check2" type="checkbox" checked></td>
+            </tr><!-- /row1 -->
+            <tr>
+              <td><input id="row2Check1" type="checkbox"></td>
+              <td>Anjali Sharma</td>
+              <td>
+                <select class="custom-select custom-select-sm" id="row2Select1">
+                  <option value="1">Manager</option>
+                  <option value="2">Team_Member</option>
+                  <option value="3">Cost_Center_Manager</option>
+                  <option value="4" selected>Cost_Center_Administrator</option>
+                  <option value="5">Super_Administrator</option>
+                </select>
+              </td>
+              <td>ash@grccenter.com</td>
+              <td>America/New_York</td>
+              <td>
+                <select class="custom-select custom-select-sm" id="row2Select2">
+                  <option value="1">Bench</option>
+                  <option value="2" selected>G-Nex</option>
+                  <option value="3">ERP Upgrade Project</option>
+                  <option value="4">Other...</option>
+                </select>
+              </td>
+              <td><input id="row2Check2" type="checkbox" checked></td>
+            </tr><!-- /row2 -->
+            <tr>
+              <td><input id="row3Check1" type="checkbox"></td>
+              <td>Bharat Gupta</td>
+              <td>
+                <select class="custom-select custom-select-sm" id="row3Select1">
+                  <option value="1" selected>Manager</option>
+                  <option value="2">Team_Member</option>
+                  <option value="3">Cost_Center_Manager</option>
+                  <option value="4">Cost_Center_Administrator</option>
+                  <option value="5">Super_Administrator</option>
+                </select>
+              </td>
+              <td>bg@grccenter.com</td>
+              <td>America/New_York</td>
+              <td>
+                <select class="custom-select custom-select-sm" id="row3Select2">
+                  <option value="1">Bench</option>
+                  <option value="2">G-Nex</option>
+                  <option value="3" selected>ERP Upgrade Project</option>
+                  <option value="4">Other...</option>
+                </select>
+              </td>
+              <td><input id="row3Check2" type="checkbox" checked></td>
+            </tr><!-- /row3 -->
+            <tr>
+              <td><input id="row4Check1" type="checkbox"></td>
+              <td>Tarun Bhatia</td>
+              <td>
+                <select class="custom-select custom-select-sm" id="row4Select1">
+                  <option value="1">Manager</option>
+                  <option value="2">Team_Member</option>
+                  <option value="3" selected>Cost_Center_Manager</option>
+                  <option value="4">Cost_Center_Administrator</option>
+                  <option value="5">Super_Administrator</option>
+                </select>
+              </td>
+              <td>tb@grccenter.com</td>
+              <td>America/New_York</td>
+              <td>
+                <select class="custom-select custom-select-sm" id="row4Select2">
+                  <option value="1">Bench</option>
+                  <option value="2" selected>G-Nex</option>
+                  <option value="3">ERP Upgrade Project</option>
+                  <option value="4">Other...</option>
+                </select>
+              </td>
+              <td><input id="row4Check2" type="checkbox" checked></td>
+            </tr><!-- /row4 -->
+            <tr>
+              <td><input id="row5Check1" type="checkbox"></td>
+              <td>Vivek Bhardwaj</td>
+              <td>
+                <select id="row5Select1" class="custom-select custom-select-sm">
+                  <option value="1">Manager</option>
+                  <option value="2">Team_Member</option>
+                  <option value="3">Cost_Center_Manager</option>
+                  <option value="4">Cost_Center_Administrator</option>
+                  <option value="5" selected>Super_Administrator</option>
+                </select>
+              </td>
+              <td>vb@grccenter.com</td>
+              <td>America/New_York</td>
+              <td>
+                <select id="row5Select2" class="custom-select custom-select-sm">
+                  <option value="1" selected>Bench</option>
+                  <option value="2">G-Nex</option>
+                  <option value="3">ERP Upgrade Project</option>
+                  <option value="4">Other...</option>
+                </select>
+              </td>
+              <td><input id="row5Check2" type="checkbox" checked></td>
+            </tr><!-- /row5 -->
+          </tbody>
+          <thead class="thead-light" data-toggle="collapse" data-target="#collapseMumbai2" aria-expanded="false" aria-controls="collapseMumbai2">
+            <tr>
+              <th colspan="7">Mumbai</th>
+            </tr>
+          </thead>
+          <tbody id="collapseMumbai2" class="collapse">
+            <tr>
+              <td><input id="row6Check1" type="checkbox"></td>
+              <td>Ameya Pant</td>
+              <td>
+                <select id="row6Select1" class="custom-select custom-select-sm">
+                  <option value="1">Manager</option>
+                  <option value="2">Team_Member</option>
+                  <option value="3">Cost_Center_Manager</option>
+                  <option value="4">Cost_Center_Administrator</option>
+                  <option value="5" selected>Super_Administrator</option>
+                </select>
+              </td>
+              <td>ap@grccenter.com</td>
+              <td></td>
+              <td>
+                <select id="row6Select2" class="custom-select custom-select-sm">
+                  <option value="1">Bench</option>
+                  <option value="2">G-Nex</option>
+                  <option value="3" selected>ERP Upgrade Project</option>
+                  <option value="4">Other...</option>
+                </select>
+              </td>
+              <td><input id="row6Check2" type="checkbox" checked></td>
+            </tr><!-- /row6 -->
+            <tr>
+              <td><input id="row7Check1" type="checkbox"></td>
+              <td>Amit Jain</td>
+              <td>
+                <select id="row7Select1" class="custom-select custom-select-sm">
+                  <option value="1">Manager</option>
+                  <option value="2">Team_Member</option>
+                  <option value="3">Cost_Center_Manager</option>
+                  <option value="4">Cost_Center_Administrator</option>
+                  <option value="5" selected>Super_Administrator</option>
+                </select>
+              </td>
+              <td>sa@grccenter.com</td>
+              <td></td>
+              <td>
+                <select id="row7Select2" class="custom-select custom-select-sm">
+                  <option value="1">Bench</option>
+                  <option value="2">G-Nex</option>
+                  <option value="3" selected>ERP Upgrade Project</option>
+                  <option value="4">Other...</option>
+                </select>
+              </td>
+              <td><input id="row7Check2" type="checkbox" checked></td>
+            </tr><!-- /row7 -->
+          </tbody>
+          <thead class="thead-light" data-toggle="collapse" data-target="#collapseRaleigh" aria-controls="collapseRaleigh" aria-expanded="false">
+            <tr>
+              <th colspan="7">Raleigh (America/New_York)</th>
+            </tr>
+          </thead>
+          <tbody id="collapseRaleigh" class="collapse">
+            <tr>
+              <td><input id="row8Check1" type="checkbox"></td>
+              <td>Judy Polska</td>
+              <td>
+                <select id="row8Select1" class="custom-select custom-select-sm">
+                  <option value="1">Manager</option>
+                  <option value="2">Team_Member</option>
+                  <option value="3">Cost_Center_Manager</option>
+                  <option value="4">Cost_Center_Administrator</option>
+                  <option value="5" selected>Super_Administrator</option>
+                </select>
+              </td>
+              <td>jp@grccenter.com</td>
+              <td>America/New_York</td>
+              <td>
+                <select id="row8Select2" class="custom-select custom-select-sm">
+                  <option value="1">Bench</option>
+                  <option value="2">G-Nex</option>
+                  <option value="3" selected>ERP Upgrade Project</option>
+                  <option value="4">Other...</option>
+                </select>
+              </td>
+              <td><input id="row8Check2" type="checkbox" checked></td>
+            </tr><!-- /row8 -->
+            <tr>
+              <td><input id="row9Check1" type="checkbox"></td>
+              <td>Ketul Mehta</td>
+              <td>
+                <select id="row9Select1" class="custom-select custom-select-sm">
+                  <option value="1">Manager</option>
+                  <option value="2">Team_Member</option>
+                  <option value="3">Cost_Center_Manager</option>
+                  <option value="4">Cost_Center_Administrator</option>
+                  <option value="5" selected>Super_Administrator</option>
+                </select>
+              </td>
+              <td>km@grccenter.com</td>
+              <td>America/New_York</td>
+              <td>
+                <select id="row9Select2" class="custom-select custom-select-sm">
+                  <option value="1">Bench</option>
+                  <option value="2">G-Nex</option>
+                  <option value="3" selected>ERP Upgrade Project</option>
+                  <option value="4">Other...</option>
+                </select>
+              </td>
+              <td><input id="row9Check2" type="checkbox" checked></td>
+            </tr><!-- /row9 -->
+          </tbody>
+        </table>
+      </div><!-- /#nav-users -->
+      <div id="nav-status" class="tab-pane fade bg-white p-3" aria-labelledby="nav-status-tab" role="tabpanel">
+        <div class="btn-group mb-3" role="group">
+          <button class="btn btn-sm btn-outline-secondary" type="button">Add</button>
+          <button class="btn btn-sm btn-outline-secondary" type="button">Remove</button>
+        </div>
+        <table id="status-table" class="table table-sm table-bordered table-hover">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col" class="w-100">Name</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input id="row1Check1" type="checkbox"></td>
+              <td><input id="row1Input2" class="form-control form-control-sm" type="text" value="Assigned"></td>
+            </tr>
+            <tr>
+              <td><input id="row2Check1" type="checkbox"></td>
+              <td><input id="row2Input2" class="form-control form-control-sm" type="text" value="In Progress"></td>
+            </tr>
+            <tr>
+              <td><input id="row3Check1" type="checkbox"></td>
+              <td><input id="row3Input2" class="form-control form-control-sm" type="text" value="Complete"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div><!-- /#nav-status -->
+      <div id="nav-priority" class="tab-pane fade bg-white p-3" aria-labelledby="nav-priority-tab" role="tabpanel">
+        <div class="btn-group mb-3" role="group">
+          <button class="btn btn-sm btn-outline-secondary" type="button">Add</button>
+          <button class="btn btn-sm btn-outline-secondary" type="button">Remove</button>
+        </div>
+        <table id="priority-table" class="table table-sm table-bordered table-hover">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col" class="w-100">Priority</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input id="row1Check1" type="checkbox"></td>
+              <td><input id="row1Input2" class="form-control form-control-sm" type="text" value="High"></td>
+            </tr>
+            <tr>
+              <td><input id="row2Check1" type="checkbox"></td>
+              <td><input id="row2Input2" class="form-control form-control-sm" type="text" value="Medium"></td>
+            </tr>
+            <tr>
+              <td><input id="row3Check1" type="checkbox"></td>
+              <td><input id="row3Input2" class="form-control form-control-sm" type="text" value="Low"></td>
+            </tr>
+            <tr>
+              <td><input id="row4Check1" type="checkbox"></td>
+              <td><input id="row4Input2" class="form-control form-control-sm" type="text" value="Productive"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div><!-- /#nav-priority -->
+      <div id="nav-audit-log" class="tab-pane fade bg-white p-3" aria-labelledby="nav-audit-log-tab" role="tabpanel">
+        <div class="btn-group mb-3" role="group">
+          <button class="btn btn-sm btn-outline-secondary" type="button">Add</button>
+          <button class="btn btn-sm btn-outline-secondary" type="button">Remove</button>
+        </div>
+        <table id="audit-log-table" class="table table-sm table-bordered table-hover">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Date</th>
+              <th scope="col">User</th>
+              <th scope="col">Action</th>
+              <th scope="col">Entity</th>
+              <th scope="col">Property</th>
+              <th scope="col">Old value</th>
+              <th scope="col">New value</th>
+              <th scope="col">Entity Id</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2019-03-09 13:53:40 UTC</td>
+              <td>Amit Jain</td>
+              <td>Create</td>
+              <td>Meeting</td>
+              <td>title</td>
+              <td></td>
+              <td>5. Estimate the Cost</td>
+              <td>15</td>
+            </tr>
+            <tr>
+              <td>2019-03-09 13:53:40 UTC</td>
+              <td>Amit Jain</td>
+              <td>Create</td>
+              <td>Meeting</td>
+              <td>memo</td>
+              <td></td>
+              <td>Standard Memo Starts here ... Standard Memo Ends here ...</td>
+              <td>15</td>
+            </tr>
+            <tr>
+              <td>2019-03-09 13:53:40 UTC</td>
+              <td>Amit Jain</td>
+              <td>Create</td>
+              <td>Meeting</td>
+              <td>startTime</td>
+              <td></td>
+              <td>Mon Mar 11 21:30:00 UTC 2019</td>
+              <td>15</td>
+            </tr>
+            <tr>
+              <td>2019-03-09 13:53:40 UTC</td>
+              <td>Amit Jain</td>
+              <td>Create</td>
+              <td>Meeting</td>
+              <td>endTime</td>
+              <td></td>
+              <td>Mon Mar 11 22:30:00 UTC 2019</td>
+              <td>15</td>
+            </tr>
+            <tr>
+              <td>2019-03-09 13:53:40 UTC</td>
+              <td>Amit Jain</td>
+              <td>Create</td>
+              <td>Meeting</td>
+              <td>privateMeeting</td>
+              <td></td>
+              <td>false</td>
+              <td>15</td>
+            </tr>
+          </tbody>
+        </table>
+      </div><!-- /#nav-audit-log -->
+      <div id="nav-settings" class="tab-pane fade bg-white p-3" aria-labelledby="nav-settings-tab" role="tabpanel">
+        <form class="col-lg-6 mx-auto">
+          <table id="settings-table" class="table table-sm table-borderless">
+            <tr>
+              <td class="w-50">Average Work Hours Saved per Mile :</td>
+              <td class="w-50"><input id="input1" class="form-control form-control-sm" type="text" placeholder=""></td>
+            </tr>
+            <tr>
+              <td><label for="input2">Average Employee Hourly Rate :</label></td>
+              <td><input id="input2" class="form-control form-control-sm" type="text" placeholder=""></td>
+            </tr>
+            <tr>
+              <td><label for="input3">Flight Cost per Seat per Mile :</label></td>
+              <td><input id="input3" class="form-control form-control-sm" type="text" placeholder=""></td>
+            </tr>
+            <tr>
+              <td><label for="check4">Cost Center Required for Each Meeting :</label></td>
+              <td><input id="check4" type="checkbox" value=""></td>
+            </tr>
+            <tr>
+              <td><label for="check5">Agenda Required for Each Meeting :</label></td>
+              <td><input id="check5" type="checkbox" value=""></td>
+            </tr>
+            <tr>
+              <td><label for="check6">Agenda Required for Each Meeting :</label></td>
+              <td><input id="check6" type="checkbox" value=""></td>
+            </tr>
+            <tr>
+              <td><label for="input7">Primary Domain :</label></td>
+              <td><input id="input7" class="form-control form-control-sm" type="text" placeholder=""></td>
+            </tr>
+            <tr>
+              <td><label for="input8">Primary Domain :</label></td>
+              <td><input id="input8" class="form-control form-control-sm" type="text" placeholder=""></td>
+            </tr>
+            <tr>
+              <td><label for="input9">Adhoc if invitation less than (hrs) :</label></td>
+              <td><input id="input9" class="form-control form-control-sm" type="text" placeholder=""></td>
+            </tr>
+            <tr>
+              <td><label for="input10">Freeze Minutes after (hrs) :</label></td>
+              <td><input id="input10" class="form-control form-control-sm" type="text" placeholder=""></td>
+            </tr>
+            <tr>
+              <td class="text-center" colspan="2"><button class="btn btn-dark" type="submit">Save</button></td>
+            </tr>
+          </table>
+        </form>
+      </div><!-- /#nav-settings -->
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-dark mt-auto py-3 text-center text-white">
+  <div class="container">
+    <ul class="list-inline mb-0">
+      <li class="list-inline-item mx-0"><a href="mailto:demouser@grccenter.com">demouser@grccenter.com</a></li>
+      <li class="list-inline-item mx-0"><a href="http://demo.grccenter.com">demo.grccenter.com</a></li>
+      <li class="list-inline-item mx-0">Version 5.09</li>
+      <li class="list-inline-item mx-0">GRC CENTER is available from Nov 12, 2012</li>
+    </ul>
+  </div>
+</footer>
+
+<!-- JavaScripts -->
+<script src="assets/vendor/jquery/jquery.slim.js"></script>
+<script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+
+<script>
+$(document).ready(function() {
+  $('#audit-log-table').DataTable();
+} );
+</script>
+
+</body>
+</html>

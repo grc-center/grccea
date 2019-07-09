@@ -1,0 +1,1180 @@
+<!doctype html>
+<html lang="en" class="h-100">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Face-to-Face | GRC Center</title>
+    <link href="favicon.ico" rel="icon">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link href="assets/vendor/fullcalendar/fullcalendar.min.css" rel="stylesheet">
+    <link href="assets/vendor/scheduler/scheduler.min.css" rel="stylesheet">
+
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body class="d-flex flex-column h-100">
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a href="index.html" class="navbar-brand py-0">
+                <img class="d-inline-block align-middle mr-2" height="50" width="50" src="assets/img/logo-white.svg" alt="">Dashboard
+            </a>
+            <button class="navbar-toggler p-2" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon text-white"></span>
+    </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><i class="fa fa-home mr-1"></i>Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="modal" data-target="#modalGetTogether"><img class="icon-img mr-1" src="assets/img/sm-icon-get-together.png">Get together</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="project-activities.html"><img class="icon-img mr-1" src="assets/img/sm-icon-project-activities.png">Activities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="notifications.html"><img class="icon-img mr-1" src="assets/img/sm-icon-notifications.png">Notifications</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="zoom-into-teams.html"><img class="icon-img mr-1" src="assets/img/sm-icon-zoom-into-teams.png">Zoom in</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="settings.html"><i class="fa fa-cog mr-1"></i>Settings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fa fa-question mr-1"></i>Help</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html"><i class="fa fa-sign-out mr-1"></i>Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <nav class="nav-fill d-flex navbar-expand-lg navbar-nav w-100 px-3 pt-3">
+        <input class="btn btn-dark ftf-btn mb-2 mr-lg-2" id="inputCostCenter" type="button" value="Cost Center" data-toggle="modal" data-target="#modalCostCenter">
+        <div class="input-group mb-2 mr-lg-2">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Title</span>
+            </div>
+            <select id="selectTitle" class="custom-select">
+      <option></option>
+      <option value="Conference">Conference</option>
+      <option value="Lecture">Lecture</option>
+      <option value="Meeting">Meeting</option>
+    </select>
+        </div>
+        <div class="btn-group mb-2 mr-lg-2">
+            <button class="btn btn-outline-dark" data-target="#modalAgenda" data-toggle="modal" type="button">
+      <i class="fa fa-users"></i>
+    </button>
+            <button class="btn btn-outline-dark btn-file">
+      <i class="fa fa-upload"></i><input type="file">
+    </button>
+            <button class="btn btn-outline-dark" data-target="#modalMeetingMemo" data-toggle="modal" type="button">
+      <i class="fa fa-paperclip"></i>
+    </button>
+            <input class="btn btn-dark ftf-btn mb-2" id="inputMeetingtype" type="button" value="Meeting type" data-toggle="modal" data-target="#modalMeetingType" style="margin-left:4px">
+        </div>
+        <div class="input-group col-lg-2 px-0 mb-2 mr-lg-2">
+            <input class="form-control" id="datetimepicker1" name="date1" type="text" placeholder="Starts at" style="margin-right:2px;width:6rem">
+            <input class="form-control" id="datetimepicker3" name="dater1" type="text" placeholder="Ends by" style="margin-left:2px;width:6rem">
+        </div>
+        <div class="input-group mb-2 mr-lg-2" style="width:60%">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Dial In</span>
+            </div>
+            <input class="form-control" id="inputTitle" maxlength="20">
+        </div>
+        <input class="btn btn-dark ftf-btn mb-2" id="submitEvent" type="button" value="Create Event">
+    </nav>
+
+    <div class="container-fluid my-auto px-3">
+        <div class="form-row">
+            <div class="col-lg-6">
+                <div class="card border-0 rounded-0" id="selectAttendees">
+                    <div class="card-body p-2">
+                        <h4 class="text-center">Select Attendees</h4>
+                        <div class="row">
+                            <div class="col-4 input-add">
+                                <div class="input-group">
+
+                                    <div class="input-group-append">
+                                        <button class="btn btn-dark" id="buttonPlus" type="button" data-toggle="modal" data-target="#modalAddAttendees" style="margin-right:4px"><i class="fa fa-plus"></i></button>
+                                        <button class="btn btn-dark" id="buttonMinus" type="button" data-toggle="modal" data-target="#modalAddAttendees"><i class="fa fa-minus"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div id="calendarOne"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /#selectAttendees -->
+            </div>
+            <div class="col-lg-6">
+                <div class="card border-0 rounded-0" id="selectConferenceRooms">
+                    <div class="card-body p-2">
+                        <h4 class="text-center">Select Conference Rooms</h4>
+                        <div class="row">
+                            <div class="col-4 input-add">
+                                <div class="input-group">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-dark" id="buttonPlus" type="button" data-toggle="modal" data-target="#modalAddRooms" style="margin-right:4px"><i class="fa fa-plus"></i></button>
+                                        <button class="btn btn-dark" id="buttonMinus" type="button" data-toggle="modal" data-target="#modalAddRooms"><i class="fa fa-minus"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div id="calendarTwo"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /#selectConferenceRooms -->
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3 mb-3">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-dark ftf-btn text-white">Minutes Writer</span>
+                    </div>
+                    <select class="custom-select" id="selectMinutesWriter">
+       
+        </select>
+                </div>
+            </div>
+            <div class="col-lg-9 mb-3 text-right">
+                <input class="btn btn-dark ftf-btn" id="sendInvite" type="button" value="Send Invite">
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark py-3 text-center">
+        <div class="container">
+            <ul class="list-inline mb-0">
+                <li class="list-inline-item mx-0"><a href="mailto:demouser@grccenter.com">demouser@grccenter.com</a></li>
+                <li class="list-inline-item mx-0"><a href="http://demo.grccenter.com">demo.grccenter.com</a></li>
+                <li class="list-inline-item mx-0">Version 5.09</li>
+                <li class="list-inline-item mx-0">GRC CENTER is available from Nov 12, 2012</li>
+            </ul>
+        </div>
+    </footer>
+
+    <!--
+MODALS:
+1. modalCostCenter
+2. modalAgenda
+3. modalFollowUpItems
+4. modalMeetingMemo
+5. modalMeetingType
+6. modalAddAttendees
+7. modalAddRooms
+-->
+
+    <div class="modal fade" id="modalCostCenter" aria-labelledby="modalCostCenterlabel" aria-hidden="true" role="dialog" tabindex="-1" data-toggle="modal" data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-white p-0">
+                    <h5 class="m-2">Meeting Cost Center</h5>
+                    <a class="btn text-white" data-dismiss="modal" aria-label="Close" href="#">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-2 pr-0">
+                            <label for="filterby">Filter by</label>
+                        </div>
+                        <div class="col-3 px-0">
+                            <select class="" id="filterby" name="filterby">
+              <option value="1"></option>
+              <option value="2">PROJECT</option>
+              <option value="3">PROGRAM</option>
+            </select>
+                        </div>
+                        <div class="col-5 offset-2 pl-0">
+                            <label for="costcenter">Cost Centers</label>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <select class="form-control" id="items" multiple style="width:80%;margin-left:10%"></select>
+
+                    </div>
+                </div>
+                <div class="modal-footer align-content-center align-items-center justify-content-center">
+                    <button class="btn btn-dark" type="button" data-dismiss="modal">Close</button>
+                    <button class="btn btn-dark" type="button" data-dismiss="modal">Choose</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /#modalCostCenter -->
+
+    <div class="modal fade" id="modalAgenda" aria-labelledby="modalAgendalabel" aria-hidden="true" role="dialog" tabindex="-1" data-toggle="modal" data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-white p-0">
+                    <h5 class="m-2">Agenda</h5>
+                    <a class="btn text-white" data-dismiss="modal" aria-label="Close" href="#">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-header p-2">
+                        <label class="h5 mb-0 py-1 bg-white" for="textareaAgenda">Agenda</label>
+                        <div class="btn-group">
+                            <button class="btn btn-outline-dark" id="addrow" type="button"><i class="fa fa-plus"></i></button>
+                            <button class="btn btn-outline-dark" type="button" data-target="#modalFollowUpItems" data-toggle="modal" data-dismiss="modal"><i class="fa fa-comment"></i></button>
+                        </div>
+                    </div>
+                    <div class="order-list d-block border pt-2" id="textareaAgenda" style="min-height: 6.6rem;"></div>
+                </div>
+                <div class="modal-footer align-content-center align-items-center justify-content-center">
+                    <button class="btn btn-dark" type="button" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /#modalAgenda -->
+
+    <div class="modal fade" id="modalFollowUpItems" aria-labelledby="modalFollowUpItemslabel" aria-hidden="true" role="dialog" tabindex="-1" data-toggle="modal" data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-white p-0">
+                    <h5 class="m-2">Select Follow Up items from Meetings</h5>
+                    <a class="btn text-white" data-dismiss="modal" aria-label="Close" href="#">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group input-group w-50">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Date</span>
+                        </div>
+                        <input class="form-control" id="datetimepicker2" name="datetimepicker2" type="text">
+                    </div>
+                    <div class="form-group">
+                        <h5>Select a Meeting</h5>
+                        <textarea class="form-control" id="textareaSelectMeeting" name="textareaSelectMeeting" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <h5>Select Agenda</h5>
+                        <textarea class="form-control" id="textareaSelectAgenda" name="textareaSelectAgenda" rows="3"></textarea>
+                    </div>
+
+                </div>
+
+                <div class="modal-footer align-content-center align-items-center justify-content-center">
+                    <button class="btn btn-dark" type="button" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- /#modalFollowUpItems -->
+
+    <div class="modal fade" id="modalMeetingMemo" aria-labelledby="modalMeetingMemolabel" aria-hidden="true" role="dialog" tabindex="-1" data-toggle="modal" data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-white p-0">
+                    <h5 class="m-2">Meeting Memo</h5>
+                    <a class="btn text-white" data-dismiss="modal" aria-label="Close" href="#">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-header p-2">
+                        <label class="h5 mb-0 py-1 bg-white" for="textareaMeetingMemo">Meeting Memo</label>
+                    </div>
+                    <textarea class="form-control" id="textareaMeetingMemo" rows="3"></textarea>
+                </div>
+                <div class="modal-footer align-content-center align-items-center justify-content-center">
+                    <button class="btn btn-dark" type="button" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /#modalMeetingMemo -->
+
+    <div class="modal fade" id="modalMeetingType" aria-labelledby="modalMeetingTypelabel" aria-hidden="true" role="dialog" tabindex="-1" data-toggle="modal" data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-white p-0">
+                    <h5 class="m-2">Meeting Type</h5>
+                    <a class="btn text-white" data-dismiss="modal" aria-label="Close" href="#">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-5">
+                            <label for="available">Available</label>
+                        </div>
+                        <div class="col-5 offset-2 pl-0">
+                            <label for="selected">Selected</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-5 pr-0">
+                            <select class="form-control" id="available" multiple></select>
+                        </div>
+                        <div class="col-2 my-auto text-center">
+                            <button class="btn btn-outline-secondary" id="meetingtype-btn-add" type="button"><i class="fa fa-arrow-right"></i></button>
+                            <button class="btn btn-outline-secondary" id="meetingtype-btn-remove" type="button"><i class="fa fa-arrow-left"></i></button>
+                        </div>
+                        <div class="col-5 pl-0">
+                            <select class="form-control" id="selected" multiple></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer align-content-center align-items-center justify-content-center">
+                    <button class="btn btn-dark" type="button" id="reset-btn">Reset</button>
+                    <button class="btn btn-dark" type="button" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /#modalMeetingType -->
+
+    <div class="modal fade" id="modalAddAttendees" aria-labelledby="modalAddAttendeeslabel" aria-hidden="true" role="dialog" tabindex="-1" data-toggle="modal" data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-white p-0">
+                    <h5 class="m-2">Select Name(s) to Add Attendees</h5>
+                    <a class="btn text-white" data-dismiss="modal" aria-label="Close" href="#">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-bordered table-hover table-sm" id="cost-center-table">
+                        <thead class="border-0">
+                            <tr class="thead-light">
+                                <th scope="col">#</th>
+                                <th scope="col" class="w-50">Name</th>
+                                <th scope="col" class="w-50">Location</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody1">
+                            <!-- Adding an attribute for country  -->
+                            <tr>
+                                <td><input id="checkbox1" type="checkbox" city="Boston" eid="0"></td>
+                                <td>Bharat Gupta</td>
+                                <td>Boston (USA)</td>
+                            </tr>
+                            <tr>
+                                <td><input id="checkbox2" type="checkbox" city="Mumbai" eid="1"></td>
+                                <td>Amit Jain</td>
+                                <td>Mumbai (India)</td>
+                            </tr>
+                            <tr>
+                                <td><input id="checkbox3" type="checkbox" city="Mumbai" eid="2"></td>
+                                <td>Ameya Pant</td>
+                                <td>Mumbai (India)</td>
+                            </tr>
+                            <tr>
+                                <td><input id="checkbox4" type="checkbox" city="Raleigh" eid="3"></td>
+                                <td>Ketul Mehta</td>
+                                <td>Raleigh (USA)</td>
+                            </tr>
+                            <tr>
+                                <td><input id="checkbox5" type="checkbox" city="Raleigh" eid="4"></td>
+                                <td>Judy Polska</td>
+                                <td>Raleigh (USA)</td>
+                            </tr>
+                            <tr>
+                                <td><input id="checkbox6" type="checkbox" city="Boston" eid="5"></td>
+                                <td>Vivek Bhardwaj</td>
+                                <td>Boston (USA)</td>
+                            </tr>
+                            <tr>
+                                <td><input id="checkbox7" type="checkbox" city="Boston" eid="6"></td>
+                                <td>Anjali Sharma</td>
+                                <td>Boston (USA)</td>
+                            </tr>
+                            <tr>
+                                <td><input id="checkbox8" type="checkbox" city="Boston" eid="7"></td>
+                                <td>Tarun Bhatia</td>
+                                <td>Boston (USA)</td>
+                            </tr>
+                            <tr>
+                                <td><input id="checkbox9" type="checkbox" city="Boston" eid="8"></td>
+                                <td>Amar Singh</td>
+                                <td>Boston (USA)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-dark" data-dismiss="modal" id="addAtt"><i class="fa fa-plus mr-1"></i> Add Attendees</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /#modalAddAttendees -->
+
+    <div class="modal fade" id="modalAddRooms" aria-labelledby="modalAddRoomslabel" aria-hidden="true" role="dialog" tabindex="-1" data-toggle="modal" data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-white p-0">
+                    <h5 class="m-2">Select Room(s) to Add</h5>
+                    <a class="btn text-white" data-dismiss="modal" aria-label="Close" href="#">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-bordered table-hover table-sm" id="cost-center-table">
+                        <thead class="border-0">
+                            <tr class="thead-light">
+                                <th scope="col">#</th>
+                                <th scope="col" class="w-50">Name</th>
+                                <th scope="col" class="w-50">Location</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody2">
+                            <tr>
+                                <td><input id="checkbox1" type="checkbox" city="Mumbai"></td>
+                                <td>Mumbai Meeting Room</td>
+                                <td>Mumbai (India)</td>
+                            </tr>
+                            <tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-dark" data-dismiss="modal" id="addRoom"><i class="fa fa-plus mr-1"></i> Add Rooms</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /#modalAddRooms -->
+    <div class="modal fade" id="modalError" aria-labelledby="modalAddAttendeeslabel" aria-hidden="true" role="dialog" tabindex="-1" data-toggle="modal" data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-white p-0">
+                    <h5 class="m-2">Please meet tese requirements:</h5>
+                    <a class="btn text-white" data-dismiss="modal" aria-label="Close" href="#">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </div>
+                <div class="modal-body" style="text-align:center">
+                    <ul id="error-body"></ul>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-dark" type="button" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /#modal for errors -->
+    <div class="modal fade" id="modalAssignUsers" aria-labelledby="modalMeetingTypelabel" aria-hidden="true" role="dialog" tabindex="-1" data-toggle="modal" data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-white p-0">
+                    <h5 class="m-2">Assign Users to this room</h5>
+                    <a class="btn text-white" data-dismiss="modal" aria-label="Close" href="#">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-5">
+                            <label for="available">Available</label>
+                        </div>
+                        <div class="col-5 offset-2 pl-0">
+                            <label for="selected">Assigned</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-5 pr-0">
+                            <select class="form-control" id="availableUsers" multiple></select>
+                        </div>
+                        <div class="col-2 my-auto text-center">
+                            <button class="btn btn-outline-secondary" id="meetingtype-btn-add" type="button"><i class="fa fa-arrow-right"></i></button>
+                            <button class="btn btn-outline-secondary" id="meetingtype-btn-remove" type="button"><i class="fa fa-arrow-left"></i></button>
+                        </div>
+                        <div class="col-5 pl-0">
+                            <select class="form-control" id="selected" multiple></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer align-content-center align-items-center justify-content-center">
+                    <button class="btn btn-dark" type="button" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /#modal for assigning users to particular room -->
+
+    <!-- JavaScripts-->
+    <script src="assets/vendor/jquery/jquery.slim.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/vendor/moment/moment.min.js"></script>
+    <script src="assets/vendor/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="assets/vendor/fullcalendar/fullcalendar.min.js"></script>
+    <script src="assets/vendor/scheduler/scheduler.min.js"></script>
+
+    <script src='fullcalendar/core/main.js'></script>
+    <script src='fullcalendar/interaction/main.js'></script>
+    <script src='fullcalendar/daygrid/main.js'></script>
+
+    <script>
+        // #datetimepicker1 initialize
+        $(function() {
+            $("#datetimepicker2").datetimepicker();
+        });
+
+        $(function() {
+            $('#datetimepicker1').datetimepicker({
+                minDate: moment()
+            })
+            $('#datetimepicker3').datetimepicker({
+                minDate: moment()
+            });
+
+
+            $("#datetimepicker1").on("dp.change", function(e) {
+                var min = moment($("#datetimepicker1").val()).add(15, 'minutes');
+                $('#datetimepicker3').data("DateTimePicker").minDate(min);
+            });
+
+        });
+    </script>
+
+    <script>
+        function costcenter() {
+            var Data = ['ABSA Bank ATM Installation', // PROJECT
+                'ERP Upgrade Project', // PROJECT
+                'ABSA and S&P Merger', // PROJECT
+                'Tech Debt', // PROGRAM
+                'New Facility Augmentation', // PROJECT
+                'DR System Augmentation', // PROGRAM
+                'New Data Center Augmentation', // PROGRAM
+                'Core Banking Upgrade', // PROJECT
+                'Roll out of Forex System', // PROJECT
+                'Enterprise Communication System Upgrade', // PROJECT
+                'Hardware Upgrade', // PROGRAM
+                'Mobile Banking System', // PROJECT
+                'Ipka'
+            ]; // PROJECT
+
+            populateItems(Data, '#items');
+
+            //add btn
+
+
+            //remove btn
+
+
+            //populate items box with arr
+            function populateItems(arr, targetMultiSelect) {
+                arr.sort();
+                generateOptionElements(arr, targetMultiSelect);
+            }
+
+            //reset demo
+
+
+            //create option elements
+            function generateOptionElements(arr, targetMultiSelect) {
+                for (var i = 0; i < arr.length; i++) {
+                    var option = document.createElement('OPTION');
+                    var text = document.createTextNode(arr[i]);
+                    option.appendChild(text);
+                    $(targetMultiSelect).append(option);
+                }
+            }
+        };
+
+        // costcenter initialize
+        $(function() {
+            costcenter();
+        });
+    </script>
+
+    <script>
+        function meetingtype() {
+            var Data = [
+                'Design Meeting',
+                'Architecture Meeting',
+                'Steering Committee Meeting',
+                'Webinar Meeting',
+                'Demo Type'
+            ];
+
+            populateItems(Data, '#available');
+
+            //add btn
+            $('#meetingtype-btn-add').click(function() {
+                if ($('#selected option').length > 0) {
+                    return;
+                } else {
+                    var selected = $('select#available').val();
+                    $('#available option:selected').remove();
+                    generateOptionElements(selected, '#selected');
+                }
+            });
+
+            //remove btn
+            $('#meetingtype-btn-remove').click(function() {
+                var selected = $('select#selected').val();
+                $('#selected option:selected').remove();
+                $('#available option').each(function() {
+                    selected.push($(this).val());
+                });
+
+                $('#available option').remove();
+                selected.sort();
+
+                generateOptionElements(selected, '#available');
+            });
+
+            //populate items box with arr
+            function populateItems(arr, targetMultiSelect) {
+                arr.sort();
+                generateOptionElements(arr, targetMultiSelect);
+            }
+
+            //create option elements
+            function generateOptionElements(arr, targetMultiSelect) {
+                for (var i = 0; i < arr.length; i++) {
+                    var option = document.createElement('OPTION');
+                    var text = document.createTextNode(arr[i]);
+                    option.appendChild(text);
+                    $(targetMultiSelect).append(option);
+                }
+            }
+        };
+
+        // meetingtype initialize
+        $(function() {
+            meetingtype();
+        });
+    </script>
+
+    <script>
+        $(function() {
+            var $filters = $('#filterby');
+            var $items = $('#items');
+            var $itemsList = $items.find('option').clone();
+            var workeranditems = {
+                '': [
+                    'ABSA Bank ATM Installation', // PROJECT
+                    'ERP Upgrade Project', // PROJECT
+                    'ABSA and S&P Merger', // PROJECT
+                    'Tech Debt', // PROGRAM
+                    'New Facility Augmentation', // PROJECT
+                    'DR System Augmentation', // PROGRAM
+                    'New Data Center Augmentation', // PROGRAM
+                    'Core Banking Upgrade', // PROJECT
+                    'Roll out of Forex System', // PROJECT
+                    'Enterprise Communication System Upgrade', // PROJECT
+                    'Hardware Upgrade', // PROGRAM
+                    'Mobile Banking System', // PROJECT
+                    'Ipka'
+                ], // PROJECT
+                PROJECT: [
+                    'ABSA Bank ATM Installation', // PROJECT
+                    'ERP Upgrade Project', // PROJECT
+                    'ABSA and S&P Merger', // PROJECT
+                    'New Facility Augmentation', // PROJECT
+                    'Core Banking Upgrade', // PROJECT
+                    'Roll out of Forex System', // PROJECT
+                    'Enterprise Communication System Upgrade', // PROJECT
+                    'Mobile Banking System', // PROJECT
+                    'Ipka'
+                ], // PROJECT
+                PROGRAM: [
+                        'Tech Debt', // PROGRAM
+                        'DR System Augmentation', // PROGRAM
+                        'New Data Center Augmentation', // PROGRAM
+                        'Hardware Upgrade'
+                    ] // PROGRAM
+            }
+
+            $filters.change(function() {
+                var $selectedWorker = $(this).find('option:selected').text();
+                $items.html($itemsList.filter(function() {
+                    return $.inArray($(this).text(), workeranditems[$selectedWorker]) >= 0;
+                }));
+            });
+        });
+    </script>
+
+    <script>
+        //today's date 
+        var rightNow = new Date();
+        var now = rightNow.toISOString().slice(0, 10).replace(/-/g, "");
+        $(function() {
+            /* initialize #calendarOne
+            -----------------------------------------------------------------*/
+            $('#calendarOne').fullCalendar({
+                schedulerLicenseKey: 'GPL-My-Project-Is-Open-Source',
+                now: now, //today's date 
+                validRange: {
+                    start: now, //today's date 
+                },
+                editable: false, // enable draggable events
+                droppable: true, // this allows things to be dropped onto the calendar
+                aspectRatio: 1.75,
+                scrollTime: '00:00', // undo default 6am scrollTime
+                header: {
+                    left: 'today',
+                    center: 'title',
+                    right: 'prev,next'
+                },
+                defaultView: 'timelineDay',
+                resourceLabelText: 'Add Attendee',
+                resources: [],
+                slotLabelFormat: 'H(:mm)',
+                eventOverlap: false,
+                events: [],
+                allDay: false,
+                eventBorderColor: 'transparent',
+                eventColor: 'red',
+                viewRender: function(view, element) {
+                    var b = $('#calendarOne').fullCalendar('getDate');
+                    $('#calendarTwo').fullCalendar("gotoDate", b);
+                },
+            });
+            $("#addAtt").click(function() { //button click event
+                    $('#calendarOne').fullCalendar('removeResource', 'm0');
+                    $('#calendarOne').fullCalendar('removeResource', 'm1'); //remove all resources
+                    $('#calendarOne').fullCalendar('removeResource', 'm2');
+                    $('#calendarOne').fullCalendar('removeResource', 'm3');
+                    $('#calendarOne').fullCalendar('removeResource', 'm4');
+                    $('#calendarOne').fullCalendar('removeResource', 'm5');
+                    $('#calendarOne').fullCalendar('removeResource', 'm6');
+                    $('#calendarOne').fullCalendar('removeResource', 'm7');
+                    $('#calendarOne').fullCalendar('removeResource', 'm8');
+                    $('#calendarOne').fullCalendar('removeResource', 'm9');
+                    $('#calendarOne').fullCalendar('removeEvents'); //remove all events
+                    var array = []; //array to check if resurce is already created 
+                    var count = 0;
+                    //data from inputs for events
+                    var start = moment($("#datetimepicker1").val(), ["DD/MM/YYYY h/mm A"]).format("YYYY-DD-MM HH:mm");
+                    var end = moment($("#datetimepicker3").val(), ["DD/MM/YYYY h/mm A"]).add(1, 'hours').format("YYYY-DD-MM HH:mm");
+                    var defaultEnd = moment($("#datetimepicker3").val(), ["DD/MM/YYYY h/mm A"]).format("YYYY-DD-MM HH:mm");
+                    $('#calendarOne').fullCalendar('renderEvent', {
+                        title: start,
+                        start: start,
+                        end: end,
+                        resourceId: 'm0',
+                        backgroundColor: 'transparent',
+                        textColor: 'black',
+                    }, true)
+
+                    $("#tbody1 input:checked").each(function() {
+                        var el = $(this).attr('city');
+                        var id = $(this).attr('eid');
+                        $('#calendarOne').fullCalendar('renderEvent', {
+
+                            id: id,
+                            start: start,
+                            end: defaultEnd,
+                            resourceId: id
+                        }, true)
+                        if (!array.includes(el)) {
+
+                            var resource = {
+                                id: 'm' + id,
+                                title: el,
+                                children: []
+                            }
+                            var child = [];
+                            $("#tbody1 input[city=" + el + "]:checked").each(function() { //map trogh element = same city
+                                var id = $(this).attr('eid');
+                                var t = $(this).parent();
+                                var newchild = {
+                                    id: id,
+                                    title: t.next().text()
+                                }
+                                child.push(newchild);
+                                count++;
+                            })
+                            resource.children = child;
+                            $('#calendarOne').fullCalendar(
+                                'addResource', resource
+                            );
+                            array.push(el);
+
+                        } else {
+                            return;
+                        }
+                    })
+                    $('#calendarOne').fullCalendar('removeEvents', 1);
+                    $('#calendarOne').fullCalendar('renderEvent', {
+                        id: 1,
+
+                        start: start,
+                        end: defaultEnd,
+                        resourceId: 1,
+                        backgroundColor: 'gray'
+                    }, true)
+                    $('#calendarOne').fullCalendar('removeEvents', 2);
+                    $('#calendarOne').fullCalendar('renderEvent', {
+                        id: 2,
+
+                        start: start,
+                        end: defaultEnd,
+                        resourceId: 2,
+                        backgroundColor: 'gray'
+                    }, true)
+
+                    var id = $("#selectMinutesWriter").children(":selected").attr("id");
+                    var id = id.replace('min', '');
+                    if (id == "1") {
+
+                        $('#calendarOne').fullCalendar('removeEvents', 1);
+                        $('#calendarOne').fullCalendar('renderEvent', {
+                            id: 1,
+
+                            start: start,
+                            end: end,
+                            resourceId: 1,
+                            backgroundColor: 'gray'
+                        }, true)
+                    } else if (id == "2") {
+                        $('#calendarOne').fullCalendar('removeEvents', 2);
+                        $('#calendarOne').fullCalendar('renderEvent', {
+                            id: 2,
+
+                            start: start,
+                            end: end,
+                            resourceId: 2,
+                            backgroundColor: 'gray'
+                        }, true)
+
+
+                    } else {
+                        $('#calendarOne').fullCalendar('removeEvents', id);
+                        $('#calendarOne').fullCalendar('renderEvent', {
+                            id: id,
+
+                            start: start,
+                            end: end,
+                            resourceId: id
+                        }, true)
+                    }
+
+
+
+                })
+                /* #calendarTwo initialize
+                -----------------------------------------------------------------*/
+            $('#calendarTwo').fullCalendar({
+                schedulerLicenseKey: 'GPL-My-Project-Is-Open-Source',
+                now: now,
+                validRange: {
+                    start: now,
+                },
+                editable: false, // enable draggable events
+                droppable: true, // this allows things to be dropped onto the calendar
+                aspectRatio: 1.75,
+                scrollTime: '00:00', // undo default 6am scrollTime
+                header: {
+                    left: 'today',
+                    center: 'title',
+                    right: 'prev,next'
+                },
+                defaultView: 'timelineDay',
+                resourceLabelText: 'Select Room',
+                eventOverlap: false,
+                resources: [],
+                timeFormat: 'H:mm',
+                events: [],
+                textColor: 'black',
+                plugins: ['interaction', 'dayGrid'],
+                selectable: true,
+                backgroundColor: 'gray',
+                viewRender: function(view, element) {
+                    var b = $('#calendarTwo').fullCalendar('getDate');
+                    $('#calendarOne').fullCalendar("gotoDate", b);
+                },
+                drop: function(date, jsEvent, ui, resourceId) {
+                    console.log('drop', date.format(), resourceId);
+
+                    // is the "remove after drop" checkbox checked?
+                    if ($('#drop-remove').is(':checked')) {
+                        // if so, remove the element from the "Draggable Events" list
+                        $(this).remove();
+                    }
+                },
+                eventReceive: function(event) { // called when a proper external event is dropped
+                    console.log('eventReceive', event);
+                },
+                eventDrop: function(event) { // called when an event (already on the calendar) is moved
+                    console.log('eventDrop', event);
+                }
+            });
+
+            $("#addRoom").click(function() { //button click event
+                $('#calendarTwo').fullCalendar('removeResource', 'l0');
+                var array = []; //array to check if resurce is already created 
+                var count = 0;
+                $("#tbody2 input:checked").each(function(index) {
+                    var el = $(this).attr('city');
+
+                    if (!array.includes(el)) {
+                        var resource = {
+                            id: 'l' + count,
+                            title: el,
+                            children: []
+                        }
+                        var child = [];
+                        $("#tbody2 input[city=" + el + "]:checked").each(function(index) { //map trogh element = same city
+                            var t = $(this).parent();
+                            var newchild = {
+                                id: 'L' + count,
+                                title: t.next().text()
+                            }
+                            child.push(newchild);
+                            count++;
+                        })
+                        resource.children = child;
+                        $('#calendarTwo').fullCalendar(
+                            'addResource', resource
+                        );
+                        array.push(el);
+                        count++;
+                    } else {
+                        return;
+                    }
+                })
+            })
+
+
+
+        });
+    </script>
+
+    <script>
+        // add input row
+        $(document).ready(function() {
+            var counter = 0;
+
+            $("#addrow").on("click", function() {
+                var newRow = $('<div class="row pb-2 px-2">');
+                var cols = "";
+                cols += '<div class="col-11 pr-1"><input class="form-control form-control-sm" id="inputAgenda' + counter + '" name="inputAgenda' + counter + '" type="text" maxlength="50"></div>';
+                cols += '<i class="fa fa-times-circle fa-lg close text-danger my-auto"></i>';
+                newRow.append(cols);
+                $("div.order-list").append(newRow);
+                counter++;
+            });
+
+            $("div.order-list").on("click", ".fa-times-circle", function(event) {
+                $(this).closest("div").remove();
+                counter -= 1
+            });
+        });
+
+
+        $("#sendInvite").click(function() {
+            var error = $("#error-body").empty();
+            if ($("#selectTitle").val() == "") {
+                error.append("<li>Please Choose Title</li>");
+            }
+            if ($("#selectTitle").val() == "") {
+                error.append("<li>Please Choose Title</li>");
+            }
+            if ($("#datetimepicker1").val() == "") {
+                error.append("<li>Please choose the start date</li>");
+            }
+            if ($("#datetimepicker3").val() == "") {
+                error.append("<li>Please choose the end date</li>");
+            }
+            if ($("#inputTitle").val() == "") {
+                error.append("<li>Please fill Dial In</li>");
+            }
+            if ($("#tbody1 input:checked").length == "0") {
+                error.append("<li>Please select at least one attendee</li>");
+            }
+        })
+
+        //creating an event
+        $("#submitEvent").click(function() {
+            $("#submitEvent").attr("disabled", "disabled");
+            var start = moment($("#datetimepicker1").val(), ["DD/MM/YYYY h/mm A"]).format("YYYY-DD-MM HH:mm");
+            var end = moment($("#datetimepicker3").val(), ["DD/MM/YYYY h/mm A"]).format("YYYY-DD-MM HH:mm");
+            ("YYYY-DD-MM HH:mm");
+            var bigend = moment($("#datetimepicker3").val(), ["DD/MM/YYYY h/mm A"]).add(2, 'hour').format("YYYY-DD-MM HH:mm");
+            for (i = 0; i < 30; i++) {
+                $('#calendarOne').fullCalendar('renderEvent', {
+                    id: i,
+
+                    start: start,
+                    end: end,
+                    resourceId: i
+                }, true)
+            }
+            $('#calendarOne').fullCalendar('removeEvents', 1);
+            $('#calendarOne').fullCalendar('renderEvent', {
+                id: 1,
+
+                start: start,
+                end: end,
+                resourceId: 1,
+                backgroundColor: 'gray'
+            }, true)
+            $('#calendarOne').fullCalendar('removeEvents', 2);
+            $('#calendarOne').fullCalendar('renderEvent', {
+                id: 2,
+
+                start: start,
+                end: end,
+                resourceId: 2,
+                backgroundColor: 'gray'
+            }, true)
+
+            $('#calendarOne').fullCalendar('renderEvent', {
+                title: start,
+                start: start,
+                end: bigend,
+                resourceId: 'm0',
+                backgroundColor: 'transparent',
+                textColor: 'black',
+            }, true)
+
+            var start = moment($("#datetimepicker1").val(), ["DD/MM/YYYY h/mm A"]).format("YYYY-DD-MM HH:mm");
+            var end2 = moment($("#datetimepicker3").val(), ["DD/MM/YYYY h/mm A"]).add(1, 'hours').format("YYYY-DD-MM HH:mm");
+            var id = $("#selectMinutesWriter").children(":selected").attr("id");
+            var id = id.replace('min', '');
+
+            $('#calendarOne').fullCalendar('removeEvents', id);
+            $('#calendarOne').fullCalendar('renderEvent', {
+                id: id,
+
+                start: start,
+                end: end2,
+                resourceId: id
+            }, true)
+
+            $('#calendarTwo').fullCalendar('renderEvent', {
+                title: $("#selectTitle").val(),
+                start: start,
+                end: end,
+                resourceId: 'l0'
+            }, true)
+
+        })
+
+
+        $("#tbody1 input").change(function() {
+            $("#selectMinutesWriter").empty();
+            $("#tbody1 input:checked").each(function() {
+                index = $(this).attr("eid");
+                console.log(" SelectIndex: " + index);
+                var text = $(this).parent().next().text();
+
+                $("#selectMinutesWriter").append("<option value=" + text + " id='min" + index + "'>" + text + "</option>")
+
+                $("#availableUsers").append("<option value=" + text + ">" + text + "</option>")
+            })
+
+        })
+        $("#selectMinutesWriter").change(function() {
+            var start = moment($("#datetimepicker1").val(), ["DD/MM/YYYY h/mm A"]).format("YYYY-DD-MM HH:mm");
+            var end = moment($("#datetimepicker3").val(), ["DD/MM/YYYY h/mm A"]).add(1, 'hours').format("YYYY-DD-MM HH:mm");
+            var defaultEnd = moment($("#datetimepicker3").val(), ["DD/MM/YYYY h/mm A"]).format("YYYY-DD-MM HH:mm");
+
+            var id = $("#selectMinutesWriter").children(":selected").attr("id");
+            var id = id.replace('min', '');
+
+            $('#calendarOne').fullCalendar('renderEvent', {
+                title: start,
+                start: start,
+                end: end,
+                resourceId: 'm0',
+                backgroundColor: 'transparent',
+                textColor: 'black',
+            }, true)
+
+            $('#calendarOne').fullCalendar('removeEvents');
+            for (i = 0; i < 30; i++) {
+                $('#calendarOne').fullCalendar('renderEvent', {
+
+                    id: i,
+                    start: start,
+                    end: defaultEnd,
+                    resourceId: i
+                }, true)
+            }
+            $('#calendarOne').fullCalendar('removeEvents', 1);
+            $('#calendarOne').fullCalendar('renderEvent', {
+                id: 1,
+
+                start: start,
+                end: defaultEnd,
+                resourceId: 1,
+                backgroundColor: 'gray'
+            }, true)
+            $('#calendarOne').fullCalendar('removeEvents', 2);
+            $('#calendarOne').fullCalendar('renderEvent', {
+                id: 2,
+
+                start: start,
+                end: defaultEnd,
+                resourceId: 2,
+                backgroundColor: 'gray'
+            }, true)
+
+            if (id == "1") {
+
+                $('#calendarOne').fullCalendar('removeEvents', 1);
+                $('#calendarOne').fullCalendar('renderEvent', {
+                    id: 1,
+
+                    start: start,
+                    end: end,
+                    resourceId: 1,
+                    backgroundColor: 'gray'
+                }, true)
+            } else if (id == "2") {
+                $('#calendarOne').fullCalendar('removeEvents', 2);
+                $('#calendarOne').fullCalendar('renderEvent', {
+                    id: 2,
+
+                    start: start,
+                    end: end,
+                    resourceId: 2,
+                    backgroundColor: 'gray'
+                }, true)
+
+
+            } else {
+                $('#calendarOne').fullCalendar('removeEvents', id);
+                $('#calendarOne').fullCalendar('renderEvent', {
+                    id: id,
+
+                    start: start,
+                    end: end,
+                    resourceId: id
+                }, true)
+            }
+        })
+
+
+        $("tr[data-resource-id='L0'] d").dblclick(function() {
+            alert("d");
+            $("#modalAssignUsers").madal("show");
+        })
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en" class="h-100">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Zoom into teams | GRC Center</title>
+  <link href="favicon.ico" rel="icon">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-select/css/bootstrap-select.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+  <script src="https://www.gstatic.com/charts/loader.js" type="text/javascript"></script>
+</head>
+<body class="d-flex flex-column h-100">
+
+<!-- Navbar -->
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a href="index.html" class="navbar-brand py-0">
+      <img class="d-inline-block align-middle mr-2" height="50" width="50" src="assets/img/logo-white.svg" alt="">Dashboard
+    </a>
+    <button class="navbar-toggler p-2" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon text-white"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html"><i class="fa fa-home mr-1"></i>Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-toggle="modal" data-target="#modalGetTogether"><img class="icon-img mr-1" src="assets/img/sm-icon-get-together.png">Get together</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="project-activities.html"><img class="icon-img mr-1" src="assets/img/sm-icon-project-activities.png" alt="">Activities</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="notifications.html"><img class="icon-img mr-1" src="assets/img/sm-icon-notifications.png" alt="">Notifications</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="zoom-into-teams.html"><img class="icon-img mr-1" src="assets/img/sm-icon-zoom-into-teams.png" alt="">Zoom in</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="settings.html"><i class="fa fa-cog mr-1"></i>Settings</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="fa fa-question mr-1"></i>Help</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="login.html"><i class="fa fa-sign-out mr-1"></i>Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<!-- content -->
+<section id="zoom-into-teams" class="flex-shrink-0">
+  <div class="container-fluid">
+    <div class="row">
+      <div id="sidebar-left" class="col-lg-2 px-0 list-group-item-dark accordion">
+        <div class="list-group-item list-group-item-dark flex-column align-items-start p-3">
+          <h2 class="h5 mb-0 menu-collapsed">Team Reports</h2>
+        </div>
+        <a class="list-group-item list-group-item-dark list-group-item-action flex-column align-items-start text-uppercase" data-target="#submenu01" data-toggle="collapse" aria-expanded="true">Culture</a>
+        <div id="submenu01" class="collapse show" data-parent="#sidebar-left">
+          <div id="submenu01-pills" class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
+            <a class="list-group-item list-group-item-dark list-group-item-action active" href="#area1" aria-controls="area1" data-toggle="tab" role="tab" aria-selected="true">Meeting Trend</a>
+            <a class="list-group-item list-group-item-dark list-group-item-action" href="#area2" aria-controls="area2" data-toggle="tab" role="tab" aria-selected="false">Meeting Per Person</a>
+            <a class="list-group-item list-group-item-dark list-group-item-action" href="#area3" aria-controls="area3" data-toggle="tab" role="tab" aria-selected="false">Adhoc Meetings</a>
+            <a class="list-group-item list-group-item-dark list-group-item-action" href="#area4" aria-controls="area4" data-toggle="tab" role="tab" aria-selected="false">Agenda Per Meetings</a>
+            <a class="list-group-item list-group-item-dark list-group-item-action" href="#area5" aria-controls="area5" data-toggle="tab" role="tab" aria-selected="false">After Hour Meetings</a>
+          </div>
+        </div><!-- /#submenu01 -->
+        <a class="list-group-item list-group-item-dark list-group-item-action flex-column align-items-start text-uppercase" data-target="#submenu02" data-toggle="collapse" aria-expanded="false">Communication</a>
+        <div id="submenu02" class="collapse" data-parent="#sidebar-left">
+          <div id="submenu02-pills" class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
+            <a class="list-group-item list-group-item-dark list-group-item-action" href="#area6" aria-controls="area6" data-toggle="tab" role="tab" aria-selected="false">Repeat Communication</a>
+            <a class="list-group-item list-group-item-dark list-group-item-action" href="#area7" aria-controls="area7" data-toggle="tab" role="tab" aria-selected="false">Task Reminders</a>
+            <a class="list-group-item list-group-item-dark list-group-item-action" href="#area8" aria-controls="area8" data-toggle="tab" role="tab" aria-selected="false">Decision Life Span</a>
+            <a class="list-group-item list-group-item-dark list-group-item-action" href="#area9" aria-controls="area9" data-toggle="tab" role="tab" aria-selected="false">RACI Communication</a>
+            <a class="list-group-item list-group-item-dark list-group-item-action" href="#area10" aria-controls="area10" data-toggle="tab" role="tab" aria-selected="false">Who is Who</a>
+          </div>
+        </div><!-- /#submenu02 -->
+        <a class="list-group-item list-group-item-dark list-group-item-action flex-column align-items-start text-uppercase" data-target="#submenu03" data-toggle="collapse" aria-expanded="false">Scope</a>
+        <div id="submenu03" class="collapse" data-parent="#sidebar-left">
+          <div id="submenu03-pills" class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
+            <a class="list-group-item list-group-item-dark list-group-item-action" href="#area11" aria-controls="area11" data-toggle="tab" role="tab" aria-selected="false">Activity Addition Trend</a>
+          </div>
+        </div><!-- /#submenu03 -->
+        <a class="list-group-item list-group-item-dark list-group-item-action flex-column align-items-start text-uppercase" data-target="#submenu04" data-toggle="collapse" aria-expanded="false">Cost</a>
+        <div id="submenu04" class="collapse" data-parent="#sidebar-left">
+          <div id="submenu04-pills" class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
+            <a class="list-group-item list-group-item-dark list-group-item-action" href="#area12" aria-controls="area12" data-toggle="tab" role="tab" aria-selected="false">Actual Cost of Meeting</a>
+            <a class="list-group-item list-group-item-dark list-group-item-action" href="#area13" aria-controls="area13" data-toggle="tab" role="tab" aria-selected="false">Average Cost of Meeting</a>
+            <a class="list-group-item list-group-item-dark list-group-item-action" href="#area14" aria-controls="area14" data-toggle="tab" role="tab" aria-selected="false">Burn Down Trend</a>
+          </div>
+        </div><!-- /#submenu04 -->
+        <a class="list-group-item list-group-item-dark list-group-item-action flex-column align-items-start text-uppercase" data-target="#submenu05" data-toggle="collapse" aria-expanded="false">Time</a>
+        <div id="submenu05" class="collapse" data-parent="#sidebar-left">
+          <div id="submenu05-pills" class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
+            <a class="list-group-item list-group-item-dark list-group-item-action" href="#area15" aria-controls="area15" data-toggle="tab" role="tab" aria-selected="false">Delay Trend</a>
+          </div>
+        </div><!-- /#submenu05 -->
+        <a class="list-group-item list-group-item-dark list-group-item-action flex-column align-items-start text-uppercase" data-target="#submenu06" data-toggle="collapse" aria-expanded="false">Quality</a>
+        <div id="submenu06" class="collapse" data-parent="#sidebar-left">
+          <div id="submenu06-pills" class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
+            <a class="list-group-item list-group-item-dark list-group-item-action" href="#area16" aria-controls="area16" data-toggle="tab" role="tab" aria-selected="false">Repeat Work</a>
+          </div>
+        </div><!-- /#submenu06 -->
+        <a class="list-group-item list-group-item-dark list-group-item-action flex-column align-items-start text-uppercase" data-target="#submenu07" data-toggle="collapse" aria-expanded="false">Risk</a>
+        <div id="submenu07" class="collapse" data-parent="#sidebar-left">
+          <div id="submenu07-pills" class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
+            <a class="list-group-item list-group-item-dark list-group-item-action" href="#area17" aria-controls="area17" data-toggle="tab" role="tab" aria-selected="false">Change of Resource</a>
+            <a class="list-group-item list-group-item-dark list-group-item-action" href="#area18" aria-controls="area18" data-toggle="tab" role="tab" aria-selected="false">Leave of Absence</a>
+            <a class="list-group-item list-group-item-dark list-group-item-action" href="#area19" aria-controls="area19" data-toggle="tab" role="tab" aria-selected="false">Unmapped Meetings</a>
+          </div>
+        </div><!-- /#submenu07 -->
+        <a class="list-group-item list-group-item-dark list-group-item-action flex-column align-items-start text-uppercase" data-target="#submenu08" data-toggle="collapse" aria-expanded="false">Robotic</a>
+        <div id="submenu08" class="collapse" data-parent="#sidebar-left">
+          <div id="submenu08-pills" class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
+            <a class="list-group-item list-group-item-dark list-group-item-action" href="#area20" aria-controls="area20" data-toggle="tab" role="tab" aria-selected="false">Auto Generated Meetings</a>
+            <a class="list-group-item list-group-item-dark list-group-item-action" href="#area21" aria-controls="area21" data-toggle="tab" role="tab" aria-selected="false">Reminder Trend</a>
+            <a class="list-group-item list-group-item-dark list-group-item-action" href="#area22" aria-controls="area22" data-toggle="tab" role="tab" aria-selected="false">Task Reminders</a>
+          </div>
+        </div><!-- /#submenu08 -->
+      </div><!-- /#sidebar-left END -->
+
+      <div id="parametric-report" class="col-lg-3 order-lg-3 p-3">
+        <h2>Parametric Reports</h2>
+        <form>
+          <div class="form-row">
+            <div class="col-3 my-2">
+              <label for="dateFrom">From:</label>
+            </div>
+            <div class="col-9">
+              <input class="form-control" id="dateFrom" name="dateFrom" type="date" value="">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-3 my-auto">
+              <label for="dateFrom">To:</label>
+            </div>
+            <div class="col-9">
+              <input class="form-control" id="dateTo" name="dateTo" type="date" value="">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-3 my-auto">
+              <label for="selectCountry">Country:</label>
+            </div>
+            <div class="col-9">
+              <select id="selectCountry" class="selectpicker form-control" data-actions-box="true" data-container="body" data-hide-disabled="true" data-live-search="true" data-virtual-scroll="false" multiple title="None Select">
+                <option>India</option>
+                <option>USA</option>
+              </select>
+            </div>
+          </div><!-- /.form-row -->
+          <div class="form-row mb-2">
+            <div class="col-3 my-auto">
+              <label for="selectCity">City:</label>
+            </div>
+            <div class="col-9">
+              <select id="selectCity" class="selectpicker form-control" data-actions-box="true" data-container="body" data-hide-disabled="true" data-live-search="true" data-virtual-scroll="false" multiple title="None Select">
+                <option>Boston</option>
+                <option>Mumbai</option>
+                <option>Raleigh</option>
+              </select>
+            </div>
+          </div><!-- /.form-row -->
+          <div class="form-row mb-2">
+            <div class="col-3 my-auto">
+              <label for="selectProgram">Program:</label>
+            </div>
+            <div class="col-9">
+              <select id="selectProgram" class="selectpicker form-control" data-actions-box="true" data-container="body" data-hide-disabled="true" data-live-search="true" data-virtual-scroll="false" multiple title="None Select">
+                <option>Hardware Upgrade</option>
+                <option>DR System Augmentation</option>
+                <option>Tech Debt</option>
+                <option>New Data Center Augmentation</option>
+              </select>
+            </div>
+          </div><!-- /.form-row -->
+          <div class="form-row mb-2">
+            <div class="col-3 my-auto">
+              <label for="selectProject">Project:</label>
+            </div>
+            <div class="col-9">
+              <select id="selectProject" class="selectpicker form-control" data-actions-box="true" data-container="body" data-hide-disabled="true" data-live-search="true" data-virtual-scroll="false" multiple title="None Select">
+                <option>ABSA and S&P Merger</option>
+                <option>Mobile Banking System</option>
+                <option>Ipka</option>
+                <option>Roll out of Forex System</option>
+                <option>ERP Upgrade Project</option>
+                <option>Enterprise Communication System Upgrade</option>
+                <option>Bench</option>
+                <option>Core Banking Upgrade</option>
+                <option>ABSA Bank ATM Installation</option>
+                <option>New Facility Augmentation</option>
+              </select>
+            </div>
+          </div><!-- /.form-row -->
+        </form>
+      </div><!-- /#parametric-report END -->
+
+      <div id="middle-content" class="col-lg-7 order-lg-2 p-3 bg-white">
+        <div class="row">
+          <div class="col-12 d-block">
+            <div id="tabContent" class="tab-content">
+              <div class="tab-pane fade show active" id="area1" aria-labelledby="area1" role="tabpanel">
+                <h2>Meeting Trend</h2>
+                <div id="map-chart" class="img-fluid"></div>
+              </div>
+              <div class="tab-pane fade" id="area2" aria-labelledby="area2" role="tabpanel">
+                <h2>Meeting Per Person</h2>
+                <div id="bar-chart" class="img-fluid"></div>
+              </div>
+              <div class="tab-pane fade" id="area3" aria-labelledby="area3" role="tabpanel">
+                <h2>Adhoc Meetings</h2>
+                <img src="https://via.placeholder.com/720x360.png?text=Chart+Placeholder" class="img-fluid" alt="">
+              </div>
+              <div class="tab-pane fade" id="area4" aria-labelledby="area4" role="tabpanel">
+                <h2>Agenda Per Meetings</h2>
+                <img src="https://via.placeholder.com/720x360.png?text=Chart+Placeholder" class="img-fluid" alt="">
+              </div>
+              <div class="tab-pane fade" id="area5" aria-labelledby="area5" role="tabpanel">
+                <h2>After Hour Meetings</h2>
+                <img src="https://via.placeholder.com/720x360.png?text=Chart+Placeholder" class="img-fluid" alt="">
+              </div>
+              <div class="tab-pane fade" id="area6" aria-labelledby="area6" role="tabpanel">
+                <h2>Repeat Communication</h2>
+                <img src="https://via.placeholder.com/720x360.png?text=Chart+Placeholder" class="img-fluid" alt="">
+              </div>
+              <div class="tab-pane fade" id="area7" aria-labelledby="area7" role="tabpanel">
+                <h2>Task Reminders</h2>
+                <img src="https://via.placeholder.com/720x360.png?text=Chart+Placeholder" class="img-fluid" alt="">
+              </div>
+              <div class="tab-pane fade" id="area8" aria-labelledby="area8" role="tabpanel">
+                <h2>Decision Life Span</h2>
+                <img src="https://via.placeholder.com/720x360.png?text=Chart+Placeholder" class="img-fluid" alt="">
+              </div>
+              <div class="tab-pane fade" id="area9" aria-labelledby="area9" role="tabpanel">
+                <h2>RACI Communication</h2>
+                <img src="https://via.placeholder.com/720x360.png?text=Chart+Placeholder" class="img-fluid" alt="">
+              </div>
+              <div class="tab-pane fade" id="area10" aria-labelledby="area10" role="tabpanel">
+                <h2>Who is Who</h2>
+                <img src="https://via.placeholder.com/720x360.png?text=Chart+Placeholder" class="img-fluid" alt="">
+              </div>
+              <div class="tab-pane fade" id="area11" aria-labelledby="area11" role="tabpanel">
+                <h2>Activity Addition Trend</h2>
+                <img src="https://via.placeholder.com/720x360.png?text=Chart+Placeholder" class="img-fluid" alt="">
+              </div>
+              <div class="tab-pane fade" id="area12" aria-labelledby="area12" role="tabpanel">
+                <h2>Actual Cost of Meeting</h2>
+                <img src="https://via.placeholder.com/720x360.png?text=Chart+Placeholder" class="img-fluid" alt="">
+              </div>
+              <div class="tab-pane fade" id="area13" aria-labelledby="area13" role="tabpanel">
+                <h2>Average Cost of Meeting</h2>
+                <img src="https://via.placeholder.com/720x360.png?text=Chart+Placeholder" class="img-fluid" alt="">
+              </div>
+              <div class="tab-pane fade" id="area14" aria-labelledby="area14" role="tabpanel">
+                <h2>Burn Down Trend</h2>
+                <img src="https://via.placeholder.com/720x360.png?text=Chart+Placeholder" class="img-fluid" alt="">
+              </div>
+              <div class="tab-pane fade" id="area15" aria-labelledby="area15" role="tabpanel">
+                <h2>Delay Trend</h2>
+                <img src="https://via.placeholder.com/720x360.png?text=Chart+Placeholder" class="img-fluid" alt="">
+              </div>
+              <div class="tab-pane fade" id="area16" aria-labelledby="area16" role="tabpanel">
+                <h2>Repeat Work</h2>
+                <img src="https://via.placeholder.com/720x360.png?text=Chart+Placeholder" class="img-fluid" alt="">
+              </div>
+              <div class="tab-pane fade" id="area17" aria-labelledby="area17" role="tabpanel">
+                <h2>Change of Resource</h2>
+                <img src="https://via.placeholder.com/720x360.png?text=Chart+Placeholder" class="img-fluid" alt="">
+              </div>
+              <div class="tab-pane fade" id="area18" aria-labelledby="area18" role="tabpanel">
+                <h2>Leave of Absence</h2>
+                <img src="https://via.placeholder.com/720x360.png?text=Chart+Placeholder" class="img-fluid" alt="">
+              </div>
+              <div class="tab-pane fade" id="area19" aria-labelledby="area19" role="tabpanel">
+                <h2>Unmapped Meetings</h2>
+                <img src="https://via.placeholder.com/720x360.png?text=Chart+Placeholder" class="img-fluid" alt="">
+              </div>
+              <div class="tab-pane fade" id="area20" aria-labelledby="area20" role="tabpanel">
+                <h2>Auto Generated Meetings</h2>
+                <img src="https://via.placeholder.com/720x360.png?text=Chart+Placeholder" class="img-fluid" alt="">
+              </div>
+              <div class="tab-pane fade" id="area21" aria-labelledby="area21" role="tabpanel">
+                <h2>Reminder Trend</h2>
+                <img src="https://via.placeholder.com/720x360.png?text=Chart+Placeholder" class="img-fluid" alt="">
+              </div>
+              <div class="tab-pane fade" id="area22" aria-labelledby="area22" role="tabpanel">
+                <h2>Task Reminders</h2>
+                <img src="https://via.placeholder.com/720x360.png?text=Chart+Placeholder" class="img-fluid" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!-- /#middle-content END -->
+
+    </div><!-- /.row -->
+  </div><!-- /.container-fluid -->
+</section>
+
+<!-- Footer -->
+<footer class="footer bg-dark mt-auto py-3 text-center">
+  <div class="container">
+    <ul class="list-inline mb-0">
+      <li class="list-inline-item mx-0"><a href="mailto:demouser@grccenter.com">demouser@grccenter.com</a></li>
+      <li class="list-inline-item mx-0"><a href="http://demo.grccenter.com">demo.grccenter.com</a></li>
+      <li class="list-inline-item mx-0">Version 5.09</li>
+      <li class="list-inline-item mx-0">GRC CENTER is available from Nov 12, 2012</li>
+    </ul>
+  </div>
+</footer>
+
+<!-- JavaScripts -->
+<script src="assets/vendor/jquery/jquery.slim.js"></script>
+<script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/vendor/bootstrap-select/js/bootstrap-select.js"></script>
+
+<script>
+  google.charts.load('current', {
+    'packages':['geochart'],
+    // Note: you will need to get a mapsApiKey for your project.
+    // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+    // 'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
+  });
+
+  google.setOnLoadCallback(drawMarkersMap);
+  function drawMarkersMap() {
+    var data = google.visualization.arrayToDataTable([
+      ['long','lat','data'],
+      [37.57,126.98,28],
+      [37.4192,-122.0574,97],
+      [50.6107,36.5802,2],
+      [13.5367,99.8171,71],
+      [-12.5,18.5,106],
+      [38,-97,119],
+      [-8.8368,13.2332,34],
+      [33.7248,-112.0889,3]
+    ]);
+
+    var options = {
+      displayMode: "markers",
+      // colors: ["#e9ba03", "#fcca03"],
+      legend: "none"
+    };
+
+    var chart = new google.visualization.GeoChart(document.getElementById('map-chart'));
+    chart.draw(data, options);
+  }
+</script>
+
+<script>
+  // Load the Visualization API and the piechart package.
+  google.load('visualization', '1.0', {'packages':['corechart']});
+
+  // Set a callback to run when the Google Visualization API is loaded.
+  google.setOnLoadCallback(drawChart);
+
+  function drawChart() {
+    // Create the data table.
+    var barData = google.visualization.arrayToDataTable([
+      ['Contact', 'Customer Contact', { role: 'style' }],
+      ['Email', 1, 'rgb(66, 133, 244)'],
+      ['Face 2 Face', 2, 'rgb(219, 68, 55)'],
+      ['Live Chat', 3, 'rgb(244, 180, 0)'],
+    ]);
+    // Set chart options
+    var barOptions = {legend: {position: 'none'}};
+    // Instantiate and draw our chart, passing in some options.
+    var barChart = new google.visualization.BarChart(document.getElementById('bar-chart'));
+    barChart.draw(barData, barOptions);
+  }
+</script>
+
+</body>
+</html>

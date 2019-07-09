@@ -1,0 +1,547 @@
+<!doctype html>
+<html lang="en" class="h-100">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Dashboard | GRC Center</title>
+  <link href="favicon.ico" rel="icon">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-select/css/bootstrap-select.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body class="d-flex flex-column h-100">
+
+<!-- Navbar -->
+<header>
+  <nav class="navbar navbar-expand navbar-dark flex-column flex-sm-row bg-dark">
+  <a class="navbar-brand py-0" href="/" aria-label="Dashboard">
+    <img class="d-inline-block align-middle mr-2" height="50" width="50" src="assets/img/logo-white.svg" alt="">Dashboard
+  </a>
+  <div class="navbar-nav-scroll ml-sm-auto">
+    <ul class="navbar-nav bd-navbar-nav flex-row">
+      <li class="nav-item">
+        <a class="nav-link" href="settings.html"><i class="fa fa-cog mr-1"></i>Settings</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><i class="fa fa-question mr-1"></i>Help</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="login.html"><i class="fa fa-sign-out mr-1"></i>Logout</a>
+      </li>
+    </ul>
+  </div>
+  </nav>
+</header>
+
+<!-- Circles Menu -->
+<nav class="menu">
+  <input class="menu-open bg-dark" id="menu-open" href="#" name="menu-open" type="checkbox">
+  <label class="menu-open-button" for="menu-open">
+    <span class="hamburger hamburger-1"></span>
+    <span class="hamburger hamburger-2"></span>
+    <span class="hamburger hamburger-3"></span>
+  </label>
+  <a class="menu-item bg-warning" href="#">Scope</a>
+  <a class="menu-item bg-danger" href="#">Quality</a>
+  <a class="menu-item bg-warning" href="#">Risk</a>
+  <a class="menu-item bg-success" href="#">Time</a>
+  <a class="menu-item bg-danger" href="#">Cost</a>
+</nav>
+
+<!-- Icons Section -->
+<section id="icons" class="text-center position-relative my-auto pt-3">
+  <div class="container">
+    <div class="row no-gutters">
+      <div class="col-md-4 col-lg-2">
+        <a href="#" data-toggle="modal" data-target="#modalGetTogether">
+          <div class="icon-box" style="background-image: url(assets/img/icon-get-together.svg);">
+          <div class="overlay"><small class="small">Your project plans are ready. Click the link to Get together, to collaborate on the activities from the project plan</small></div>
+          </div>
+          <h6>Get together</h6>
+        </a>
+      </div><!-- /icon-1 -->
+      <div class="col-md-4 col-lg-2">
+        <a href="events-log.html">
+          <div class="icon-box" style="background-image: url(assets/img/icon-events-log.svg);">
+          <div class="overlay"><small class="small">All your collaborations and task status are logged here</small></div>
+          </div>
+          <h6>Events log</h6>
+        </a>
+      </div><!-- /icon-2 -->
+      <div class="col-md-4 col-lg-2">
+        <a href="project-activities.html">
+          <div class="icon-box" style="background-image: url(assets/img/icon-project-activities.svg);">
+          <div class="overlay"><small class="small">Progress of each ACTIVITY from the project plan is centrally available to review overall project progress</small></div>
+          </div>
+          <h6>Project activities</h6>
+        </a>
+      </div><!-- /icon-3 -->
+      <div class="col-md-4 col-lg-2">
+        <a href="notifications.html">
+          <div class="icon-box" style="background-image: url(assets/img/icon-notifications.svg);">
+          <div class="overlay"><small class="small">Your past due task are centrally viewable as notifications</small></div>
+          </div>
+          <h6>Notifications</h6>
+        </a>
+      </div><!-- /icon-4 -->
+      <div class="col-md-4 col-lg-2">
+        <a href="zoom-into-teams.html">
+          <div class="icon-box" style="background-image: url(assets/img/icon-zoom-into-teams.svg);">
+          <div class="overlay"><small class="small">Zoom in to see the sliced anddiced view of your project team's earned value</small></div>
+          </div>
+          <h6>Zoom into teams</h6>
+        </a>
+      </div><!-- /icon-5 -->
+      <hr class="">
+      <div class="col-md-4 col-lg-2">
+        <a href="#">
+          <div class="icon-box" style="background-image: url(assets/img/icon-search.svg);">
+          <div class="overlay"><small class="small">Search your collaboration details and the related artifacts</small></div>
+          </div>
+          <h6>Search</h6>
+        </a>
+      </div><!-- /icon-6 -->
+    </div>
+    <hr class="mt-2 mb-4">
+    <div class="row no-gutters justify-content-md-center">
+      <div class="col-md-4 col-lg-2">
+        <a href="#" data-toggle="modal" data-target="#modalMyDecisions">
+          <div class="icon-box" style="background-image: url(assets/img/icon-my-decisions.svg);">
+          <div class="overlay"><small class="small">Look into all the decisions taken by your group in last 24 hours</small></div>
+          </div>
+          <h6 class="text-primary">My decisions</h6>
+        </a>
+      </div><!-- /icon-7 -->
+      <div class="col-md-4 col-lg-2">
+        <a href="#" data-toggle="modal" data-target="#modalMyMeetings">
+          <div class="icon-box" style="background-image: url(assets/img/icon-my-meetings.svg);">
+          <div class="overlay"><small class="small">Look for all the collaborations you have been invited this week</small></div>
+          </div>
+          <h6 class="text-primary">My meetings</h6>
+        </a>
+      </div><!-- /icon-8 -->
+      <div class="col-md-4 col-lg-2">
+        <a href="#" data-toggle="modal" data-target="#modalMyTasks">
+          <div class="icon-box" style="background-image: url(assets/img/icon-my-tasks.svg);">
+          <div class="overlay"><small class="small">Look into the all the pending tasks assigned to you</small></div>
+          </div>
+          <h6 class="text-primary">My tasks</h6>
+        </a>
+      </div><!-- /icon-9 -->
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-dark mt-auto py-3 text-center">
+  <div class="container">
+    <ul class="list-inline mb-0">
+      <li class="list-inline-item mx-0"><a href="mailto:demouser@grccenter.com">demouser@grccenter.com</a></li>
+      <li class="list-inline-item mx-0"><a href="http://demo.grccenter.com">demo.grccenter.com</a></li>
+      <li class="list-inline-item mx-0">Version 5.09</li>
+      <li class="list-inline-item mx-0">GRC CENTER is available from Nov 12, 2012</li>
+    </ul>
+  </div>
+</footer>
+
+<!--
+MODALS LIST:
+1.modalGetTogether
+2.modalSelectUsers
+3.modalChatRooms
+4.modalTextChat
+5.modalDialer
+6.modalMeetingDetails
+7.modalMyDecisions
+8.modalMyMeetings
+9.modalMyTasks
+-->
+
+<div class="modal fade" id="modalGetTogether" aria-labelledby="modalGetTogetherlabel" aria-hidden="true" role="dialog" tabindex="-1" data-toggle="modal" data-keyboard="false">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-dark text-white p-0">
+        <h5 class="m-2">Choose the mode of communication</h5>
+        <a class="btn text-white" data-dismiss="modal" aria-label="Close" href="#">
+          <i class="fa fa-times"></i>
+        </a>
+      </div>
+      <div class="modal-body text-center" id="icons">
+        <div class="row no-gutters">
+          <div class="col-4">
+            <a href="#" data-target="#modalSelectUsers" data-toggle="modal" data-dismiss="modal">
+              <div class="icon-box" style="background-image: url(assets/img/icon-text-chat.svg);">
+              <div class="overlay"><small class="small">Click to chat with your peers through text</small></div>
+              </div>
+              <h6>Text Chat</h6>
+            </a>
+          </div>
+          <div class="col-4">
+            <a href="#" data-target="#modalSelectUsers" data-toggle="modal" data-dismiss="modal">
+              <div class="icon-box" style="background-image: url(assets/img/icon-voice-chat.svg);">
+              <div class="overlay"><small class="small">Click to chat with your peers through voice</small></div>
+              </div>
+              <h6>Voice Chat</h6>
+            </a>
+          </div>
+          <div class="col-4">
+            <a href="face-to-face.html">
+              <div class="icon-box" style="background-image: url(assets/img/icon-face-to-face.svg);">
+              <div class="overlay"><small class="small">Click to invite your team for a face to face meeting</small></div>
+              </div>
+              <h6>Face-to-Face</h6>
+            </a>
+          </div>
+        </div>
+      </div><!-- /.modal-body -->
+    </div>
+  </div>
+</div><!-- /1.modalGetTogether -->
+
+<div class="modal fade" id="modalSelectUsers" aria-labelledby="modalSelectUserslabel" aria-hidden="true" role="dialog" tabindex="-2" data-toggle="modal" data-keyboard="false">
+  <div class="modal-dialog position-absolute modal-sm" role="document" style="right: 1rem; bottom: 0;">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="form-group row">
+          <div class="col-sm-8 pr-sm-0 my-auto">
+            <h5>Select Users</h5>
+          </div>
+          <div class="col-sm-4 pl-sm-0">
+            <input class="btn btn-outline-dark btn-block" type="button" value="Start">
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-12">
+            <input class="form-control" placeholder="Type the name of the user" type="text">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-12">
+            <div class="form-check">
+              <input class="form-check-input" id="defaultCheck1" type="checkbox" data-target="#modalChatRooms" data-toggle="modal">
+              <label class="form-check-label" for="defaultCheck1">Amit Jain</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" id="defaultCheck2" type="checkbox" data-target="#modalChatRooms" data-toggle="modal">
+              <label class="form-check-label" for="defaultCheck2">Ritesh Mallik</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" id="defaultCheck3" type="checkbox" data-target="#modalChatRooms" data-toggle="modal">
+              <label class="form-check-label" for="defaultCheck3">Rajesh Patel</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" id="defaultCheck4" type="checkbox" data-target="#modalChatRooms" data-toggle="modal">
+              <label class="form-check-label" for="defaultCheck4">Gary Howers</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" id="defaultCheck5" type="checkbox" data-target="#modalChatRooms" data-toggle="modal">
+              <label class="form-check-label" for="defaultCheck5">Cathy Pully</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" id="defaultCheck6" type="checkbox" data-target="#modalDialer" data-toggle="modal">
+              <label class="form-check-label" for="defaultCheck6">Rohit Ghosh</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" id="defaultCheck7" type="checkbox" data-target="#modalDialer" data-toggle="modal">
+              <label class="form-check-label" for="defaultCheck7">Deepak Arora</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" id="defaultCheck8" type="checkbox" data-target="#modalDialer" data-toggle="modal">
+              <label class="form-check-label" for="defaultCheck8">Sachin Tendulkar</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" id="defaultCheck9" type="checkbox" data-target="#modalDialer" data-toggle="modal">
+              <label class="form-check-label" for="defaultCheck9">Saurabh Gang</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" id="defaultCheck10" type="checkbox" data-target="#modalDialer" data-toggle="modal">
+              <label class="form-check-label" for="defaultCheck10">Shahrusk Khan</label>
+            </div>
+          </div>
+        </div>
+      </div><!-- /.modal-body -->
+    </div>
+  </div>
+</div><!-- /2.modalSelectUsers -->
+
+<div class="modal fade" id="modalChatRooms" aria-labelledby="modalChatRoomslabel" aria-hidden="true" role="dialog" tabindex="-3" data-toggle="modal" data-keyboard="false">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-dark text-white p-0">
+        <h5 class="m-2">Chatrooms</h5>
+        <a class="btn text-white" data-dismiss="modal" aria-label="Close" href="#">
+          <i class="fa fa-times"></i>
+        </a>
+      </div>
+      <div class="modal-body bg-secondary">
+        <h2>Create chatroom</h2>
+        <p class="mb-0">Create a chatroom here</p>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group row">
+            <div class="col-sm-3 pr-sm-0">
+              <a class="btn btn-outline-dark btn-block mb-3 mb-sm-0" href="#">Cost Center</a>
+            </div>
+            <div class="col-sm-9">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Title</span>
+                </div>
+                <select id="inputTitle" class="form-control">
+                  <option selected>Amount (to the nearest dollar)</option>
+                  <option>Title #2</option>
+                  <option>Title #3</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-3 col-form-label pr-0 text-right" for="inputAgenta">Agenta</label>
+            <div class="col-9">
+              <input type="text" class="form-control" id="inputAgenta" placeholder="Type the Agenta of the Chat Discussion">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-3 col-form-label pr-0 text-right" for="inputType">Type</label>
+            <div class="col-9">
+              <select id="inputType" class="form-control">
+                <option selected>Invitation only room</option>
+                <option>Option #2</option>
+                <option>Option #3</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row mb-0">
+            <div class="col-sm-6 mx-auto">
+              <input class="btn btn-dark btn-block" id="inputSubmit" type="button" value="Create room" data-target="#modalTextChat" data-toggle="modal" data-dismiss="modal">
+            </div>
+          </div>
+        </form>
+      </div><!-- /.modal-body -->
+    </div>
+  </div>
+</div><!-- /3.modalChatRooms -->
+
+<div class="modal fade" id="modalTextChat" aria-labelledby="modalTextChatlabel" aria-hidden="true" role="dialog" tabindex="-4" data-toggle="modal" data-dismiss="modal" data-keyboard="false">
+  <div class="modal-dialog modal-dialog-centered" role="document" style="right: 2rem; bottom: 1rem;">
+    <div class="modal-content">
+      <div class="modal-header bg-dark text-white p-0">
+        <h5 class="m-2">Text Chat</h5>
+        <a class="btn text-white" data-dismiss="modal" aria-label="Close" href="#">
+          <i class="fa fa-times"></i>
+        </a>
+      </div>
+      <div class="modal-body">
+        <img class="img-fluid filter-grayscale-100" src="assets/img/img-temp-chat.png" alt="" data-target="#modalMeetingDetails" data-toggle="modal" data-dismiss="modal">
+      </div>
+    </div>
+  </div>
+</div><!-- /4.modalTextChat -->
+
+<div class="modal fade" id="modalDialer" aria-labelledby="modalDialerlabel" aria-hidden="true" role="dialog" tabindex="-4" data-toggle="modal" data-dismiss="modal" data-keyboard="false">
+  <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-dark text-white p-0">
+        <h5 class="m-2">Dialer</h5>
+        <a class="btn text-white" data-dismiss="modal" aria-label="Close" href="#">
+          <i class="fa fa-times"></i>
+        </a>
+      </div>
+      <div class="modal-body">
+        <img class="img-fluid" src="assets/img/img-temp-dialer.jpg" alt="" data-target="#modalMeetingDetails" data-toggle="modal" data-dismiss="modal">
+      </div>
+    </div>
+  </div>
+</div><!-- /5.modalDialer -->
+
+<div class="modal fade" id="modalMeetingDetails" aria-labelledby="modalMeetingDetailsLabel" aria-hidden="true" role="dialog" tabindex="-5" data-toggle="modal" data-keyboard="false">
+  <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="d-flex justify-content-end">
+          <button class="btn btn-outline-dark my-3" type="button">Add Minutes</button>
+        </div>
+        <table class="table table-bordered table-hover bg-white mb-3" id="tab2">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col"></th>
+              <th scope="col">Owner</th>
+              <th scope="col">Agenda</th>
+              <th scope="col">Minutes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>
+                <select class="custom-select" id="tab2Owner">
+                  <option value="1" selected>Ameya Virkar</option>
+                  <option value="2">Amitabh S</option>
+                  <option value="3">Cathy Beck</option>
+                  <option value="4">Glanz Manager</option>
+                  <option value="5">Vaibhavi Arekar</option>
+                </select>
+              </td>
+              <td>
+                <input class="form-control" id="tab2Agenda" name="tab2Agenda" size="10" type="text" value="1">
+              </td>
+              <td>
+                <input class="form-control" id="tab2Minutes" name="tab2Minutes" size="100" type="text" value="Senior leadership team has decided to run the project with a stricter deadline">
+              </td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="4">
+                <div class="row">
+                  <div class="col-6 col-lg-4 my-auto">
+                    <span>Showing 1 - 1 of 10 entries</span>
+                  </div>
+                  <div class="col-6 col-lg-4 order-2 order-lg-3 text-right">
+                    <span>Show</span>
+                    <select class="custom-select" style="width:60px;">
+                      <option value="1" selected>10</option>
+                      <option value="2">20</option>
+                      <option value="3">30</option>
+                    </select>
+                    <span>entries</span>
+                  </div>
+                  <div class="col-12 col-lg-4 order-3 order-lg-2 mt-2 mt-lg-0">
+                    <ul class="pagination justify-content-center mb-0">
+                      <li class="page-item disabled"><a href="#" class="page-link" tabindex="-1" aria-disabled="true">Previous</a></li>
+                      <li class="page-item active"><a href="#" class="page-link">1</a></li>
+                      <li class="page-item"><a href="#" class="page-link">2</a></li>
+                      <li class="page-item"><a href="#" class="page-link">3</a></li>
+                      <li class="page-item"><a href="#" class="page-link">Next</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+        <!-- /#tab2 -->
+        <div class="d-flex justify-content-end">
+          <button class="btn btn-outline-dark my-3" type="button">Add Task</button>
+        </div>
+        <table class="table table-bordered table-hover bg-white" id="tab3">
+          <thead class="thead-dark text-nowrap">
+            <tr>
+              <th scope="col">Task Description</th>
+              <th scope="col">Decision</th>
+              <th scope="col">Assigned To</th>
+              <th scope="col">Due Date</th>
+              <th scope="col">Status</th>
+              <th scope="col">% Complete</th>
+              <th scope="col">Priority</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <input class="form-control" id="tab3Task" name="tab3Task" size="50" type="text" value="Define the resources in all the department">
+              </td>
+              <td>
+                <select class="custom-select" id="tab3Decision">
+                  <option value="1" selected>1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+              </td>
+              <td>
+                <select class="custom-select" id="tab3Assigned">
+                  <option value="1" selected>Ameya Virkar</option>
+                  <option value="2">Amitabh S</option>
+                  <option value="3">Cathy Beck</option>
+                  <option value="4">Glanz Manager</option>
+                  <option value="5">Vaibhavi Arekar</option>
+                </select>
+              </td>
+              <td>
+                <input class="form-control" id="tab3duedate" name="tab3Duedate" type="date" value="2017-02-15">
+              </td>
+              <td>
+                <select class="custom-select" id="tab3Status">
+                  <option value="1" selected>Assigned</option>
+                  <option value="2">In Progress</option>
+                  <option value="3">Complete</option>
+                </select>
+              </td>
+              <td>
+                <input class="form-control" id="tab3Complete" min="0" max="100" name="tab3Complete" type="number" value="0">
+              </td>
+              <td>High</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="7">
+                <div class="row">
+                  <div class="col-6 col-lg-4 my-auto">
+                    <span>Showing 1 - 1 of 10 entries</span>
+                  </div>
+                  <div class="col-6 col-lg-4 order-2 order-lg-3 text-right">
+                    <span>Show</span>
+                    <select class="custom-select" style="width:60px;">
+                      <option value="1" selected>10</option>
+                      <option value="2">20</option>
+                      <option value="3">30</option>
+                    </select>
+                    <span>entries</span>
+                  </div>
+                  <div class="col-12 col-lg-4 order-3 order-lg-2 mt-2 mt-lg-0">
+                    <ul class="pagination justify-content-center mb-0">
+                      <li class="page-item disabled"><a href="#" class="page-link" tabindex="-1" aria-disabled="true">Previous</a></li>
+                      <li class="page-item active"><a href="#" class="page-link">1</a></li>
+                      <li class="page-item"><a href="#" class="page-link">2</a></li>
+                      <li class="page-item"><a href="#" class="page-link">3</a></li>
+                      <li class="page-item"><a href="#" class="page-link">Next</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tfoot>
+        </table><!-- /#tab3 -->
+      </div><!-- /.modal-body -->
+      <div class="modal-footer">
+        <button class="btn btn-dark" type="button">Submit</button>
+        <button class="btn btn-dark" type="button" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div><!-- /6.modalMeetingDetails -->
+
+<div class="modal fade" id="modalMyDecisions" aria-labelledby="modalMyDecisionslabel" aria-hidden="true" role="dialog" tabindex="-4" data-toggle="modal" data-dismiss="modal" data-keyboard="false">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <img class="img-fluid" src="assets/img/img-temp-my-decisions.png" alt="" data-dismiss="modal">
+    </div>
+  </div>
+</div><!-- /7.modalMyDecisions -->
+
+<div class="modal fade" id="modalMyMeetings" aria-labelledby="modalMyMeetingslabel" aria-hidden="true" role="dialog" tabindex="-4" data-toggle="modal" data-dismiss="modal" data-keyboard="false">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <img class="img-fluid" src="assets/img/img-temp-my-meetings.png" alt="" data-dismiss="modal">
+    </div>
+  </div>
+</div><!-- /8.modalMyMeetings -->
+
+<div class="modal fade" id="modalMyTasks" aria-labelledby="modalMyTaskslabel" aria-hidden="true" role="dialog" tabindex="-4" data-toggle="modal" data-dismiss="modal" data-keyboard="false">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <img class="img-fluid" src="assets/img/img-temp-my-tasks.png" alt="" data-dismiss="modal">
+    </div>
+  </div>
+</div><!-- /9.modalMyTasks -->
+
+<!-- JavaScripts -->
+<script src="assets/vendor/jquery/jquery.slim.js"></script>
+<script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/vendor/bootstrap-select/js/bootstrap-select.js"></script>
+
+</body>
+</html>

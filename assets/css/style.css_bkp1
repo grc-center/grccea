@@ -1,0 +1,766 @@
+/*
+================================
+Table of Content:
+--------------------------------
+1. Import Fonts
+2. General Styles
+  2.1. Colors
+  2.2. Buttons
+  2.3. Forms
+3. Navbar
+4. Footer
+5. Login Page
+  5.1. Hamburger Menu
+  5.2. Icons Section
+6. Sidebar
+7. Settings Page
+8. Zoom into teams Page
+9. Face-to-Face Page
+================================ */
+
+/* 1. Import Fonts
+-------------------------------- */
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css);
+
+/* 2. General Styles
+-------------------------------- */
+html,
+body {
+  color: #595b61;
+  font-family: "Montserrat", "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  font-size: 12px;
+}
+@media (min-width: 992px) {
+  html, body {
+    font-size: 14px;
+  }
+}
+body {
+  background-image: url(../img/bg-img.png);
+}
+a, a:hover {
+  color: #595b61;
+  outline: none;
+}
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-weight: 700;
+}
+/* badges */
+.badge-outline-danger,
+.badge-outline-success {
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.875em;
+  font-weight: 700;
+  line-height: 1.25;
+  padding: .2em .5em;
+  text-align: center;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+.badge-outline-danger {
+  background-color: #fff;
+  border-color: #dc3545;
+  color: #dc3545;
+}
+.badge-outline-danger::before {
+  content: "A";
+}
+.badge-outline-success {
+  background-color: #fff;
+  border-color: #28a745;
+  color: #28a745;
+}
+.badge-outline-success::before {
+  content: "P";
+}
+/* breadcrumb */
+.breadcrumb {
+  background-color: rgba(0, 0, 0, 0.075);
+  border-color: #dee2e6;
+  border-radius: 0;
+  display: flex;
+  margin-bottom: 0; 
+  padding: 0.45rem 1rem;
+}
+.breadcrumb a {
+  font-weight: 700;
+}
+.img-fluid {
+  width: 100% !important;
+}
+.filter-grayscale-100 {
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+}
+/* modals */
+.modal-dialog {
+  overflow: hidden;
+}
+.modal-content,
+.modal-header {
+  border: 0;
+  border-radius: 0;
+}
+.op-50 {
+  opacity: 0.5 !important;
+}
+/* pagnitation*/
+.page-item:first-child .page-link,
+.page-item:last-child .page-link {
+  border-radius: 0;
+}
+.page-link,
+.page-link:hover {
+  box-shadow: none !important;
+  color: #595b61;
+}
+.page-item.active .page-link {
+  background-color: #595b61;
+  border-color: #595b61;
+  color: #fff;
+}
+.page-item.disabled .page-link {
+  color: #dee2e6;
+}
+/* tables */
+.table thead th {
+  border-width: 1px;
+}
+.table .thead-dark th {
+  background-color: #595b61;
+  border-color: #424347;
+  color: #fff;
+}
+.table .thead-light th {
+  color: #595b61;
+  background-color: #f5f5f5;
+  border-color: #dee2e6;
+  border-bottom-width: 1px;
+}
+.table th,
+.table td {
+  padding: 0.5rem;
+  vertical-align: middle;
+}
+
+/* 2.1. Colors
+-------------------------------- */
+:root {
+  --primary:    #ffc107;
+  --white:      #fff;
+  --light:      #f5f5f5;
+  --secondary:  #dee2e6;
+  --body:       #595b61;
+  --dark:       #424347;
+}
+.bordered {
+  border: 1px dashed cyan;
+}
+.bordered-gray {
+  box-shadow: inset 0 0 0 1px #ddd !important;
+}
+.bg-primary {
+  background-color: #ffc107 !important;
+}
+.bg-dark {
+  background-color: #424347 !important;
+}
+.bg-secondary {
+  background-color: #dee2e6 !important;
+}
+.bg-light {
+  background-color: #f5f5f5 !important;
+}
+.text-primary {
+  color: #ffc107 !important;
+  text-decoration-color: #ffc107 !important;
+}
+a.text-primary:hover, a.text-primary:focus {
+  color: #e9ba03 !important;
+}
+.list-group-item-dark {
+  background-color: #595b61;
+  color: #fff;
+}
+.list-group-item-dark.list-group-item-action:hover,
+.list-group-item-dark.list-group-item-action:focus,
+.list-group-item-dark.list-group-item-action.active {
+  background-color: #424347;
+  border-color: #424347;
+  color: #fff;
+}
+
+/* 2.2. Buttons
+-------------------------------- */
+.btn,
+.custom-select,
+.form-control,
+.fc-button,
+.input-group-text,
+.bootstrap-select > .dropdown-toggle.bs-placeholder,
+.bootstrap-select > .dropdown-toggle.bs-placeholder:hover,
+.bootstrap-select > .dropdown-toggle.bs-placeholder:focus,
+.bootstrap-select > .dropdown-toggle.bs-placeholder:active {
+  border-radius: 0;
+  box-shadow: none !important;
+  outline: none !important;
+}
+/* primary */
+.btn-primary,
+.fc-button-primary {
+  background-color: #ffc107;
+  border-color: #ffc107;
+  color: #fff;
+}
+.btn-primary:hover,
+.btn-outline-primary:hover {
+  background-color: #e9ba03;
+  border-color: #e9ba03;
+  color: #fff;
+}
+/* outline primary */
+.btn-outline-primary {
+  border-color: #ffc107;
+  color: #ffc107;
+}
+/* dark */
+.btn-dark {
+  color: #fff;
+  background-color: #424347;
+  border-color: #424347;
+}
+.btn-dark:hover,
+.btn-dark:not(:disabled):not(.disabled):active,
+.btn-dark:not(:disabled):not(.disabled).active,
+.show > .btn-dark.dropdown-toggle {
+  color: #fff;
+  background-color: #595b61;
+  border-color: #595b61;
+}
+/* outline dark */
+.btn-outline-dark {
+  color: #424347;
+  border-color: #424347;
+}
+.btn-outline-dark:hover,
+.btn-outline-dark:not(:disabled):not(.disabled):active,
+.btn-outline-dark:not(:disabled):not(.disabled).active,
+.show > .btn-outline-dark.dropdown-toggle {
+  color: #fff;
+  background-color: #595b61;
+  border-color: #595b61;
+}
+
+/* 2.3. Forms
+-------------------------------- */
+.custom-select,
+.form-control {
+  border: 1px solid #dee2e6;
+  border-radius: 0;
+}
+.custom-select:focus,
+.form-control:focus {
+  border-color: #595b61;
+}
+.form-control-bottom {
+  border: 0;
+  border-bottom: 1px solid #dee2e6;
+}
+.custom-select-sm,
+.form-control-sm {
+  border-radius: 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  padding: 0.25rem 0.5rem;
+}
+.form-control-sm {
+  min-width: 4rem;
+}
+.input-group-text {
+  border: 1px solid #dee2e6;
+  color: #595b61;
+}
+.form-control::-webkit-input-placeholder {
+  color: #dee2e6;
+  opacity: 1;
+}
+.form-control::-moz-placeholder {
+  color: #dee2e6;
+  opacity: 1;
+}
+.form-control:-ms-input-placeholder {
+  color: #dee2e6;
+  opacity: 1;
+}
+.form-control::-ms-input-placeholder {
+  color: #dee2e6;
+  opacity: 1;
+}
+.form-control::placeholder {
+  color: #dee2e6;
+  opacity: 1;
+}
+
+/* 3. Navbar
+-------------------------------- */
+.navbar {
+  padding: 0.5rem 1rem;
+  z-index: 999;
+}
+.navbar-brand {
+  font-size: 1.5rem;
+}
+.navbar-dark .navbar-nav .nav-link,
+.navbar-dark .navbar-nav .nav-link:focus,
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: #fff;
+}
+li.nav-item:hover {
+  opacity: 0.75;
+}
+.navbar-toggler,
+.navbar-toggler:focus,
+.navbar-toggler:hover {
+  box-shadow: none !important;
+  outline: none;
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  color: #fff !important;
+}
+.icon-img {
+  height: 16px;
+  width: 16px;
+  margin-top: -2px; 
+}
+
+/* 4. Footer
+-------------------------------- */
+footer,
+footer a,
+footer a:hover {
+  color: #a7a9ac;
+  font-size: 0.875rem;
+}
+footer .list-inline-item {
+  border-right: 1px solid #a7a9ac;
+  padding: 0 0.75rem;
+  padding-right: 1rem;
+}
+footer .list-inline-item:last-child {
+  border: 0;
+}
+
+/* 5. Login Page
+-------------------------------- */
+.circle-box {
+  background-color: #fff;
+  border-radius: 100%;
+  height: 500px;
+  width: 500px;
+  min-height: 500px;
+  min-width: 500px;
+}
+.mlogo {
+  height: 8rem;
+  width: 8rem;
+}
+@media (max-width: 767.98px) {
+  .circle-box {
+    height: 290px;
+    width: 290px;
+    min-height: 290px;
+    min-width: 290px;
+  }
+  .mlogo {
+    height: 5rem;
+    width: 5rem;
+  }
+}
+
+/* 5.1. Hamburger Menu */
+.menu {
+  box-sizing: border-box;
+  font-size: 12px;
+  padding-left: 15px;
+  position: absolute;
+  height: 60px;
+  width: 100%;
+  text-align: left;
+  top: 107px;
+  right: 15px;
+  z-index: 2;
+}
+.menu-item,
+.menu-open-button {
+  background: #424347;
+  border-radius: 100%;
+  box-shadow: 0 .5rem .5rem rgba(0,0,0,.125);
+  font-size: 12px;
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+  transform: translate3d(0, 0, 0);
+  transition: transform ease-out 200ms;
+}
+.menu-open {
+  display: none;
+}
+.hamburger {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -12.5px;
+  margin-top: -1.5px;
+  transition: transform 200ms;
+}
+.hamburger-1 {
+  transform: translate3d(0, -8px, 0);
+}
+.hamburger-2 {
+  transform: translate3d(0, 0, 0);
+}
+.hamburger-3 {
+  transform: translate3d(0, 8px, 0);
+}
+.menu-open:checked + .menu-open-button .hamburger-1 {
+  transform: translate3d(0, 0, 0) rotate(45deg);
+}
+.menu-open:checked + .menu-open-button .hamburger-2 {
+  transform: translate3d(0, 0, 0) scale(0.1, 1);
+}
+.menu-open:checked + .menu-open-button .hamburger-3 {
+  transform: translate3d(0, 0, 0) rotate(-45deg);
+}
+.menu-item:hover {
+  box-shadow: 0 .5rem .5rem rgba(0,0,0,.125);
+  color: #fff;
+  transition: all .3s;
+  text-decoration: none;
+}
+.menu-item:nth-child(3),
+.menu-item:nth-child(4),
+.menu-item:nth-child(5),
+.menu-item:nth-child(6),
+.menu-item:nth-child(7) {
+  transition-duration: 180ms;
+}
+.menu-open-button {
+  z-index: 2;
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition-duration: 400ms;
+  transform: scale(1.1, 1.1) translate3d(0, 0, 0);
+  cursor: pointer;
+}
+.menu-open-button:hover {
+  transform: scale(1.2, 1.2) translate3d(0, 0, 0);
+}
+.menu-open:checked + .menu-open-button {
+  background-color: #a7a9ac;
+  transition-timing-function: linear;
+  transition-duration: 200ms;
+  transform: scale(0.8, 0.8) translate3d(0, 0, 0);
+}
+.menu-open:checked ~ .menu-item {
+  transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.menu-open:checked ~ .menu-item:nth-child(3) {
+  transition-duration: 100ms;
+  transform: translate3d(0, 60px, 0);
+}
+.menu-open:checked ~ .menu-item:nth-child(4) {
+  transition-duration: 200ms;
+  transform: translate3d(0, 120px, 0);
+}
+.menu-open:checked ~ .menu-item:nth-child(5) {
+  transition-duration: 300ms;
+  transform: translate3d(0, 180px, 0);
+}
+.menu-open:checked ~ .menu-item:nth-child(6) {
+  transition-duration: 400ms;
+  transform: translate3d(0, 240px, 0);
+}
+.menu-open:checked ~ .menu-item:nth-child(7) {
+  transition-duration: 500ms;
+  transform: translate3d(0, 300px, 0);
+}
+@media (min-width: 576px) {
+  .menu {
+    top: 79px;
+  }
+  .menu-open:checked ~ .menu-item:nth-child(3) {
+    transition-duration: 100ms;
+    transform: translate3d(-60px, 0, 0);
+  }
+  .menu-open:checked ~ .menu-item:nth-child(4) {
+    transition-duration: 200ms;
+    transform: translate3d(-120px, 0, 0);
+  }
+  .menu-open:checked ~ .menu-item:nth-child(5) {
+    transition-duration: 300ms;
+    transform: translate3d(-180px, 0, 0);
+  }
+  .menu-open:checked ~ .menu-item:nth-child(6) {
+    transition-duration: 400ms;
+    transform: translate3d(-240px, 0, 0);
+  }
+  .menu-open:checked ~ .menu-item:nth-child(7) {
+    transition-duration: 500ms;
+    transform: translate3d(-300px, 0, 0);
+  }
+}
+
+/* 5.2. Icons Section
+-------------------------------- */
+#icons .col-md-4 {
+  margin-bottom: 1rem;
+}
+#icons .icon-box {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 80% 80%;
+  border-radius: 499rem !important;
+  height: 10rem;
+  width: 10rem;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-bottom: .25rem;
+  overflow: hidden;
+  position: relative;
+}
+#icons.modal-body .icon-box {
+  background-size: 75% 75%;
+}
+#icons .icon-box .overlay {
+  background-color: rgba(0,0,0,.65);
+  border-radius: 499rem !important;
+  opacity: 0;
+  position: relative;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: all 0.15s ease-in-out;
+  width: 100%;
+  height: 100%;
+}
+#icons .icon-box:hover,
+#icons .icon-box:hover .overlay {
+  opacity: 1;
+}
+#icons .small {
+  color: #fff;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 90%;
+  font-style: italic;
+  line-height: 1.1;
+  position: absolute;
+  width: 70%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+#icons a:hover .text-primary {
+  color: #424347 !important;
+  text-decoration: underline;
+  text-decoration-color: #424347 !important;
+}
+
+/* 6. Sidebar
+-------------------------------- */
+@media (min-width: 992px) {
+  #sidebar-left {
+    min-height: calc(100vh - 110px) !important;
+  }
+}
+#main-form .form-row[aria-expanded="false"]::before,
+#main-form .form-row[aria-expanded="true"]::before {
+  cursor: pointer;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+/* Closed submenu icon */
+#main-form .form-row[aria-expanded="false"]::before {
+  content: "\f0fe";
+  margin-left: -1rem;
+  width: 1rem;
+}
+/* Opened submenu icon */
+#main-form .form-row[aria-expanded="true"]::before {
+  content: "\f146";
+  margin-left: -1rem;
+  width: 1rem;
+}
+.list-group .list-group-item:first-child {
+  border-top: 0;
+}
+.list-group-item:first-child,
+.list-group-item:last-child {
+  border-radius: 0 !important;
+}
+
+/* 7. Settings Page
+-------------------------------- */
+#settings .tab-pane {
+  background-color: #fff !important;
+  border-right: 1px solid #dee2e6 !important;
+  border-bottom: 1px solid #dee2e6 !important;
+  border-left: 1px solid #dee2e6 !important;
+  padding: 1rem !important;
+}
+#settings .table td {
+  white-space: nowrap !important;
+}
+#settings .table-sm td {
+  font-size: .875rem;
+  vertical-align: middle;
+}
+#settings .table-bordered td:last-child {
+  text-align: center;
+}
+#settings-table td:first-child {
+  text-align: right;
+}
+#settings thead[aria-expanded="false"] th::before,
+#settings thead[aria-expanded="true"] th::before {
+  cursor: pointer;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 700;
+  margin-right: 0.5rem;
+}
+#settings thead[aria-expanded="false"] th::before {
+  content: "\f0fe";
+}
+#settings thead[aria-expanded="true"] th::before {
+  content: "\f146";
+}
+
+/* 8. Zoom into teams Page
+-------------------------------- */
+#parametric-report .form-row {
+  margin-bottom: .5rem;
+}
+#parametric-report .form-row .col-3 {
+  margin-top: auto !important;
+  margin-bottom: auto !important;
+}
+#parametric-report .form-row .col-3 label {
+  margin-bottom: 0; 
+}
+#parametric-report .btn-light {
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  box-shadow: none !important;
+  font-weight: 400;
+}
+#sidebar-left .list-group-item {
+  position: relative;
+}
+#sidebar-left .list-group-item[aria-expanded="false"]::after,
+#sidebar-left .list-group-item[aria-expanded="true"]::after {
+  cursor: pointer;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 700;
+  font-size: .875rem;
+  position: absolute;
+  right: 1.5rem;
+  top: 0.75rem;
+}
+/* sidebar-left */
+#sidebar-left .list-group-item[aria-expanded="false"]::after {
+  content: "\f0d7";
+}
+#sidebar-left .list-group-item[aria-expanded="true"]::after {
+  content: "\f0d8";
+}
+
+/* 9. Face-to-Face Page
+-------------------------------- */
+.btn,
+.input-group-text {
+  max-height: 2.4rem;
+}
+.ftf-btn {
+  width: 100% !important;
+}
+@media (min-width: 992px) {
+  .ftf-btn {
+    width: 128px !important;
+  }
+}
+#modalCostCenter select.form-control,
+#modalMeetingType select.form-control {
+  height: 15rem !important;
+  padding: 0;
+}
+#modalCostCenter select.form-control option,
+#modalMeetingType select.form-control option {
+  padding: 0.25rem;
+}
+.btn-file {
+  cursor: pointer !important;
+  overflow: hidden;
+  position: relative;
+}
+.btn-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  outline: none;
+  cursor: pointer !important;
+  display: block;
+}
+.btn-file:hover {
+  cursor: pointer !important;
+}
+.input-add {
+  margin-bottom: -2.25rem;
+  z-index: 999;
+}
+.bootstrap-datetimepicker-widget {
+  position: absolute !important;
+}
+.bootstrap-datetimepicker-widget table td.active,
+.bootstrap-datetimepicker-widget table td.active:hover,
+.bootstrap-datetimepicker-widget table td span.active,
+.bootstrap-datetimepicker-widget table td i.active {
+  background-color: #424347;
+  border-radius: 0;
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+.fc-toolbar.fc-header-toolbar {
+  margin-bottom: 0.5rem;
+  margin-left: 33.333333%;
+  max-width: 66.666667%;
+}
+.fc-center h2 {
+  font-size: 1.75rem;
+  font-weight: 400;
+}
+.bootstrap-datetimepicker-widget {
+  display: block;
+}
