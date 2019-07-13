@@ -597,111 +597,113 @@ MODALS:
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- /#modal for summary -->
-        <div class="modal fade" id="modalSummary" aria-labelledby="modalMeetingTypelabel" aria-hidden="true" role="dialog" tabindex="-1" data-toggle="modal" data-keyboard="false">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header bg-dark text-white p-0">
-                        <h5 class="m-2">Meeting Details</h5>
-                        <a class="btn text-white" data-dismiss="modal" aria-label="Close" href="#">
-                            <i class="fa fa-times"></i>
-                        </a>
-                    </div>
-                    <div class="modal-body">
-                        <table class="table table-bordered table-hover table-sm" id="cost-center-table">
-                            <tbody id="summary">
-                                <!-- Adding an attribute for country  -->
-                                <tr>
-                                    <th class="light">Meeting Cost Center</th>
-                                </tr>
-                                <tr>
-                                    <td id="meeting-cost"></td>
-                                </tr>
-                                <tr>
-                                    <th class="light">Meeting Title</th>
-                                </tr>
-                                <tr>
-                                    <td id="meeting-title"></td>
-                                </tr>
+    <!-- /#modal for summary -->
+    <div class="modal fade" id="modalSummary" aria-hidden="true" role="dialog" tabindex="-1" data-toggle="modal" data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-white p-0">
+                    <h5 class="m-2">Meeting Details</h5>
+                    <a class="btn text-white" data-dismiss="modal" aria-label="Close" href="#">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-bordered table-hover table-sm" id="cost-center-table">
+                        <tbody id="summary">
+                            <!-- Adding an attribute for country  -->
+                            <tr>
+                                <th class="light">Meeting Cost Center</th>
+                            </tr>
+                            <tr>
+                                <td id="meeting-cost"></td>
+                            </tr>
+                            <tr>
+                                <th class="light">Meeting Title</th>
+                            </tr>
+                            <tr>
+                                <td id="meeting-title"></td>
+                            </tr>
 
-                                <tr>
-                                    <th class="light">Meeting Agenda</th>
-                                </tr>
-                                <tr>
-                                    <td id="meeting-agenda"></td>
-                                </tr>
+                            <tr>
+                                <th class="light">Meeting Agenda</th>
+                            </tr>
+                            <tr>
+                                <td id="meeting-agenda"></td>
+                            </tr>
 
-                                <tr>
-                                    <th class="light">Dial in number for conference call</th>
-                                </tr>
-                                <tr>
-                                    <td id="meeting-dial"></td>
-                                </tr>
+                            <tr>
+                                <th class="light">Dial in number for conference call</th>
+                            </tr>
+                            <tr>
+                                <td id="meeting-dial"></td>
+                            </tr>
 
-                                <tr>
-                                    <th class="light">Minutes writer</th>
-                                </tr>
-                                <tr>
-                                    <td id="meeting-min"></td>
-                                </tr>
+                            <tr>
+                                <th class="light">Minutes writer</th>
+                            </tr>
+                            <tr>
+                                <td id="meeting-min"></td>
+                            </tr>
 
-                                <tr>
-                                    <th class="light">Meeting Type</th>
-                                </tr>
-                                <tr>
-                                    <td id="meeting-type"></td>
-                                </tr>
+                            <tr>
+                                <th class="light">Meeting Type</th>
+                            </tr>
+                            <tr>
+                                <td id="meeting-type"></td>
+                            </tr>
 
-                                <tr>
-                                    <th class="light">Meeting Memo</th>
-                                </tr>
-                                <tr>
-                                    <td id="meeting-memo"></td>
-                                </tr>
+                            <tr>
+                                <th class="light">Meeting Memo</th>
+                            </tr>
+                            <tr>
+                                <td id="meeting-memo"></td>
+                            </tr>
 
-                                <tr>
-                                    <th class="light">Meeting Time</th>
-                                </tr>
-                                <tr>
-                                    <td id="meeting-time"></td>
-                                </tr>
+                            <tr>
+                                <th class="light">Meeting Time</th>
+                            </tr>
+                            <tr>
+                                <td id="meeting-time"></td>
+                            </tr>
 
-                                <tr>
-                                    <th class="light">Meeting Attendee & Location</th>
-                                </tr>
-                                <tr>
-                                    <td id="meeting-att"></td>
-                                </tr>
+                            <tr>
+                                <th class="light">Meeting Attendee & Location</th>
+                            </tr>
+                            <tr>
+                                <td id="meeting-att"></td>
+                            </tr>
 
 
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="modal-footer align-content-center align-items-center justify-content-center">
-                        <button class="btn btn-dark" type="button" data-dismiss="modal">Close</button>
-                        <button class="btn btn-dark" type="button" data-dismiss="modal" id="send">Send Invite</button>
-                    </div>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer align-content-center align-items-center justify-content-center">
+                    <button class="btn btn-dark" type="button" data-dismiss="modal">Close</button>
+                    <button class="btn btn-dark" type="button" data-dismiss="modal" id="send">Send Invite</button>
                 </div>
             </div>
         </div>
-        <!-- /#modal for assigning users to particular room -->
+    </div>
 
-        <!-- JavaScripts-->
-        <script src="assets/vendor/jquery/jquery.slim.js"></script>
-        <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-        <script src="assets/vendor/moment/moment.min.js"></script>
-        <script src="assets/vendor/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
-        <script src="assets/vendor/fullcalendar/fullcalendar.min.js"></script>
-        <script src="assets/vendor/scheduler/scheduler.min.js"></script>
+    <!-- /#modal for assigning users to particular room -->
 
-        <script src='fullcalendar/core/main.js'></script>
-        <script src='fullcalendar/interaction/main.js'></script>
-        <script src='fullcalendar/daygrid/main.js'></script>
-        <script src="https://momentjs.com/downloads/moment-timezone.js"></script>
-        <script src="https://momentjs.com/downloads/moment-timezone-with-data-10-year-range.js"></script>
-        <script src="assets/js/f2f.js"></script>
-        <script src="assets/js/disallow.js"></script>
+    <!-- JavaScripts-->
+    <script src="assets/vendor/jquery/jquery.slim.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/vendor/moment/moment.min.js"></script>
+    <script src="assets/vendor/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="assets/vendor/fullcalendar/fullcalendar.min.js"></script>
+    <script src="assets/vendor/scheduler/scheduler.min.js"></script>
+
+    <script src='fullcalendar/core/main.js'></script>
+    <script src='fullcalendar/interaction/main.js'></script>
+    <script src='fullcalendar/daygrid/main.js'></script>
+    <script src="https://momentjs.com/downloads/moment-timezone.js"></script>
+    <script src="https://momentjs.com/downloads/moment-timezone-with-data-10-year-range.js"></script>
+    <script src="assets/js/f2f.js"></script>
+    <script src="assets/js/disallow.js"></script>
 
 
 </body>
