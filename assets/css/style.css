@@ -493,6 +493,16 @@ footer .list-inline-item:last-child {
     }
 }
 
+@media (max-width: 990px) {
+    #na {
+        display: block !important;
+    }
+    #datet {
+        margin-top: 3px;
+        margin-bottom: 3px;
+    }
+}
+
 
 /* 5.1. Hamburger Menu */
 
