@@ -2,708 +2,672 @@
 <html lang="en" class="h-100">
 
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>Face-to-Face | GRC Center</title>
-	<link href="favicon.ico" rel="icon">
-	<link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link href="assets/vendor/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
-	<link href="assets/vendor/fullcalendar/fullcalendar.min.css" rel="stylesheet">
-	<link href="assets/vendor/scheduler/scheduler.min.css" rel="stylesheet">
-
-	<link href="assets/css/style.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Face-to-Face | GRC Center</title>
+  <link href="favicon.ico" rel="icon">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+  <link href="assets/vendor/fullcalendar/fullcalendar.min.css" rel="stylesheet">
+  <link href="assets/vendor/scheduler/scheduler.min.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
 </head>
 
 <body class="d-flex flex-column h-100">
 
-	<header>
-		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-			<a href="index.html" class="navbar-brand py-0">
-				<img class="d-inline-block align-middle mr-2" height="50" width="50" src="assets/img/logo-white.svg" alt="">Dashboard
-			</a>
-			<button class="navbar-toggler p-2" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-	  <span class="navbar-toggler-icon text-white"></span>
-	</button>
-			<div class="collapse navbar-collapse" id="navbarCollapse">
-				<ul class="navbar-nav ml-auto">
-					<li class="nav-item">
-						<a class="nav-link" href="index.html"><i class="fa fa-home mr-1"></i>Home</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#" data-toggle="modal" data-target="#modalGetTogether"><img class="icon-img mr-1" src="assets/img/sm-icon-get-together.png">Get together</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="project-activities.html"><img class="icon-img mr-1" src="assets/img/sm-icon-project-activities.png">Activities</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="notifications.html"><img class="icon-img mr-1" src="assets/img/sm-icon-notifications.png">Notifications</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="zoom-into-teams.html"><img class="icon-img mr-1" src="assets/img/sm-icon-zoom-into-teams.png">Zoom in</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" data-toggle="modal" data-target="#modalSettings"><i class="fa fa-cog mr-1"></i>Preferrences</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#"><i class="fa fa-question mr-1"></i>Help</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="login.html"><i class="fa fa-sign-out mr-1"></i>Logout</a>
-					</li>
-				</ul>
-			</div>
-		</nav>
-	</header>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a href="index.html" class="navbar-brand py-0">
+        <img class="d-inline-block align-middle mr-2" height="50" width="50" src="assets/img/logo-white.svg" alt="">Dashboard
+      </a>
+      <button class="navbar-toggler p-2" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon text-white"></span>
+  </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html"><i class="fa fa-home mr-1"></i>Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-toggle="modal" data-target="#modalGetTogether"><img class="icon-img mr-1" src="assets/img/sm-icon-get-together.png">Get together</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="project-activities.html"><img class="icon-img mr-1" src="assets/img/sm-icon-project-activities.png">Activities</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="notifications.html"><img class="icon-img mr-1" src="assets/img/sm-icon-notifications.png">Notifications</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="zoom-into-teams.html"><img class="icon-img mr-1" src="assets/img/sm-icon-zoom-into-teams.png">Zoom in</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSettings"><i class="fa fa-cog mr-1"></i>Preferrences</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fa fa-question mr-1"></i>Help</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="login.html"><i class="fa fa-sign-out mr-1"></i>Logout</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
 
-	<nav class="nav-fill d-flex navbar-expand-lg navbar-nav w-100 px-3 pt-3" id="na">
-		<input class="btn btn-dark ftf-btn mb-2 mr-lg-2" id="inputCostCenter" type="button" value="Cost Center" data-toggle="modal" data-target="#modalCostCenter">
-		<select id="selectTitle" class="custom-select">
-	  <option></option>
-	  <option value="Conference">Conference</option>
-	  <option value="Lecture">Lecture</option>
-	  <option value="Meeting">Meeting</option>
-	  <option value="Meeting" selected> Select the title for the meeting</option>
-																 "
-	</select>
-
-
-		<div class="input-group" id="datet">
-			<input class="form-control" id="datetimepicker1" name="date1" type="text" placeholder="Select Start Time..." size="13" style="margin-right:2px;margin-left:4px;width:45%;">
-			<input class="form-control" id="datetimepicker3" name="dater1" type="text" placeholder="Select End Time..." size="13" style="margin-left:2px;margin-right:4px;width:45%;">
-		</div>
-
-		<input class="btn btn-dark ftf-btn mb-2" id="inputMeetingtype" type="button" value="Meeting type" data-toggle="modal" data-target="#modalMeetingType" style="margin-left:4px">
-
-	</nav>
-
-	<div class="container-fluid my-auto px-3">
-		<div class="form-row">
-			<div class="col-lg-6">
-				<div class="card border-0 rounded-0" id="selectAttendees">
-					<div class="card-body p-2">
-						<h4 class="text-center">Select Attendees</h4>
-						<div class="row">
-							<div class="col-4 input-add">
-								<div class="input-group">
-
-									<div class="input-group-append">
-										<button class="btn btn-dark" id="buttonPlus" type="button" data-toggle="modal" data-target="#modalAddAttendees" style="margin-right:4px"><i class="fa fa-plus"></i></button>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-lg-12">
-								<div id="calendarOne"></div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- /#selectAttendees -->
-			</div>
-			<div class="col-lg-6">
-				<div class="card border-0 rounded-0" id="selectConferenceRooms">
-					<div class="card-body p-2">
-						<h4 class="text-center">Select Conference Rooms</h4>
-						<div class="row">
-							<div class="col-4 input-add">
-								<div class="input-group">
-									<div class="input-group-append">
-										<button class="btn btn-dark" id="buttonPlus" type="button" data-toggle="modal" data-target="#modalAddRooms" style="margin-right:4px"><i class="fa fa-plus"></i></button>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-lg-12">
-								<div id="calendarTwo"></div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- /#selectConferenceRooms -->
-			</div>
-		</div>
-	</div>
-
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-lg-3 mb-3">
-				<div class="input-group">
-					<div class="input-group-prepend">
-						<span class="input-group-text bg-dark ftf-btn text-white">Minutes Writer</span>
-					</div>
-					<select class="custom-select" id="selectMinutesWriter">
-	   <option value="Amit" id="min1">Amit Jain</option>
-		</select>
-				</div>
-			</div>
-
-			<div class="col-lg-9 mb-3 text-right">
-				<button class="btn btn-outline-dark" data-target="#modalAgenda" data-toggle="modal" type="button">
-							<i class="fa fa-users"></i>
-						  </button>
-				<button class="btn btn-outline-dark btn-file">
-							<i class="fa fa-upload"></i><input type="file">
-						  </button>
-				<button class="btn btn-outline-dark" data-target="#modalMeetingMemo" data-toggle="modal" type="button">
-							<i class="fa fa-paperclip"></i>
-						  </button>
-
-				<button class="btn btn-outline-dark" style="width:34px;height:34px;padding:0;" data-target="#modalDialIn" data-toggle="modal" type="button" id="dialButton">
-							<i class="fa fa-th" aria-hidden="true"></i>
-						  </button>
-				<input class="btn btn-dark ftf-btn" id="sendInvite" type="button" value="Review Invite">
-			</div>
-		</div>
-	</div>
-
-	<footer class="bg-dark py-3 text-center">
-		<div class="container">
-			<ul class="list-inline mb-0">
-				<li class="list-inline-item mx-0"><a href="mailto:demouser@grccenter.com">demouser@grccenter.com</a></li>
-				<li class="list-inline-item mx-0"><a href="http://demo.grccenter.com">demo.grccenter.com</a></li>
-				<li class="list-inline-item mx-0">Version 5.09</li>
-				<li class="list-inline-item mx-0">GRC CENTER is available from Nov 12, 2012</li>
-			</ul>
-		</div>
-	</footer>
-
-	<!--
-MODALS:
-1. modalCostCenter
-2. modalAgenda
-3. modalFollowUpItems
-4. modalMeetingMemo
-5. modalMeetingType
-6. modalAddAttendees
-7. modalAddRooms
--->
-
-	<div class="modal fade" id="modalCostCenter" aria-labelledby="modalCostCenterlabel" aria-hidden="true" role="dialog" tabindex="-1" data-toggle="modal" data-keyboard="false">
-		<div class="modal-dialog modal-dialog-centered" role="document">
-			<div class="modal-content">
-				<div class="modal-header bg-dark text-white p-0">
-					<h5 class="m-2">Meeting Cost Center</h5>
-					<a class="btn text-white" data-dismiss="modal" aria-label="Close" href="#">
-						<i class="fa fa-times"></i>
-					</a>
-				</div>
-				<div class="modal-body">
-					<div class="row">
-						<div class="col-2 pr-0">
-							<label for="filterby">Filter by</label>
-						</div>
-						<div class="col-3 px-0">
-							<select class="" id="filterby" name="filterby">
-			  <option value="1"></option>
-			  <option value="2">PROJECT</option>
-			  <option value="3">PROGRAM</option>
-			</select>
-						</div>
-					</div>
-					<div class="row">
-
-						<select class="form-control" id="items" multiple style="width:80%;margin-left:10%"></select>
-
-					</div>
-				</div>
-				<div class="modal-footer align-content-center align-items-center justify-content-center">
-					<button class="btn btn-dark" type="button" data-dismiss="modal">Close</button>
-					<button class="btn btn-dark" type="button" data-dismiss="modal">Choose</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- /#modalCostCenter -->
-
-	<div class="modal fade" id="modalAgenda" aria-labelledby="modalAgendalabel" aria-hidden="true" role="dialog" tabindex="-1" data-toggle="modal" data-keyboard="false">
-		<div class="modal-dialog modal-dialog-centered" role="document">
-			<div class="modal-content">
-				<div class="modal-header bg-dark text-white p-0">
-					<h5 class="m-2">Agenda</h5>
-					<a class="btn text-white" data-dismiss="modal" aria-label="Close" href="#">
-						<i class="fa fa-times"></i>
-					</a>
-				</div>
-				<div class="modal-body">
-					<div class="modal-header p-2">
-						<label class="h5 mb-0 py-1 bg-white" for="textareaAgenda">Agenda</label>
-						<div class="btn-group">
-							<button class="btn btn-outline-dark" id="addrow" type="button"><i class="fa fa-plus"></i></button>
-							<button class="btn btn-outline-dark" type="button" data-target="#modalFollowUpItems" data-toggle="modal" data-dismiss="modal"><i class="fa fa-comment"></i></button>
-						</div>
-					</div>
-					<div class="order-list d-block border pt-2" id="textareaAgenda" style="min-height: 6.6rem;"></div>
-				</div>
-				<div class="modal-footer align-content-center align-items-center justify-content-center">
-					<button class="btn btn-dark" type="button" data-dismiss="modal">Close</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- /#modalAgenda -->
-
-	<div class="modal fade" id="modalFollowUpItems" aria-labelledby="modalFollowUpItemslabel" aria-hidden="true" role="dialog" tabindex="-1" data-toggle="modal" data-keyboard="false">
-		<div class="modal-dialog modal-dialog-centered" role="document">
-			<div class="modal-content">
-				<div class="modal-header bg-dark text-white p-0">
-					<h5 class="m-2">Select Follow Up items from Meetings</h5>
-					<a class="btn text-white" data-dismiss="modal" aria-label="Close" href="#">
-						<i class="fa fa-times"></i>
-					</a>
-				</div>
-				<div class="modal-body">
-					<div class="form-group input-group w-50">
-						<div class="input-group-prepend">
-							<span class="input-group-text">Date</span>
-						</div>
-						<input class="form-control" id="datetimepicker2" name="datetimepicker2" type="text">
-					</div>
-					<div class="form-group">
-						<h5>Select a Meeting</h5>
-						<div class="form-control" id="textareaSelectMeeting" name="textareaSelectMeeting" style="height:100px">
-							<p style="display:none" id="check"><input id='define' type='checkbox'> 1. Define the WBS for this project</p>
-						</div>
-					</div>
-					<div class="form-group">
-						<h5>Select Agenda</h5>
-						<div class="form-control" id="textareaSelectAgenda" name="textareaSelectAgenda" style="height:100px">
-							<p style="display:none" id="non-striked"><input id='non-striked-input' type='checkbox'><span id="test">Test Agenda for demo purpose</span></p>
-							<p style="display:none" id="striked"><s><input type='checkbox' readonly>Striked Agenda for demo purpose</s></p>
-						</div>
-					</div>
-
-				</div>
-
-				<div class="modal-footer align-content-center align-items-center justify-content-center">
-					<button class="btn btn-dark" type="button" data-dismiss="modal">Close</button>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!-- /#modalFollowUpItems -->
-
-	<div class="modal fade" id="modalMeetingMemo" aria-labelledby="modalMeetingMemolabel" aria-hidden="true" role="dialog" tabindex="-1" data-toggle="modal" data-keyboard="false">
-		<div class="modal-dialog modal-dialog-centered" role="document">
-			<div class="modal-content">
-				<div class="modal-header bg-dark text-white p-0">
-					<h5 class="m-2">Meeting Memo</h5>
-					<a class="btn text-white" data-dismiss="modal" aria-label="Close" href="#">
-						<i class="fa fa-times"></i>
-					</a>
-				</div>
-				<div class="modal-body">
-					<div class="modal-header p-2">
-						<label class="h5 mb-0 py-1 bg-white" for="textareaMeetingMemo">Meeting Memo</label>
-					</div>
-					<textarea class="form-control" id="textareaMeetingMemo" rows="3" maxlength="250"></textarea>
-				</div>
-				<div class="modal-footer align-content-center align-items-center justify-content-center">
-					<button class="btn btn-dark" type="button" data-dismiss="modal">Close</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- /#modalMeetingMemo -->
-
-	<div class="modal fade" id="modalMeetingType" aria-labelledby="modalMeetingTypelabel" aria-hidden="true" role="dialog" tabindex="-1" data-toggle="modal" data-keyboard="false">
-		<div class="modal-dialog modal-dialog-centered" role="document">
-			<div class="modal-content">
-				<div class="modal-header bg-dark text-white p-0">
-					<h5 class="m-2">Meeting Type</h5>
-					<a class="btn text-white" data-dismiss="modal" aria-label="Close" href="#">
-						<i class="fa fa-times"></i>
-					</a>
-				</div>
-				<div class="modal-body">
-
-					<div class="row">
-
-						<select class="form-control" id="available" multiple style="width:80%;margin-left:10%"></select>
-
-					</div>
-				</div>
-				<div class="modal-footer align-content-center align-items-center justify-content-center">
-					<button class="btn btn-dark" type="button" data-dismiss="modal">Close</button>
-					<button class="btn btn-dark" type="button" data-dismiss="modal">Choose</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- /#modalMeetingType -->
-
-	<div class="modal fade" id="modalAddAttendees" aria-labelledby="modalAddAttendeeslabel" aria-hidden="true" role="dialog" tabindex="-1" data-toggle="modal" data-keyboard="false">
-		<div class="modal-dialog modal-dialog-centered" role="document">
-			<div class="modal-content">
-				<div class="modal-header bg-dark text-white p-0">
-					<h5 class="m-2">Select/Deselect Attendees</h5>
-					<a class="btn text-white" data-dismiss="modal" aria-label="Close" href="#">
-						<i class="fa fa-times"></i>
-					</a>
-				</div>
-				<div class="modal-body">
-					<table class="table table-bordered table-hover table-sm" id="cost-center-table">
-						<thead class="border-0">
-							<tr class="thead-light">
-								<th scope="col">#</th>
-								<th scope="col" class="w-50">Name</th>
-								<th scope="col" class="w-50">Location</th>
-							</tr>
-						</thead>
-						<tbody id="tbody1">
-							<!-- Adding an attribute for country  -->
-							<tr>
-								<td><input id="checkbox1" type="checkbox" city="Boston" eid="0"></td>
-								<td>Bharat Gupta</td>
-								<td>Boston (USA)</td>
-							</tr>
-							<tr>
-								<td><input id="checkbox2" type="checkbox" city="Mumbai" eid="1" checked></td>
-								<td>Amit Jain</td>
-								<td>Mumbai (India)</td>
-							</tr>
-							<tr>
-								<td><input id="checkbox3" type="checkbox" city="Mumbai" eid="2"></td>
-								<td>Ameya Pant</td>
-								<td>Mumbai (India)</td>
-							</tr>
-							<tr>
-								<td><input id="checkbox4" type="checkbox" city="Raleigh" eid="3"></td>
-								<td>Ketul Mehta</td>
-								<td>Raleigh (USA)</td>
-							</tr>
-							<tr>
-								<td><input id="checkbox5" type="checkbox" city="Raleigh" eid="4"></td>
-								<td>Judy Polska</td>
-								<td>Raleigh (USA)</td>
-							</tr>
-							<tr>
-								<td><input id="checkbox6" type="checkbox" city="Boston" eid="5"></td>
-								<td>Vivek Bhardwaj</td>
-								<td>Boston (USA)</td>
-							</tr>
-							<tr>
-								<td><input id="checkbox7" type="checkbox" city="Boston" eid="6"></td>
-								<td>Anjali Sharma</td>
-								<td>Boston (USA)</td>
-							</tr>
-							<tr>
-								<td><input id="checkbox8" type="checkbox" city="Boston" eid="7"></td>
-								<td>Tarun Bhatia</td>
-								<td>Boston (USA)</td>
-							</tr>
-							<tr>
-								<td><input id="checkbox9" type="checkbox" city="Boston" eid="8"></td>
-								<td>Amar Singh</td>
-								<td>Boston (USA)</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-dark" data-dismiss="modal" id="addAtt">Select Attendees</button>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="modal fade" id="modalSettings" aria-labelledby="modalAddAttendeeslabel" aria-hidden="true" role="dialog" tabindex="-1" data-toggle="modal" data-keyboard="false">
-		<div class="modal-dialog modal-dialog-centered" role="document">
-			<div class="modal-content">
-				<div class="modal-header bg-dark text-white p-0">
-					<h5 class="m-2">Save your personal preferrences</h5>
-					<a class="btn text-white" data-dismiss="modal" aria-label="Close" href="#">
-						<i class="fa fa-times"></i>
-					</a>
-				</div>
-				<div class="modal-body">
-					<table class="table table-bordered table-hover table-sm" id="cost-center-table">
-						<tbody id="tbody1">
-							<!-- Adding an attribute for country  -->
-							<tr>
-								<td>Dial In Number</td>
-								<td><input class="form-control" type="number" id="dialIn"></td>
-							</tr>
-							<tr>
-
-								<td>Extension</td>
-								<td><input class="form-control" type="number" id="extension"></td>
-							</tr>
-							<tr>
-								<td>Desktop sharing url</td>
-								<td><input class="form-control" type="text" id="url"></td>
-							</tr>
-							<tr id="office-time-div">
-								<td>Preffered office time</td>
-								<td><input class="form-control" type="text" id="office-time" style="width:48%;display:inline-block">
-									<input class="form-control" type="text" id="office-time2" style="width:48%;display:inline-block"></td>
-							</tr>
-							<tr>
-
-								<td>Preffered lunch time</td>
-								<td><input class="form-control" type="text" id="lunch-time" style="width:48%;display:inline-block">
-									<input class="form-control" type="text" id="lunch-time2" style="width:48%;display:inline-block"></td>
-							</tr>
-							<tr>
-
-								<td>Vacation</td>
-								<td><input class="form-control" type="text" id="vacation" style="width:48%;display:inline-block">
-									<input class="form-control" type="text" id="vacation2" style="width:48%;display:inline-block"></td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-dark" id="resetSettigs">Reset</button>
-					<button type="button" class="btn btn-dark" data-dismiss="modal">Save</button>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!-- /#modalAddAttendees -->
-
-	<div class="modal fade" id="modalAddRooms" aria-labelledby="modalAddRoomslabel" aria-hidden="true" role="dialog" tabindex="-1" data-toggle="modal" data-keyboard="false">
-		<div class="modal-dialog modal-dialog-centered" role="document">
-			<div class="modal-content">
-				<div class="modal-header bg-dark text-white p-0">
-					<h5 class="m-2">Select/Deselect Rooms</h5>
-					<a class="btn text-white" data-dismiss="modal" aria-label="Close" href="#">
-						<i class="fa fa-times"></i>
-					</a>
-				</div>
-				<div class="modal-body">
-					<table class="table table-bordered table-hover table-sm" id="cost-center-table">
-						<thead class="border-0">
-							<tr class="thead-light">
-								<th scope="col">#</th>
-								<th scope="col" class="w-50">Name</th>
-								<th scope="col" class="w-50">Location</th>
-							</tr>
-						</thead>
-						<tbody id="tbody2">
-							<tr>
-								<td><input id="checkbox1" type="checkbox" city="Mumbai"></td>
-								<td>Mumbai Meeting Room</td>
-								<td>Mumbai (India)</td>
-							</tr>
-							<tr>
-						</tbody>
-					</table>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-dark" data-dismiss="modal" id="addRoom"> Select Rooms</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- /#modalAddRooms -->
-	<div class="modal fade" id="modalError" aria-labelledby="modalAddAttendeeslabel" aria-hidden="true" role="dialog" tabindex="-1" data-toggle="modal" data-keyboard="false">
-		<div class="modal-dialog modal-dialog-centered" role="document">
-			<div class="modal-content" style="text-align: left">
-				<div class="modal-header bg-dark text-white p-0">
-					<h5 class="m-2">Please set the following parameters:</h5>
-					<a class="btn text-white" data-dismiss="modal" aria-label="Close" href="#">
-						<i class="fa fa-times"></i>
-					</a>
-				</div>
-				<div class="modal-body" style="text-align:left">
-					<ul id="error-body"></ul>
-				</div>
-				<div class="modal-footer">
-					<button class="btn btn-dark" type="button" data-dismiss="modal">Close</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- /#modal for errors -->
-	<div class="modal fade" id="modalAssignUsers" aria-labelledby="modalMeetingTypelabel" aria-hidden="true" role="dialog" tabindex="-1" data-toggle="modal" data-keyboard="false">
-		<div class="modal-dialog modal-dialog-centered" role="document">
-			<div class="modal-content">
-				<div class="modal-header bg-dark text-white p-0">
-					<h5 class="m-2">Assign Users to this room</h5>
-					<a class="btn text-white" data-dismiss="modal" aria-label="Close" href="#">
-						<i class="fa fa-times"></i>
-					</a>
-				</div>
-				<div class="modal-body">
-					<div class="row">
-						<div class="col-5">
-							<label for="available">Available</label>
-						</div>
-						<div class="col-5 offset-2 pl-0">
-							<label for="selected">Assigned</label>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-5 pr-0">
-							<select class="form-control" id="availableUsers" multiple></select>
-						</div>
-						<div class="col-2 my-auto text-center">
-							<button class="btn btn-outline-secondary" id="user-btn-add" type="button"><i class="fa fa-arrow-right"></i></button>
-							<button class="btn btn-outline-secondary" id="user-btn-remove" type="button"><i class="fa fa-arrow-left"></i></button>
-						</div>
-						<div class="col-5 pl-0">
-							<select class="form-control" id="selectedUsers" multiple></select>
-						</div>
-					</div>
-				</div>
-				<div class="modal-footer align-content-center align-items-center justify-content-center">
-					<button class="btn btn-dark" type="button" data-dismiss="modal">Close</button>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="modal fade" id="modalDialIn" aria-labelledby="modalDialIn" aria-hidden="true" role="dialog" tabindex="-1" data-toggle="modal" data-keyboard="false">
-		<div class="modal-dialog modal-dialog-centered" role="document">
-			<div class="modal-content">
-				<div class="modal-header bg-dark text-white p-0">
-					<h5 class="m-2">Please set the dial in number</h5>
-					<a class="btn text-white" data-dismiss="modal" aria-label="Close" href="#">
-						<i class="fa fa-times"></i>
-					</a>
-				</div>
-				<div class="modal-body" style="padding:10%;">
-					<p id="dialModalBody"></p>
-				</div>
-				<div class="modal-footer align-content-center align-items-center justify-content-center">
-					<button class="btn btn-dark" type="button" data-dismiss="modal" data-toggle="modal" data-target="#modalSettings" id="ok">OK</button>
-
-					<button class="btn btn-dark" type="button" data-dismiss="modal" id="okclose" style="display:none">OK</button>
-
-					<button class="btn btn-dark" id="pref-button" type="button" data-dismiss="modal" data-toggle="modal" data-target="#modalSettings" style="display:none">Preferences</button>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="modal fade" id="modalRoomSelect" aria-labelledby="modalDialIn" aria-hidden="true" role="dialog" tabindex="-1" data-toggle="modal" data-keyboard="false">
-		<div class="modal-dialog modal-dialog-centered" role="document">
-			<div class="modal-content">
-				<div class="modal-header bg-dark text-white p-0">
-					<h5 class="m-2">Assign Attendees</h5>
-					<a class="btn text-white" data-dismiss="modal" aria-label="Close" href="#">
-						<i class="fa fa-times"></i>
-					</a>
-				</div>
-				<div class="modal-body" style="padding:10%;">
-					<p>Please click the room name to assign the attendees to the respective rooms.</p>
-				</div>
-				<div class="modal-footer align-content-center align-items-center justify-content-center">
-					<button class="btn btn-dark" type="button" data-dismiss="modal">OK</button>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!-- /#modal for summary -->
-	<div class="modal fade" id="modalSummary" aria-hidden="true" role="dialog" tabindex="-1" data-toggle="modal" data-keyboard="false">
-		<div class="modal-dialog modal-dialog-centered" role="document">
-			<div class="modal-content">
-				<div class="modal-header bg-dark text-white p-0">
-					<h5 class="m-2">Meeting Details</h5>
-					<a class="btn text-white" data-dismiss="modal" aria-label="Close" href="#">
-						<i class="fa fa-times"></i>
-					</a>
-				</div>
-				<div class="modal-body">
-					<table class="table table-bordered table-hover table-sm" id="cost-center-table">
-						<tbody id="summary">
-							<!-- Adding an attribute for country  -->
-							<tr>
-								<th class="light">Meeting Cost Center</th>
-							</tr>
-							<tr>
-								<td id="meeting-cost"></td>
-							</tr>
-							<tr>
-								<th class="light">Meeting Title</th>
-							</tr>
-							<tr>
-								<td id="meeting-title"></td>
-							</tr>
-
-							<tr>
-								<th class="light">Meeting Agenda</th>
-							</tr>
-							<tr>
-								<td id="meeting-agenda"></td>
-							</tr>
-
-							<tr>
-								<th class="light">Dial in number for conference call</th>
-							</tr>
-							<tr>
-								<td id="meeting-dial"></td>
-							</tr>
-
-							<tr>
-								<th class="light">Minutes writer</th>
-							</tr>
-							<tr>
-								<td id="meeting-min"></td>
-							</tr>
-
-							<tr>
-								<th class="light">Meeting Type</th>
-							</tr>
-							<tr>
-								<td id="meeting-type"></td>
-							</tr>
-
-							<tr>
-								<th class="light">Meeting Memo</th>
-							</tr>
-							<tr>
-								<td id="meeting-memo"></td>
-							</tr>
-
-							<tr>
-								<th class="light">Meeting Time</th>
-							</tr>
-							<tr>
-								<td id="meeting-time"></td>
-							</tr>
-
-							<tr>
-								<th class="light">Meeting Attendee & Location</th>
-							</tr>
-							<tr>
-								<td id="meeting-att"></td>
-							</tr>
+  <nav class="nav-fill d-flex navbar-expand-lg navbar-nav w-100 px-3 pt-3" id="na">
+    <input class="btn btn-dark ftf-btn mb-2 mr-lg-2" id="inputCostCenter" type="button" value="Cost Center" data-toggle="modal" data-target="#modalCostCenter">
+    <select id="selectTitle" class="custom-select">
+    <option></option>
+    <option value="Conference">Conference</option>
+    <option value="Lecture">Lecture</option>
+    <option value="Meeting">Meeting</option>
+    <option value="Meeting" selected> Select the title for the meeting</option>
+                                 "
+  </select>
 
 
-						</tbody>
-					</table>
-				</div>
-				<div class="modal-footer align-content-center align-items-center justify-content-center">
-					<button class="btn btn-dark" type="button" data-dismiss="modal">Close</button>
-					<button class="btn btn-dark" type="button" data-dismiss="modal" id="send">Send Invite</button>
-				</div>
-			</div>
-		</div>
-	</div>
+    <div class="input-group" id="datet">
+      <input class="form-control" id="datetimepicker1" name="date1" type="text" placeholder="Select Start Time..." size="13" style="margin-right:2px;margin-left:4px;width:45%;">
+      <input class="form-control" id="datetimepicker3" name="dater1" type="text" placeholder="Select End Time..." size="13" style="margin-left:2px;margin-right:4px;width:45%;">
+    </div>
 
-	<!-- /#modal for assigning users to particular room -->
+    <input class="btn btn-dark ftf-btn mb-2" id="inputMeetingtype" type="button" value="Meeting type" data-toggle="modal" data-target="#modalMeetingType" style="margin-left:4px">
 
-	<!-- JavaScripts-->
-	<script src="assets/vendor/jquery/jquery.slim.js"></script>
-	<script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-	<script src="assets/vendor/moment/moment.min.js"></script>
-	<script src="assets/vendor/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
-	<script src="assets/vendor/fullcalendar/fullcalendar.min.js"></script>
-	<script src="assets/vendor/scheduler/scheduler.min.js"></script>
+  </nav>
 
-	<script src='fullcalendar/core/main.js'></script>
-	<script src='fullcalendar/interaction/main.js'></script>
-	<script src='fullcalendar/daygrid/main.js'></script>
-	<script src="https://momentjs.com/downloads/moment-timezone.js"></script>
-	<script src="https://momentjs.com/downloads/moment-timezone-with-data-10-year-range.js"></script>
-	<script src="assets/js/f2f.js"></script>
-	<script src="assets/js/disallow.js"></script>
+  <div class="container-fluid my-auto px-3">
+    <div class="form-row">
+      <div class="col-lg-6">
+        <div class="card border-0 rounded-0" id="selectAttendees">
+          <div class="card-body p-2">
+            <h4 class="text-center">Select Attendees</h4>
+            <div class="row">
+              <div class="col-4 input-add">
+                <div class="input-group">
+
+                  <div class="input-group-append">
+                    <button class="btn btn-dark" id="buttonPlus" type="button" data-toggle="modal" data-target="#modalAddAttendees" style="margin-right:4px"><i class="fa fa-plus"></i></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-12">
+                <div id="calendarOne"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /#selectAttendees -->
+      </div>
+      <div class="col-lg-6">
+        <div class="card border-0 rounded-0" id="selectConferenceRooms">
+          <div class="card-body p-2">
+            <h4 class="text-center">Select Conference Rooms</h4>
+            <div class="row">
+              <div class="col-4 input-add">
+                <div class="input-group">
+                  <div class="input-group-append">
+                    <button class="btn btn-dark" id="buttonPlus" type="button" data-toggle="modal" data-target="#modalAddRooms" style="margin-right:4px"><i class="fa fa-plus"></i></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-12">
+                <div id="calendarTwo"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /#selectConferenceRooms -->
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-3 mb-3">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text bg-dark ftf-btn text-white">Minutes Writer</span>
+          </div>
+          <select class="custom-select" id="selectMinutesWriter">
+     <option value="Amit" id="min1">Amit Jain</option>
+    </select>
+        </div>
+      </div>
+
+      <div class="col-lg-9 mb-3 text-right">
+        <button class="btn btn-outline-dark" data-target="#modalAgenda" data-toggle="modal" type="button">
+              <i class="fa fa-users"></i>
+              </button>
+        <button class="btn btn-outline-dark btn-file">
+              <i class="fa fa-upload"></i><input type="file">
+              </button>
+        <button class="btn btn-outline-dark" data-target="#modalMeetingMemo" data-toggle="modal" type="button">
+              <i class="fa fa-paperclip"></i>
+              </button>
+
+        <button class="btn btn-outline-dark" data-target="#modalDialIn" data-toggle="modal" type="button" id="dialButton">
+              <i class="fa fa-th" aria-hidden="true"></i>
+        </button>
+        <input class="btn btn-dark ftf-btn" id="sendInvite" type="button" value="Review Invite">
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-dark py-3 text-center">
+    <div class="container">
+      <ul class="list-inline mb-0">
+        <li class="list-inline-item mx-0"><a href="mailto:demouser@grccenter.com">demouser@grccenter.com</a></li>
+        <li class="list-inline-item mx-0"><a href="http://demo.grccenter.com">demo.grccenter.com</a></li>
+        <li class="list-inline-item mx-0">Version 5.09</li>
+        <li class="list-inline-item mx-0">GRC CENTER is available from Nov 12, 2012</li>
+      </ul>
+    </div>
+  </footer>
+
+<!-- MODALS BELOW -->
+
+  <div id="modalCostCenter" class="modal fade" aria-labelledby="modalCostCenterlabel" aria-hidden="true" role="dialog" tabindex="-1" data-toggle="modal" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-white p-0">
+          <h5 class="m-2">Meeting Cost Center</h5>
+          <a class="btn text-white" data-dismiss="modal" aria-label="Close" href="#">
+            <i class="fa fa-times"></i>
+          </a>
+        </div>
+        <div class="modal-body">
+          <div class="input-group mb-3">
+            <label class="col-form-label pr-2" for="filterby">Filter by</label>
+            <select class="custom-select" id="filterby" name="filterby">
+              <option value="1"></option>
+              <option value="2">PROJECT</option>
+              <option value="3">PROGRAM</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <select class="form-control" id="items" size="8"></select>
+          </div>
+        </div>
+        <div class="modal-footer align-content-center align-items-center justify-content-center">
+          <button class="btn btn-dark" type="button" data-dismiss="modal">Close</button>
+          <button class="btn btn-dark" type="button" data-dismiss="modal">Choose</button>
+        </div>
+      </div>
+    </div>
+  </div><!-- /#modalCostCenter -->
+
+  <div id="modalAgenda" class="modal fade" aria-labelledby="modalAgendalabel" aria-hidden="true" role="dialog" tabindex="-1" data-toggle="modal" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-white p-0">
+          <h5 class="m-2">Agenda</h5>
+          <a class="btn text-white" data-dismiss="modal" aria-label="Close" href="#">
+            <i class="fa fa-times"></i>
+          </a>
+        </div>
+        <div class="modal-body">
+          <div class="modal-header p-2">
+            <label class="h5 mb-0 py-1 bg-white" for="textareaAgenda">Agenda</label>
+            <div class="btn-group">
+              <button class="btn btn-outline-dark" id="addrow" type="button"><i class="fa fa-plus"></i></button>
+              <button class="btn btn-outline-dark" type="button" data-target="#modalFollowUpItems" data-toggle="modal" data-dismiss="modal"><i class="fa fa-comment"></i></button>
+            </div>
+          </div>
+          <div class="order-list d-block border pt-2" id="textareaAgenda" style="min-height: 6.6rem;"></div>
+        </div>
+        <div class="modal-footer align-content-center align-items-center justify-content-center">
+          <button class="btn btn-dark" type="button" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div><!-- /#modalAgenda -->
+
+  <div id="modalFollowUpItems" class="modal fade" aria-labelledby="modalFollowUpItemslabel" aria-hidden="true" role="dialog" tabindex="-1" data-toggle="modal" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-white p-0">
+          <h5 class="m-2">Select Follow Up items from Meetings</h5>
+          <a class="btn text-white" data-dismiss="modal" aria-label="Close" href="#">
+            <i class="fa fa-times"></i>
+          </a>
+        </div>
+        <div class="modal-body">
+          <div class="form-group input-group w-50">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Date</span>
+            </div>
+            <input class="form-control" id="datetimepicker2" name="datetimepicker2" type="text">
+          </div>
+          <div class="form-group">
+            <h5>Select a Meeting</h5>
+            <div class="form-control" id="textareaSelectMeeting" name="textareaSelectMeeting" style="height:100px">
+              <p style="display:none" id="check"><input id='define' type='checkbox'> 1. Define the WBS for this project</p>
+            </div>
+          </div>
+          <div class="form-group">
+            <h5>Select Agenda</h5>
+            <div class="form-control" id="textareaSelectAgenda" name="textareaSelectAgenda" style="height:100px">
+              <p style="display:none" id="non-striked"><input id='non-striked-input' type='checkbox'><span id="test">Test Agenda for demo purpose</span></p>
+              <p style="display:none" id="striked"><s><input type='checkbox' readonly>Striked Agenda for demo purpose</s></p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer align-content-center align-items-center justify-content-center">
+          <button class="btn btn-dark" type="button" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div><!-- /#modalFollowUpItems -->
+
+  <div id="modalMeetingMemo" class="modal fade" aria-labelledby="modalMeetingMemolabel" aria-hidden="true" role="dialog" tabindex="-1" data-toggle="modal" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-white p-0">
+          <h5 class="m-2">Meeting Memo</h5>
+          <a class="btn text-white" data-dismiss="modal" aria-label="Close" href="#">
+            <i class="fa fa-times"></i>
+          </a>
+        </div>
+        <div class="modal-body">
+          <div class="modal-header p-2">
+            <label class="h5 mb-0 py-1 bg-white" for="textareaMeetingMemo">Meeting Memo</label>
+          </div>
+          <textarea class="form-control" id="textareaMeetingMemo" rows="3" maxlength="250"></textarea>
+        </div>
+        <div class="modal-footer align-content-center align-items-center justify-content-center">
+          <button class="btn btn-dark" type="button" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div><!-- /#modalMeetingMemo -->
+
+  <div id="modalMeetingType" class="modal fade" aria-labelledby="modalMeetingTypelabel" aria-hidden="true" role="dialog" tabindex="-1" data-toggle="modal" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-white p-0">
+          <h5 class="m-2">Meeting Type</h5>
+          <a class="btn text-white" data-dismiss="modal" aria-label="Close" href="#">
+            <i class="fa fa-times"></i>
+          </a>
+        </div>
+        <div class="modal-body">
+          <div class="input-group">
+            <select class="form-control" id="available" size="8"></select>
+          </div>
+        </div>
+        <div class="modal-footer align-content-center align-items-center justify-content-center">
+          <button class="btn btn-dark" type="button" data-dismiss="modal">Close</button>
+          <button class="btn btn-dark" type="button" data-dismiss="modal">Choose</button>
+        </div>
+      </div>
+    </div>
+  </div><!-- /#modalMeetingType -->
+
+  <div id="modalAddAttendees" class="modal fade" aria-labelledby="modalAddAttendeeslabel" aria-hidden="true" role="dialog" tabindex="-1" data-toggle="modal" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-white p-0">
+          <h5 class="m-2">Select/Deselect Attendees</h5>
+          <a class="btn text-white" data-dismiss="modal" aria-label="Close" href="#">
+            <i class="fa fa-times"></i>
+          </a>
+        </div>
+        <div class="modal-body">
+          <table class="table table-bordered table-hover table-sm" id="cost-center-table">
+            <thead class="border-0">
+              <tr class="thead-light">
+                <th scope="col">#</th>
+                <th scope="col" class="w-50">Name</th>
+                <th scope="col" class="w-50">Location</th>
+              </tr>
+            </thead>
+            <tbody id="tbody1">
+              <!-- Adding an attribute for country  -->
+              <tr>
+                <td><input id="checkbox1" type="checkbox" city="Boston" eid="0"></td>
+                <td>Bharat Gupta</td>
+                <td>Boston (USA)</td>
+              </tr>
+              <tr>
+                <td><input id="checkbox2" type="checkbox" city="Mumbai" eid="1" checked></td>
+                <td>Amit Jain</td>
+                <td>Mumbai (India)</td>
+              </tr>
+              <tr>
+                <td><input id="checkbox3" type="checkbox" city="Mumbai" eid="2"></td>
+                <td>Ameya Pant</td>
+                <td>Mumbai (India)</td>
+              </tr>
+              <tr>
+                <td><input id="checkbox4" type="checkbox" city="Raleigh" eid="3"></td>
+                <td>Ketul Mehta</td>
+                <td>Raleigh (USA)</td>
+              </tr>
+              <tr>
+                <td><input id="checkbox5" type="checkbox" city="Raleigh" eid="4"></td>
+                <td>Judy Polska</td>
+                <td>Raleigh (USA)</td>
+              </tr>
+              <tr>
+                <td><input id="checkbox6" type="checkbox" city="Boston" eid="5"></td>
+                <td>Vivek Bhardwaj</td>
+                <td>Boston (USA)</td>
+              </tr>
+              <tr>
+                <td><input id="checkbox7" type="checkbox" city="Boston" eid="6"></td>
+                <td>Anjali Sharma</td>
+                <td>Boston (USA)</td>
+              </tr>
+              <tr>
+                <td><input id="checkbox8" type="checkbox" city="Boston" eid="7"></td>
+                <td>Tarun Bhatia</td>
+                <td>Boston (USA)</td>
+              </tr>
+              <tr>
+                <td><input id="checkbox9" type="checkbox" city="Boston" eid="8"></td>
+                <td>Amar Singh</td>
+                <td>Boston (USA)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-dark" data-dismiss="modal" id="addAtt">Select Attendees</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modalSettings" class="modal fade" aria-labelledby="modalAddAttendeeslabel" aria-hidden="true" role="dialog" tabindex="-1" data-toggle="modal" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-white p-0">
+          <h5 class="m-2">Save your personal preferrences</h5>
+          <a class="btn text-white" data-dismiss="modal" aria-label="Close" href="#">
+            <i class="fa fa-times"></i>
+          </a>
+        </div>
+        <div class="modal-body">
+          <table class="table table-bordered table-hover table-sm" id="cost-center-table">
+            <tbody id="tbody1">
+              <!-- Adding an attribute for country  -->
+              <tr>
+                <td>Dial In Number</td>
+                <td><input class="form-control" type="number" id="dialIn"></td>
+              </tr>
+              <tr>
+                <td>Extension</td>
+                <td><input class="form-control" type="number" id="extension"></td>
+              </tr>
+              <tr>
+                <td>Desktop sharing url</td>
+                <td><input class="form-control" type="text" id="url"></td>
+              </tr>
+              <tr id="office-time-div">
+                <td>Preffered office time</td>
+                <td><input class="form-control" type="text" id="office-time" style="width:48%;display:inline-block">
+                  <input class="form-control" type="text" id="office-time2" style="width:48%;display:inline-block"></td>
+              </tr>
+              <tr>
+                <td>Preffered lunch time</td>
+                <td><input class="form-control" type="text" id="lunch-time" style="width:48%;display:inline-block">
+                  <input class="form-control" type="text" id="lunch-time2" style="width:48%;display:inline-block"></td>
+              </tr>
+              <tr>
+                <td>Vacation</td>
+                <td><input class="form-control" type="text" id="vacation" style="width:48%;display:inline-block">
+                  <input class="form-control" type="text" id="vacation2" style="width:48%;display:inline-block"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-dark" id="resetSettigs">Reset</button>
+          <button type="button" class="btn btn-dark" data-dismiss="modal">Save</button>
+        </div>
+      </div>
+    </div>
+  </div><!-- /#modalAddAttendees -->
+
+  <div id="modalAddRooms" class="modal fade" aria-labelledby="modalAddRoomslabel" aria-hidden="true" role="dialog" tabindex="-1" data-toggle="modal" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-white p-0">
+          <h5 class="m-2">Select/Deselect Rooms</h5>
+          <a class="btn text-white" data-dismiss="modal" aria-label="Close" href="#">
+            <i class="fa fa-times"></i>
+          </a>
+        </div>
+        <div class="modal-body">
+          <table class="table table-bordered table-hover table-sm" id="cost-center-table">
+            <thead class="border-0">
+              <tr class="thead-light">
+                <th scope="col">#</th>
+                <th scope="col" class="w-50">Name</th>
+                <th scope="col" class="w-50">Location</th>
+              </tr>
+            </thead>
+            <tbody id="tbody2">
+              <tr>
+                <td><input id="checkbox1" type="checkbox" city="Mumbai"></td>
+                <td>Mumbai Meeting Room</td>
+                <td>Mumbai (India)</td>
+              </tr>
+              <tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-dark" data-dismiss="modal" id="addRoom"> Select Rooms</button>
+        </div>
+      </div>
+    </div>
+  </div><!-- /#modalAddRooms -->
+
+  <div id="modalError" class="modal fade" aria-labelledby="modalAddAttendeeslabel" aria-hidden="true" role="dialog" tabindex="-1" data-toggle="modal" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content" style="text-align: left">
+        <div class="modal-header bg-dark text-white p-0">
+          <h5 class="m-2">Please set the following parameters:</h5>
+          <a class="btn text-white" data-dismiss="modal" aria-label="Close" href="#">
+            <i class="fa fa-times"></i>
+          </a>
+        </div>
+        <div class="modal-body" style="text-align:left">
+          <ul id="error-body"></ul>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-dark" type="button" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div><!-- /#modal for errors -->
+
+  <div id="modalAssignUsers" class="modal fade" aria-labelledby="modalMeetingTypelabel" aria-hidden="true" role="dialog" tabindex="-1" data-toggle="modal" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-white p-0">
+          <h5 class="m-2">Assign Users to this room</h5>
+          <a class="btn text-white" data-dismiss="modal" aria-label="Close" href="#">
+            <i class="fa fa-times"></i>
+          </a>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-5">
+              <label for="available">Available</label>
+            </div>
+            <div class="col-5 offset-2 pl-0">
+              <label for="selected">Assigned</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-5 pr-0">
+              <select class="form-control" id="availableUsers" multiple></select>
+            </div>
+            <div class="col-2 my-auto text-center">
+              <button class="btn btn-outline-secondary" id="user-btn-add" type="button"><i class="fa fa-arrow-right"></i></button>
+              <button class="btn btn-outline-secondary" id="user-btn-remove" type="button"><i class="fa fa-arrow-left"></i></button>
+            </div>
+            <div class="col-5 pl-0">
+              <select class="form-control" id="selectedUsers" multiple></select>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer align-content-center align-items-center justify-content-center">
+          <button class="btn btn-dark" type="button" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modalDialIn" class="modal fade" aria-labelledby="modalDialIn" aria-hidden="true" role="dialog" tabindex="-1" data-toggle="modal" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-white p-0">
+          <h5 class="m-2">Please set the dial in number</h5>
+          <a class="btn text-white" data-dismiss="modal" aria-label="Close" href="#">
+            <i class="fa fa-times"></i>
+          </a>
+        </div>
+        <div class="modal-body" style="padding:10%;">
+          <p id="dialModalBody"></p>
+        </div>
+        <div class="modal-footer align-content-center align-items-center justify-content-center">
+          <button class="btn btn-dark" type="button" data-dismiss="modal" data-toggle="modal" data-target="#modalSettings" id="ok">OK</button>
+
+          <button class="btn btn-dark" type="button" data-dismiss="modal" id="okclose" style="display:none">OK</button>
+
+          <button class="btn btn-dark" id="pref-button" type="button" data-dismiss="modal" data-toggle="modal" data-target="#modalSettings" style="display:none">Preferences</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modalRoomSelect" class="modal fade" aria-labelledby="modalDialIn" aria-hidden="true" role="dialog" tabindex="-1" data-toggle="modal" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-white p-0">
+          <h5 class="m-2">Assign Attendees</h5>
+          <a class="btn text-white" data-dismiss="modal" aria-label="Close" href="#">
+            <i class="fa fa-times"></i>
+          </a>
+        </div>
+        <div class="modal-body" style="padding:10%;">
+          <p>Please click the room name to assign the attendees to the respective rooms.</p>
+        </div>
+        <div class="modal-footer align-content-center align-items-center justify-content-center">
+          <button class="btn btn-dark" type="button" data-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div><!-- /#modal for summary -->
+
+  <div id="modalSummary" class="modal fade" aria-hidden="true" role="dialog" tabindex="-1" data-toggle="modal" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-white p-0">
+          <h5 class="m-2">Meeting Details</h5>
+          <a class="btn text-white" data-dismiss="modal" aria-label="Close" href="#">
+            <i class="fa fa-times"></i>
+          </a>
+        </div>
+        <div class="modal-body">
+          <table class="table table-bordered table-hover table-sm" id="cost-center-table">
+            <tbody id="summary">
+              <!-- Adding an attribute for country  -->
+              <tr>
+                <th class="light">Meeting Cost Center</th>
+              </tr>
+              <tr>
+                <td id="meeting-cost"></td>
+              </tr>
+              <tr>
+                <th class="light">Meeting Title</th>
+              </tr>
+              <tr>
+                <td id="meeting-title"></td>
+              </tr>
+              <tr>
+                <th class="light">Meeting Agenda</th>
+              </tr>
+              <tr>
+                <td id="meeting-agenda"></td>
+              </tr>
+
+              <tr>
+                <th class="light">Dial in number for conference call</th>
+              </tr>
+              <tr>
+                <td id="meeting-dial"></td>
+              </tr>
+
+              <tr>
+                <th class="light">Minutes writer</th>
+              </tr>
+              <tr>
+                <td id="meeting-min"></td>
+              </tr>
+
+              <tr>
+                <th class="light">Meeting Type</th>
+              </tr>
+              <tr>
+                <td id="meeting-type"></td>
+              </tr>
+
+              <tr>
+                <th class="light">Meeting Memo</th>
+              </tr>
+              <tr>
+                <td id="meeting-memo"></td>
+              </tr>
+
+              <tr>
+                <th class="light">Meeting Time</th>
+              </tr>
+              <tr>
+                <td id="meeting-time"></td>
+              </tr>
+
+              <tr>
+                <th class="light">Meeting Attendee & Location</th>
+              </tr>
+              <tr>
+                <td id="meeting-att"></td>
+              </tr>
+
+
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-footer align-content-center align-items-center justify-content-center">
+          <button class="btn btn-dark" type="button" data-dismiss="modal">Close</button>
+          <button class="btn btn-dark" type="button" data-dismiss="modal" id="send">Send Invite</button>
+        </div>
+      </div>
+    </div>
+  </div><!-- /#modal for assigning users to particular room -->
+
+  <!-- JavaScripts-->
+  <script src="assets/vendor/jquery/jquery.slim.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/vendor/moment/moment.min.js"></script>
+  <script src="assets/vendor/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+  <script src="assets/vendor/fullcalendar/fullcalendar.min.js"></script>
+  <script src="assets/vendor/scheduler/scheduler.min.js"></script>
+
+  <script src='fullcalendar/core/main.js'></script>
+  <script src='fullcalendar/interaction/main.js'></script>
+  <script src='fullcalendar/daygrid/main.js'></script>
+  <script src="https://momentjs.com/downloads/moment-timezone.js"></script>
+  <script src="https://momentjs.com/downloads/moment-timezone-with-data-10-year-range.js"></script>
+  <script src="assets/js/f2f.js"></script>
+  <script src="assets/js/disallow.js"></script>
 
 </body>
 </html>
