@@ -27,7 +27,11 @@ Table of Content:
 
 /* 2. General Styles
 -------------------------------- */
-
+.office-time {
+    width: 141px;
+    display: inline-block;
+    margin-right: 1px;
+}
 html,
 body {
     color: #595b61;
