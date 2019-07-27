@@ -18,7 +18,14 @@ $(function() {
     // $("#office-time2").datetimepicker({
     //     minDate: moment()
     // });
-
+    function isNumber(evt) {
+        evt = (evt) ? evt : window.event;
+        var charCode = (evt.which) ? evt.which : evt.keyCode;
+        if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+            return false;
+        }
+        return true;
+    }
     $("#datetimepicker1").on("dp.change", function(e) {
 
         var min = moment($("#datetimepicker1").val()).add(15, 'minutes');
@@ -729,6 +736,24 @@ $(document).ready(function() {
         $(this).closest("div").remove();
         counter -= 1
     });
+});
+
+$(document).ready(function() {
+    var counter = 0;
+
+    $("#addOfficeTime").on("click", function() {
+        var cols = "";
+        cols += '<input class="form-control office-time" type="text" name="office-time' + counter + '" style="margin-top:4px;"><input class="form-control office-time" style="margin-left: 4px;margin-top: 4px;margin-right: 2px;" type="text" name="office-time' + counter + '">';
+        cols += '<button class="btn" type="button" style="margin-top:4px;"><i class="fa fa-times-circle fa-lg close text-danger my-auto"></i></button>';
+        $("#office-time-div").append(cols);
+        counter++;
+        if (counter >= 2) {
+            $("#addOfficeTime").attr("disabled", "disabled");
+        }
+
+    });
+
+
 });
 
 
