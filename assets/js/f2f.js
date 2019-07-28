@@ -846,6 +846,7 @@ $(document).ready(function() {
         if (!$(".office-time").val()) {
             $("#error").append('<p style="color:red">Please insert office time</p>');
         } else {
+            var diff = 0;
             for (i = 0; i < $(".office-time").length; i = i + 2) {
                 var error = "";
                 var e = i + 1;
@@ -854,7 +855,7 @@ $(document).ready(function() {
                 } else {
                     var start = moment($(".office-time[name='office-time" + i + "']").val(), "hh:mm");
                     var end = moment($(".office-time[name='office-time" + e + "']").val(), "hh:mm");
-                    var diff = end.diff(start);
+                    diff = diff + end.diff(start);
                 }
                 if (diff != 28800000) {
                     error += '<p style="color:red">Total office time should be 8 hours</p>';
