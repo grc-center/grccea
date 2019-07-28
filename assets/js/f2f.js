@@ -790,73 +790,88 @@ $(document).ready(function() {
 
     });
 
+    function checkDial() {
+        // if (!$("#code").val()) {
+        //     $("#error").append('<p style="color:red">Please insert country code In</p>');
+        // }
+        // if (!$("#extension").val()) {
+        //     $("#error").append('<p style="color:red">Please insert extension</p>');
+        // }
+        if (!$("#dialIn").val()) {
+            $("#error").append('<p style="color:red">Please insert dial In</p>');
+        } else if ($("#dialIn").val().length != 10) {
+            $("#error").append('<p style="color:red">Dial In must contain 10 numbers</p>');
+        }
+    }
 
     function check() {
-        var error = $("#error").empty();
-        if ($("#lunch-time").val() >= $("#lunch-time2").val()) {
-            error.append('<p style="color:red">End of lunch must be later than start</p>');
+        var error = $("#error");
+        if (!$("#lunch-time").val()) {
+            error.append('<p style="color:red">Please insert lunch start</p>');
+        } else if (!$("#lunch-time2").val()) {
+            error.append('<p style="color:red">Please insert lunch end</p>');
+        } else {
+            if ($("#lunch-time").val() >= $("#lunch-time2").val()) {
+                error.append('<p style="color:red">End of lunch must be later than start</p>');
+            }
+            if ($("#lunch-time").val().substr(0, 2) > 23 || $("#lunch-time").val().substr(3, 2) > 59) {
+                error.append('<p style="color:red">Insert correct time for lunch start</p>');
+            }
+            if ($("#lunch-time2").val().substr(0, 2) > 23 || $("#lunch-time2").val().substr(3, 2) > 59) {
+                error.append('<p style="color:red">Insert correct time for lunch end</p>');
+            }
         }
-        if ($("#lunch-time").val().substr(0, 2) > 23 || $("#lunch-time").val().substr(3, 2) > 59) {
-            error.append('<p style="color:red">Insert correct time for lunch start</p>');
-        }
-        if ($("#lunch-time2").val().substr(0, 2) > 23 || $("#lunch-time2").val().substr(3, 2) > 59) {
-            error.append('<p style="color:red">Insert correct time for lunch end</p>');
-        }
-
     }
 
     function checkodd() {
-        var error = $("#error3").empty();
-        if ($("#odd-time").val() >= $("#odd-time2").val()) {
-            error.append('<p style="color:red">End of odd time must be later than start</p>');
+        var error = $("#error");
+        if (!$("#odd-time").val()) {
+            error.append('<p style="color:red">Please insert odd time start</p>');
+        } else if (!$("#odd-time2").val()) {
+            error.append('<p style="color:red">Please insert odd time end</p>');
+        } else {
+            if ($("#odd-time").val() >= $("#odd-time2").val()) {
+                error.append('<p style="color:red">End of odd time must be later than start</p>');
+            }
+            if ($("#odd-time").val().substr(0, 2) > 23 || $("#odd-time").val().substr(3, 2) > 59) {
+                error.append('<p style="color:red">Insert correct odd time start</p>');
+            }
+            if ($("#odd-time2").val().substr(0, 2) > 23 || $("#odd-time2").val().substr(3, 2) > 59) {
+                error.append('<p style="color:red">Insert correct odd time for end</p>');
+            }
         }
-        if ($("#odd-time").val().substr(0, 2) > 23 || $("#odd-time").val().substr(3, 2) > 59) {
-            error.append('<p style="color:red">Insert correct odd time start</p>');
-        }
-        if ($("#odd-time2").val().substr(0, 2) > 23 || $("#odd-time2").val().substr(3, 2) > 59) {
-            error.append('<p style="color:red">Insert correct odd time for end</p>');
-        }
-
     }
 
     function checkOffice() {
-        $("#error2").empty();
-        var hours;
-        for (i = 0; i < $(".office-time").length; i = i + 2) {
-            var error = "";
-            var e = i + 1;
-            if ($(".office-time[name='office-time" + i + "']").val() > $(".office-time[name='office-time" + e + "']").val()) {
-                error = 1;
-            } else {
-                var start = moment($(".office-time[name='office-time" + i + "']").val(), "hh:mm");
-                var end = moment($(".office-time[name='office-time" + e + "']").val(), "hh:mm");
-                var diff = end.diff(start);
+        if (!$(".office-time").val()) {
+            $("#error").append('<p style="color:red">Please insert office time</p>');
+        } else {
+            for (i = 0; i < $(".office-time").length; i = i + 2) {
+                var error = "";
+                var e = i + 1;
+                if ($(".office-time[name='office-time" + i + "']").val() > $(".office-time[name='office-time" + e + "']").val()) {
+                    error += '<p style="color:red">End of office-time must be later than start</p>';
+                } else {
+                    var start = moment($(".office-time[name='office-time" + i + "']").val(), "hh:mm");
+                    var end = moment($(".office-time[name='office-time" + e + "']").val(), "hh:mm");
+                    var diff = end.diff(start);
+                }
+                if (diff != 28800000) {
+                    error += '<p style="color:red">Total office time should be 8 hours</p>';
+                }
+                if ($(".office-time[name='office-time" + i + "']").val().substr(0, 2) > 23 || $(".office-time[name='office-time" + i + "']").val().substr(3, 2) > 59) {
+                    error += '<p style="color:red">Insert correct time for office time start</p>';
+                }
+                if ($(".office-time[name='office-time" + e + "']").val().substr(0, 2) > 23 || $(".office-time[name='office-time" + e + "']").val().substr(3, 2) > 59) {
+                    error += '<p style="color:red">Insert correct time for office time end</p>';
+                }
+                var i2 = i + 2;
+                var i1 = i - 1
+                if ($(".office-time[name='office-time" + e + "']").val() > $(".office-time[name='office-time" + i2 + "']").val() || $(".office-time[name='office-time" + i + "']").val() < $(".office-time[name='office-time" + i1 + "']").val()) {
+                    error += '<p style="color:red">Start of another period is earlier that end of previous one in office time</p>';
+                }
             }
-            if (diff != 28800000) {
-                error = 4;
-            }
-            if ($(".office-time[name='office-time" + i + "']").val().substr(0, 2) > 23 || $(".office-time[name='office-time" + i + "']").val().substr(3, 2) > 59) {
-                error = 2;
-            }
-            if ($(".office-time[name='office-time" + e + "']").val().substr(0, 2) > 23 || $(".office-time[name='office-time" + e + "']").val().substr(3, 2) > 59) {
-                error = 3;
-            }
-            var i2 = i + 2;
-            var i1 = i - 1
-            if ($(".office-time[name='office-time" + e + "']").val() > $(".office-time[name='office-time" + i2 + "']").val() || $(".office-time[name='office-time" + i + "']").val() > $(".office-time[name='office-time" + i1 + "']").val()) {
-                error = 5;
-            }
-        }
-        if (error == "1") {
-            $("#error2").append('<p style="color:red">End of office-time must be later than start</p>');
-        } else if (error == "2") {
-            $("#error2").append('<p style="color:red">Insert correct time for office time start</p>');
-        } else if (error == "3") {
-            $("#error2").append('<p style="color:red">Insert correct time for office time end</p>');
-        } else if (error == "4") {
-            $("#error2").append('<p style="color:red">Total office time should be 8 hours</p>');
-        } else if (error == "5") {
-            $("#error2").append('<p style="color:red">Start of another period is earlier that end of previous one in office time</p>');
+            $("#error").append(error);
         }
     }
 
@@ -867,21 +882,25 @@ $(document).ready(function() {
     $(".deviated-time").mask('00:00');
     $(".time-mask").mask('00:00');
     $(".date-mask").mask('00/00/0000');
-    //LUNCH TIME
-    $("#lunch-time").change(function() {
+    // //LUNCH TIME
+    // $("#lunch-time").change(function() {
+    //     check();
+    // })
+    // $("#lunch-time2").change(function() {
+    //         check();
+    //     })
+    //     //OFFICE TIME
+    // $('#office-time-div').on('change', '.office-time', function() {
+    //     checkOffice();
+    // })
+
+    $("#save").click(function() {
+        $("#error").empty();
+        checkDial();
         check();
-    })
-    $("#lunch-time2").change(function() {
-            check();
-        })
-        //OFFICE TIME
-    $('#office-time-div').on('change', '.office-time', function() {
         checkOffice();
+        checkodd();
     })
-
-    //ODD HOUR
-
-    //DEVIATED DATE
 
 });
 
