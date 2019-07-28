@@ -397,42 +397,57 @@
                     </a>
                 </div>
                 <div class="modal-body">
-                    <table class="table table-bordered table-hover table-sm" id="cost-center-table">
-                        <tbody id="tbody1">
-                            <!-- Adding an attribute for country  -->
-                            <tr>
-                                <td>Dial In Number</td>
-                                <td><input class="form-control" type="text" onkeypress="return isNumber(event)" id="dialIn"></td>
-                            </tr>
-                            <tr>
-                                <td>Extension</td>
-                                <td><input class="form-control" type="text" onkeypress="return isNumber(event)" id="extension"></td>
-                            </tr>
-                            <tr>
-                                <td>Desktop sharing url</td>
-                                <td><input class="form-control" type="text" id="url"></td>
-                            </tr>
-                            <tr>
-                                <td>Preffered office time</td>
-                                <td id="office-time-div">
-                                    <input class="form-control office-time" type="text" id="office-time">
-                                    <input class="form-control office-time" type="text" id="office-time2">
-                                    <button class="btn btn-dark" id="addOfficeTime" type="button"><i class="fa fa-plus"></i></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Preffered lunch time</td>
-                                <td><input class="form-control" type="text" id="lunch-time" style="width:48%;display:inline-block">
-                                    <input class="form-control" type="text" id="lunch-time2" style="width:48%;display:inline-block"></td>
-                            </tr>
-                            <tr>
-                                <td>Vacation</td>
-                                <td><input class="form-control" type="text" id="vacation" style="width:48%;display:inline-block">
-                                    <input class="form-control" type="text" id="vacation2" style="width:48%;display:inline-block"></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div style="border: 1px solid #dee2e6;padding:0.5rem;overflow:hidden">
+                        <!-- Adding an attribute for country  -->
+
+                        <div class="lined">Dial In Number</div>
+                        <input class="form-control" type="text" onkeypress="return isNumber(event)" placeholder="Country Code" style="width:25%;display: inline-block;margin-right:2px;" id="code">
+                        <input class="form-control" type="text" onkeypress="return isNumber(event)" placeholder="Phone Number" style="width:45%;display: inline-block;margin-right:2px;" id="dialIn">
+                        <input class="form-control" type="text" onkeypress="return isNumber(event)" placeholder="Extension" style="width:27%;display: inline-block" id="extension">
+
+
+                        <div class="lined">Desktop sharing url</div>
+                        <input class="form-control" type="text" id="url" placeholder="URL">
+
+                        <div class="lined">Preffered lunch time (24 Hours Format)</div>
+                        <input class="form-control" type="text" id="lunch-time" style="width:48%;display:inline-block" placeholder="From Hrs.">
+                        <input class="form-control" type="text" id="lunch-time2" style="width:48%;display:inline-block" placeholder="To Hrs.">
+
+
+                        <div class="lined">Preffered office time (24 Hours Format)</div>
+                        <div id="office-time-div">
+                            <input class="form-control office-time" type="text" name="office-time0" placeholder="From Hrs.">
+                            <input class="form-control office-time" type="text" name="office-time1" placeholder="To Hrs.">
+                            <button class="btn btn-dark" id="addOfficeTime" type="button"><i class="fa fa-plus"></i></button>
+                        </div>
+
+                        <div class="lined">Odd Hour (24 Hours Format)</div>
+                        <input class="form-control time-mask odd-time" type="text" id="odd-time" style="width:48%;display:inline-block" placeholder="From Hrs.">
+                        <input class="form-control time-mask odd-time" type="text" id="odd-time2" style="width:48%;display:inline-block" placeholder="To Hrs.">
+
+                        <div class="lined">Deviated Shedule</div>
+                        <input class="form-control date-mask" type="text" id="deviated" style="width:48%;display:inline-block" placeholder="From Date">
+                        <input class="form-control date-mask" type="text" id="deviated2" style="width:48%;display:inline-block" placeholder="From Date">
+
+                        <div style="padding-left:5px">24 Hours Format</div>
+                        <div id="deviated-time-div">
+                            <input class="form-control time-mask deviated-time" name="deviated0" type="text" placeholder="From Hrs.">
+                            <input class="form-control time-mask deviated-time" name="deviated1" type="text" placeholder="To Hrs.">
+                            <button class="btn btn-dark" id="addDeviatedTime" type="button"><i class="fa fa-plus"></i></button>
+                        </div>
+
+                        <div class="lined">Vacation</div>
+                        <input class="form-control date-mask" type="text" id="vacation" style="width:48%;display:inline-block" placeholder="From Date">
+                        <input class="form-control date-mask" type="text" id="vacation2" style="width:48%;display:inline-block" placeholder="From Date">
+                    </div>
+                    <div id="error"></div>
+                    <div id="error2"></div>
+                    <div id="error3"></div>
+                    <div id="error4"></div>
+                    <div id="error4.2"></div>
+                    <div id="error5"></div>
                 </div>
+
                 <div class="modal-footer">
                     <button type="button" class="btn btn-dark" id="resetSettigs">Reset</button>
                     <button type="button" class="btn btn-dark" data-dismiss="modal">Save</button>
@@ -690,6 +705,11 @@
     <script src='fullcalendar/daygrid/main.js'></script>
     <script src="https://momentjs.com/downloads/moment-timezone.js"></script>
     <script src="https://momentjs.com/downloads/moment-timezone-with-data-10-year-range.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+
+
+
 
     <script src="assets/js/disallow.js"></script>
     <script src="assets/js/f2f.js"></script>
