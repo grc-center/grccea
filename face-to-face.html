@@ -402,7 +402,7 @@
 
                         <div class="lined">Dial In Number</div>
                         <input class="form-control" type="text" onkeypress="return isNumber(event)" placeholder="Country Code" style="width:25%;display: inline-block;margin-right:2px;" id="code">
-                        <input class="form-control" type="text" onkeypress="return isNumber(event)" placeholder="Phone Number" style="width:45%;display: inline-block;margin-right:2px;" id="dialIn">
+                        <input class="form-control" type="text" onkeypress="return isNumber(event)" placeholder="Phone Number" style="width:45%;display: inline-block;margin-right:2px;" id="dialIn" maxlength="10">
                         <input class="form-control" type="text" onkeypress="return isNumber(event)" placeholder="Extension" style="width:27%;display: inline-block" id="extension">
 
 
@@ -441,16 +441,11 @@
                         <input class="form-control date-mask" type="text" id="vacation2" style="width:48%;display:inline-block" placeholder="From Date">
                     </div>
                     <div id="error"></div>
-                    <div id="error2"></div>
-                    <div id="error3"></div>
-                    <div id="error4"></div>
-                    <div id="error4.2"></div>
-                    <div id="error5"></div>
                 </div>
 
                 <div class="modal-footer">
                     <button type="button" class="btn btn-dark" id="resetSettigs">Reset</button>
-                    <button type="button" class="btn btn-dark" data-dismiss="modal">Save</button>
+                    <button type="button" class="btn btn-dark" id="save">Save</button>
                 </div>
             </div>
         </div>
