@@ -27,11 +27,57 @@ Table of Content:
 
 /* 2. General Styles
 -------------------------------- */
+
 .office-time {
-    width: 141px;
+    width: 198px;
     display: inline-block;
     margin-right: 1px;
 }
+
+.deviated-time {
+    width: 198px;
+    display: inline-block;
+    margin-right: 1px;
+}
+
+.lined {
+    position: relative;
+    z-index: 0;
+    padding-left: 15px;
+}
+
+.lined:before {
+    content: '';
+    display: inline-block;
+    width: 15px;
+    height: 1px;
+    background: #dee2e6;
+    z-index: -1;
+    position: relative;
+    vertical-align: middle;
+}
+
+.lined:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+    height: 1px;
+    background: #dee2e6;
+    z-index: -1;
+    position: relative;
+    vertical-align: middle;
+}
+
+.lined:before {
+    right: 5px;
+    margin: 0 0 0 -17px;
+}
+
+.lined:after {
+    left: 5px;
+    margin: 0 -100% 0 0;
+}
+
 html,
 body {
     color: #595b61;
