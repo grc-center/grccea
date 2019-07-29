@@ -768,7 +768,7 @@ $(document).ready(function() {
     $("#addDeviatedTime").on("click", function() {
         var cols = "";
         var counter2 = counter + 1;
-        cols += '<div class="deviated-time-row"><input class="form-control deviated-time" type="text" name="office-time' + counter + '" style="margin-top:4px;" placeholder="From Hrs."><input class="form-control deviated-time" style="margin-left: 4px;margin-top: 4px;margin-right: 2px;" type="text" name="office-time' + counter2 + '" placeholder="To Hrs.">';
+        cols += '<div class="deviated-time-row"><input class="form-control deviated-time" type="text" name="deviated-time' + counter + '" style="margin-top:4px;" placeholder="From Hrs."><input class="form-control deviated-time" style="margin-left: 4px;margin-top: 4px;margin-right: 2px;" type="text" name="deviated-time' + counter2 + '" placeholder="To Hrs.">';
         cols += '<button class="btn btn-circle" type="button" style="margin-top:4px;"><i class="fa fa-times-circle fa-lg close text-danger my-auto"></i></button></div>';
         $("#deviated-time-div").append(cols);
         counter = counter + 2;
@@ -876,6 +876,82 @@ $(document).ready(function() {
         }
     }
 
+    function checkDeviatedDate() {
+        var error = $("#error");
+        if (!$("#deviated").val()) {
+            error.append('<p style="color:red">Please insert deviated shedule start date</p>');
+        } else if (!$("#deviated2").val()) {
+            error.append('<p style="color:red">Please insert deviated shedule end date</p>');
+        } else {
+            if (moment($("#deviated").val()).isAfter(moment($("#deviated2").val()))) {
+                error.append('<p style="color:red">End of deviated shedule must be later than start</p>');
+            }
+            if ($("#deviated").val().substr(0, 2) > 31 || $("#deviated").val().substr(3, 2) > 12) {
+                error.append('<p style="color:red">Insert correct deviated shedule start time</p>');
+            } else if (moment($("#deviated").val(), "DD/MM/YYYY").isBefore(moment())) {
+                error.append('<p style="color:red">Deviated shedule start time must be in the future</p>');
+            }
+            if ($("#deviated2").val().substr(0, 2) > 31 || $("#deviated2").val().substr(3, 2) > 12 || $("#deviated2").val().substr(6, 4) < 2019) {
+                error.append('<p style="color:red">Insert correct deviated shedule end time</p>');
+            }
+        }
+    }
+
+    function checkDeviatedTime() {
+        if (!$(".deviated-time").val()) {
+            $("#error").append('<p style="color:red">Please insert deviated time</p>');
+        } else {
+            var diff = 0;
+            for (i = 0; i < $(".deviated-time").length; i = i + 2) {
+                var error = "";
+                var e = i + 1;
+                if ($(".deviated-time[name='deviated-time" + i + "']").val() > $(".deviated-time[name='deviated-time" + e + "']").val()) {
+                    error += '<p style="color:red">End of deviated-time must be later than start</p>';
+                } else {
+                    var start = moment($(".deviated-time[name='deviated-time" + i + "']").val(), "hh:mm");
+                    var end = moment($(".deviated-time[name='deviated-time" + e + "']").val(), "hh:mm");
+                    diff = diff + end.diff(start);
+                }
+                if (diff != 28800000) {
+                    error += '<p style="color:red">Total deviated time should be 8 hours</p>';
+                }
+                if ($(".deviated-time[name='deviated-time" + i + "']").val().substr(0, 2) > 23 || $(".deviated-time[name='deviated-time" + i + "']").val().substr(3, 2) > 59) {
+                    error += '<p style="color:red">Insert correct time for deviated time start</p>';
+                }
+                if ($(".deviated-time[name='deviated-time" + e + "']").val().substr(0, 2) > 23 || $(".deviated-time[name='deviated-time" + e + "']").val().substr(3, 2) > 59) {
+                    error += '<p style="color:red">Insert correct time for deviated time end</p>';
+                }
+                var i2 = i + 2;
+                var i1 = i - 1
+                if ($(".deviated-time[name='deviated-time" + e + "']").val() > $(".deviated-time[name='deviated-time" + i2 + "']").val() || $(".deviated-time[name='deviated-time" + i + "']").val() < $(".deviated-time[name='deviated-time" + i1 + "']").val()) {
+                    error += '<p style="color:red">Start of another period is earlier that end of previous one in deviated time</p>';
+                }
+            }
+            $("#error").append(error);
+        }
+    }
+
+    function checkVacation() {
+        var error = $("#error");
+        if (!$("#vacation").val()) {
+            error.append('<p style="color:red">Please insert vacation start date</p>');
+        } else if (!$("#vacation2").val()) {
+            error.append('<p style="color:red">Please insert vacation end date</p>');
+        } else {
+            if (moment($("#vacation").val()).isAfter(moment($("#vacation2").val()))) {
+                error.append('<p style="color:red">End of vacation must be later than start</p>');
+            }
+            if ($("#vacation").val().substr(0, 2) > 31 || $("#vacation").val().substr(3, 2) > 12) {
+                error.append('<p style="color:red">Insert correct vacation start time</p>');
+            } else if (moment($("#vacation").val(), "DD/MM/YYYY").isBefore(moment())) {
+                error.append('<p style="color:red">Vacation start time must be in the future</p>');
+            }
+            if ($("#vacation2").val().substr(0, 2) > 31 || $("#vacation2").val().substr(3, 2) > 12 || $("#vacation2").val().substr(6, 4) < 2019) {
+                error.append('<p style="color:red">Insert correct vacation end time</p>');
+            }
+        }
+    }
+
     //MASKS FOR FORMS
     $("#lunch-time").mask('00:00');
     $("#lunch-time2").mask('00:00');
@@ -901,6 +977,12 @@ $(document).ready(function() {
         check();
         checkOffice();
         checkodd();
+        checkDeviatedDate();
+        checkDeviatedTime();
+        checkVacation();
+        if ($("#error").html() == "") {
+            $("#modalSettings").modal("hide");
+        }
     })
 
 });
