@@ -925,6 +925,80 @@ footer .list-inline-item:last-child {
 }
 
 
+/* Modals*/
+
+.padding-b {
+    padding: 10px 0 10px 0;
+}
+
+.divider-left-half:before {
+    position: absolute;
+    top: 30%;
+    left: 0;
+    content: "";
+    width: 0;
+    height: 70%;
+    border-left: 1px dashed #212529;
+}
+
+.divider-left-bottom:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    width: 0;
+    height: 20%;
+    border-left: 1px dashed #212529;
+}
+
+@media(min-width:992px) {
+    .line-start:before {
+        position: absolute;
+        content: "";
+        width: 0;
+        margin-left: 3px;
+        margin-top: 1.2rem;
+        height: 1.8rem;
+        border-left: 1px dashed #212529;
+    }
+}
+
+.divider-left {
+    border-left: 1px dashed #212529;
+}
+
+.divider-bottom:after {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -50px;
+    content: "";
+    width: 100px;
+    height: 0;
+    border-bottom: 1px dashed #212529;
+}
+
+@media(max-width:600px) {
+    #modalMyDecisions p,
+    #modalMyDecisions {
+        font-size: 8px;
+    }
+}
+
+@media(max-width:992px) {
+    .divider-bottom:after {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -15px;
+        content: "";
+        width: 30px;
+        height: 0;
+        border-bottom: 1px dashed #212529;
+    }
+}
+
+
 /* 9. Face-to-Face Page
 -------------------------------- */
 
