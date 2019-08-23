@@ -956,11 +956,16 @@ footer .list-inline-item:last-child {
         position: absolute;
         content: "";
         width: 0;
-        margin-left: 3px;
-        margin-top: 1.2rem;
-        height: 1.8rem;
+        margin-top: -1.3rem;
+        margin-left: 1px;
+        height: 1.9rem;
         border-left: 1px dashed #212529;
     }
+}
+
+.tree-content,
+.tree-content2 {
+    display: none;
 }
 
 .divider-left {
