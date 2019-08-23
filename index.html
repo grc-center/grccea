@@ -559,7 +559,7 @@ MODALS LIST:
                     <div class="w-100"></div>
 
                     <div class="col-8">
-                        <p><span class="text-primary">D </span><span class="line-start">+</span> 1. The boilers for the new plant will be purchased from Thermon</p>
+                        <p><span class="text-primary">D </span><a class="tree-open">+</a> 1. The boilers for the new plant will be purchased from Thermon</p>
                     </div>
                     <div class="col col-2 divider-left-half text-center">
                         Ray White
@@ -567,17 +567,15 @@ MODALS LIST:
                     <div class="col col-2 divider-left-half text-center"></div>
 
                     <div class="w-100"></div>
-
-                    <div class="col-8">
-                        <p><span class="text-primary divider-bottom">A&nbsp;&nbsp;</span>---Invite bid from the various boiler companies for the new plant at scottdale AZ</p>
+                    <div class="col-8 tree-content">
+                        <p><span class="text-primary divider-bottom">A&nbsp;&nbsp;</span><span class="line-start">-</span>--Invite bid from the various boiler companies for the new plant at scottdale AZ</p>
                     </div>
-                    <div class="col col-2 divider-bottom divider-left text-center"></div>
-                    <div class="col col-2 divider-bottom divider-left text-center">Barbara Beck</div>
-
+                    <div class="col col-2 divider-bottom divider-left text-center tree-content"></div>
+                    <div class="col col-2 divider-bottom divider-left text-center tree-content">Barbara Beck</div>
                     <div class="w-100"></div>
 
                     <div class="col-8" style="padding-top:1rem">
-                        <p><span class="text-primary">D </span><span class="line-start">+</span> 1. The boilers for the new plant will be purchased from Thermon</p>
+                        <p><span class="text-primary">D </span><a class="tree-open2">+</a> 1. The boilers for the new plant will be purchased from Thermon</p>
                     </div>
                     <div class="col col-2 divider-left" style="padding-top:1rem">
                         Ray White
@@ -586,11 +584,11 @@ MODALS LIST:
 
                     <div class="w-100"></div>
 
-                    <div class="col-8">
-                        <p><span class="text-primary">A&nbsp;&nbsp;</span>---Invite bid from the various boiler companies for the new plant at scottdale AZ</p>
+                    <div class="col-8 tree-content2">
+                        <p><span class="text-primary">A&nbsp;&nbsp;</span><span class="line-start">-</span>--Invite bid from the various boiler companies for the new plant at scottdale AZ</p>
                     </div>
-                    <div class="col col-2  divider-left-bottom"></div>
-                    <div class="col col-2  divider-left-bottom">Barbara Beck</div>
+                    <div class="col col-2  divider-left-bottom tree-content2"></div>
+                    <div class="col col-2  divider-left-bottom tree-content2">Barbara Beck</div>
 
                 </div>
             </div>
@@ -620,6 +618,14 @@ MODALS LIST:
     <script src="assets/vendor/jquery/jquery.slim.js"></script>
     <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/vendor/bootstrap-select/js/bootstrap-select.js"></script>
+    <script>
+        $(".tree-open").click(function() {
+            $(".tree-content").show();
+        })
+        $(".tree-open2").click(function() {
+            $(".tree-content2").show();
+        })
+    </script>
 
 </body>
 
