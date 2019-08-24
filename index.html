@@ -577,7 +577,7 @@ MODALS LIST:
                     <div class="col-8" style="padding-top:1rem">
                         <p><span class="text-primary">D </span><a class="tree-open2">+</a> 1. The boilers for the new plant will be purchased from Thermon</p>
                     </div>
-                    <div class="col col-2 divider-left" style="padding-top:1rem">
+                    <div class="col col-2 divider-left text-center" style="padding-top:1rem">
                         Ray White
                     </div>
                     <div class="col col-2 divider-left" style="padding-top:1rem"></div>
@@ -620,10 +620,18 @@ MODALS LIST:
     <script src="assets/vendor/bootstrap-select/js/bootstrap-select.js"></script>
     <script>
         $(".tree-open").click(function() {
-            $(".tree-content").show();
+            if ($(".tree-content").css("display") == "none") {
+                $(".tree-content").show();
+            } else {
+                $(".tree-content").hide();
+            }
         })
         $(".tree-open2").click(function() {
-            $(".tree-content2").show();
+            if ($(".tree-content2").css("display") == "none") {
+                $(".tree-content2").show();
+            } else {
+                $(".tree-content2").hide();
+            }
         })
     </script>
 
