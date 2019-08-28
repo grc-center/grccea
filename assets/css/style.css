@@ -931,6 +931,10 @@ footer .list-inline-item:last-child {
     padding: 10px 0 10px 0;
 }
 
+.pb {
+    padding-bottom: 10px;
+}
+
 .divider-left-half:before {
     position: absolute;
     top: 30%;
@@ -1001,6 +1005,44 @@ footer .list-inline-item:last-child {
         height: 0;
         border-bottom: 1px dashed #212529;
     }
+}
+
+.left-aligned {
+    position: absolute;
+    left: 0;
+}
+
+#modalMyMeetings {
+    font-size: 10px;
+}
+
+.line-to-agenda {
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    margin-left: 39%;
+    border-left: 1px dashed #212529;
+}
+
+.line-to-agenda:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    border-bottom: 1px dashed #212529;
+}
+
+.la-bottom {
+    border-left: none !important;
+}
+
+.la-bottom:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    height: 50%;
+    left: 0;
+    border-left: 1px dashed #212529;
 }
 
 
