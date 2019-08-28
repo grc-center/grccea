@@ -545,7 +545,7 @@ MODALS LIST:
                         <i class="fa fa-times"></i>
                     </a>
                 </div>
-                <div class="row" style="padding:0 10px 0 10px">
+                <div class="row" style="padding:0 10px 10px 10px">
                     <div class="col-8 text-center padding-b">
                         Artifact
                     </div>
@@ -572,10 +572,11 @@ MODALS LIST:
                     </div>
                     <div class="col col-2 divider-bottom divider-left text-center tree-content"></div>
                     <div class="col col-2 divider-bottom divider-left text-center tree-content">Barbara Beck</div>
+
                     <div class="w-100"></div>
 
                     <div class="col-8" style="padding-top:1rem">
-                        <p><span class="text-primary">D </span><a class="tree-open2">+</a> 1. The boilers for the new plant will be purchased from Thermon</p>
+                        <p><span class="text-primary">D </span><a class="tree-open2">+</a> 2. The boilers for the new plant will be purchased from Thermon</p>
                     </div>
                     <div class="col col-2 divider-left text-center" style="padding-top:1rem">
                         Ray White
@@ -599,7 +600,87 @@ MODALS LIST:
     <div class="modal fade" id="modalMyMeetings" aria-labelledby="modalMyMeetingslabel" aria-hidden="true" role="dialog" tabindex="-4" data-toggle="modal" data-dismiss="modal" data-keyboard="false">
         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div class="modal-content">
-                <img class="img-fluid" src="assets/img/img-temp-my-meetings.png" alt="" data-dismiss="modal">
+                <div class="modal-header bg-dark text-white p-0">
+                    <h5 class="m-2">My meetings (Next 7 days)</h5>
+                    <a class="btn text-white" data-dismiss="modal" aria-label="Close" href="#">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </div>
+                <div class="row" style="padding:0 10px 10px 30px">
+                    <div class="col-3 text-center">
+                        <span class="left-aligned">#</span> <b>Title</b>
+                    </div>
+                    <div class="col-3 text-center">
+                        <b>Agenda</b>
+                    </div>
+                    <div class="col text-center"><b>Minutes Writer</b></div>
+                    <div class="col text-center"><b>Start Time(GMT)</b></div>
+                    <div class="col text-center"><b>Duration</b></div>
+
+                    <div class="w-100"></div>
+
+                    <div class="col-3 small-f">
+                        <span class="left-aligned"><a class="tree-open">+ </a>1</span>&nbsp;&nbsp;&nbsp;Plan verification and validiation
+                    </div>
+                    <div class="col-3 text-center divider-left"></div>
+                    <div class="col text-center divider-left-half">Bob Gauthier</div>
+                    <div class="col text-center divider-left-half">1 Jul, 2019, 14:00 Hrs</div>
+                    <div class="col text-center divider-left-half">1 hr 30 min</div>
+
+                    <div class="w-100"></div>
+                    <div class="col-3 tree-content">
+                        <div class="line-to-agenda"></div>
+                    </div>
+                    <div class="col-3 divider-left tree-content">Review the project charter to understand the scope</div>
+                    <div class="col text-center divider-left tree-content"></div>
+                    <div class="col text-center divider-left tree-content"></div>
+                    <div class="col text-center divider-left tree-content"></div>
+
+                    <div class="w-100"></div>
+                    <div class="col-3 tree-content">
+                        <div class="line-to-agenda"></div>
+                    </div>
+                    <div class="col-3 divider-left tree-content">High level plan for the design team</div>
+                    <div class="col text-center divider-left tree-content"></div>
+                    <div class="col text-center divider-left tree-content"></div>
+                    <div class="col text-center divider-left tree-content"></div>
+
+                    <div class="w-100"></div>
+                    <div class="col-3 tree-content">
+                        <div class="line-to-agenda la-bottom"></div>
+                    </div>
+                    <div class="col-3 divider-left divider-bottom tree-content">High level plan for the design team</div>
+                    <div class="col text-center divider-bottom divider-left pb tree-content"></div>
+                    <div class="col text-center divider-bottom divider-left pb tree-content"></div>
+                    <div class="col text-center divider-bottom divider-left pb tree-content"></div>
+                    <div class="w-100" style="height:6px"></div>
+
+                    <div class="col-3 small-f">
+                        <span class="left-aligned"><a class="tree-open2">+ </a>2</span>&nbsp;&nbsp;&nbsp;Plan verification and validiation
+                    </div>
+                    <div class="col-3 text-center divider-left"></div>
+                    <div class="col text-center divider-left">Bob Gauthier</div>
+                    <div class="col text-center divider-left">1 Jul, 2019, 14:00 Hrs</div>
+                    <div class="col text-center divider-left">1 hr 30 min</div>
+
+                    <div class="w-100"></div>
+                    <div class="col-3 tree-content2">
+                        <div class="line-to-agenda"></div>
+                    </div>
+                    <div class="col-3 divider-left tree-content2">Review the project charter to understand the scope</div>
+                    <div class="col text-center divider-left tree-content2"></div>
+                    <div class="col text-center divider-left tree-content2"></div>
+                    <div class="col text-center divider-left tree-content2"></div>
+
+                    <div class="w-100"></div>
+                    <div class="col-3 tree-content2">
+                        <div class="line-to-agenda la-bottom"></div>
+                    </div>
+                    <div class="col-3 divider-left tree-content2">High level plan for team</div>
+                    <div class="col text-center divider-left tree-content2"></div>
+                    <div class="col text-center divider-left tree-content2"></div>
+                    <div class="col text-center divider-left tree-content2"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -620,17 +701,19 @@ MODALS LIST:
     <script src="assets/vendor/bootstrap-select/js/bootstrap-select.js"></script>
     <script>
         $(".tree-open").click(function() {
-            if ($(".tree-content").css("display") == "none") {
-                $(".tree-content").show();
+            var cont = $(this).closest(".row").children(".tree-content");
+            if (cont.css("display") == "none") {
+                cont.show();
             } else {
-                $(".tree-content").hide();
+                cont.hide();
             }
         })
         $(".tree-open2").click(function() {
-            if ($(".tree-content2").css("display") == "none") {
-                $(".tree-content2").show();
+            var cont = $(this).closest(".row").children(".tree-content2");
+            if (cont.css("display") == "none") {
+                cont.show();
             } else {
-                $(".tree-content2").hide();
+                cont.hide();
             }
         })
     </script>
