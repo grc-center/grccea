@@ -987,6 +987,14 @@ footer .list-inline-item:last-child {
     border-bottom: 1px dashed #212529;
 }
 
+.pl {
+    padding-left: 10px;
+}
+
+.ml {
+    margin-left: 6px;
+}
+
 @media(max-width:600px) {
     #modalMyDecisions p,
     #modalMyDecisions {
@@ -1012,7 +1020,8 @@ footer .list-inline-item:last-child {
     left: 0;
 }
 
-#modalMyMeetings {
+#modalMyMeetings,
+#modalMyTasks {
     font-size: 10px;
 }
 
